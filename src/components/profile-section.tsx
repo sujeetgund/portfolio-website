@@ -7,12 +7,12 @@ import { Section } from './section';
 export function ProfileSection() {
   return (
     <Section id="profile" className="pt-0">
-      <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-8">
+      <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-6 sm:gap-8">
         <div className="text-center sm:text-left">
           <h1 className="font-headline text-4xl md:text-5xl font-bold">
             {profileData.name}
           </h1>
-          <p className="mt-2 text-md text-foreground/80 max-w-md">
+          <p className="mt-2 text-base text-foreground/80 max-w-md">
             {profileData.title}
           </p>
           <p className="mt-2 text-sm text-muted-foreground">

@@ -9,7 +9,7 @@ export function ExperienceSection() {
       <div className="space-y-6">
         {experienceData.map((item, index) => (
           <div key={index}>
-            <div className="flex justify-between items-baseline">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-baseline">
               <h3 className="font-bold text-base">{item.role}</h3>
               <p className="text-sm text-muted-foreground">{item.period}</p>
             </div>
