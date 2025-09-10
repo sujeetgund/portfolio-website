@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button';
 export function PhishDetectorPage() {
   return (
     <div className="bg-muted min-h-dvh">
-      <div className="container mx-auto max-w-4xl py-4 sm:py-8 md:py-12">
+      <div className="container mx-auto max-w-4xl px-4 py-4 sm:py-8 md:py-12">
         <Button asChild variant="ghost" size="sm" className="mb-4 text-muted-foreground hover:text-foreground">
           <Link href="/#projects">
             <ArrowLeft className="mr-2 h-4 w-4" />
