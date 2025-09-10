@@ -1,12 +1,12 @@
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, Link as LinkIcon, Phone } from 'lucide-react';
 
 const profileImage = PlaceHolderImages.find(p => p.id === 'profile-headshot');
 
 export const profileData = {
-  name: 'Alex Doe',
-  title: 'Senior AI Engineer',
-  location: 'San Francisco, CA',
+  name: 'Sujeet Gund',
+  title: 'AI Engineer specializing in building Machine Learning applications and intelligent systems.',
+  location: 'Bhopal, Madhya Pradesh, IN',
   image: {
     src: profileImage?.imageUrl || 'https://picsum.photos/seed/100/400/400',
     hint: profileImage?.imageHint || 'professional headshot',
@@ -14,127 +14,116 @@ export const profileData = {
   contacts: [
     {
       label: 'Email',
-      value: 'mailto:alex.doe@email.com',
+      value: 'mailto:sujeetgund@email.com',
       icon: Mail,
+    },
+     {
+      label: 'Phone',
+      value: 'tel:+919999999999',
+      icon: Phone,
+    },
+    {
+      label: 'Website',
+      value: 'https://sujeetgund.com',
+      icon: LinkIcon,
     },
     {
       label: 'LinkedIn',
-      value: 'https://linkedin.com/in/alex-doe',
+      value: 'https://linkedin.com/in/sujeetgund',
       icon: Linkedin,
     },
     {
       label: 'GitHub',
-      value: 'https://github.com/alex-doe',
+      value: 'https://github.com/sujeetgund',
       icon: Github,
-    },
-    {
-      label: 'Twitter',
-      value: 'https://twitter.com/alex-doe',
-      icon: Twitter,
     },
   ],
 };
 
 export const aboutData = {
   summary:
-    "I'm a passionate AI Engineer with over 8 years of experience in designing, developing, and deploying machine learning models at scale. My expertise lies in natural language processing (NLP) and computer vision, and I am driven by a desire to build intelligent systems that solve real-world problems. I thrive in collaborative environments and am always eager to learn and apply new technologies.",
+    "I'm an AI Engineering student at VIT Bhopal University, specializing in Machine Learning, Deep Learning, and Generative AI. My projects demonstrate proficiency in end-to-end ML pipeline development, from data preprocessing to production deployment. I have hands-on experience with cutting-edge technologies like LLMs and Agentic AI, and I'm passionate about building intelligent systems that solve real-world problems using modern tools and frameworks.",
 };
 
 export const experienceData = [
   {
-    company: 'InnovateAI Corp',
-    location: 'San Francisco, CA',
-    role: 'Senior AI Engineer',
-    period: '2020 - Present',
+    company: 'The Eureka Club, VIT Bhopal University',
+    location: 'Bhopal, India',
+    role: 'Technical Club Member',
+    period: 'Jul 24 - Feb 25',
     description:
-      'Led the development of a state-of-the-art NLP engine for sentiment analysis, improving accuracy by 15%. Deployed and managed machine learning models in production using Kubernetes and MLOps principles, reducing inference time by 30%.',
-  },
-  {
-    company: 'DataDriven Solutions',
-    location: 'Boston, MA',
-    role: 'Machine Learning Engineer',
-    period: '2018 - 2020',
-    description:
-      'Developed a recommendation system for an e-commerce platform, resulting in a 20% increase in user engagement. Worked on computer vision projects for image classification and object detection.',
-  },
-  {
-    company: 'TechStart Inc.',
-    location: 'Austin, TX',
-    role: 'Software Engineer',
-    period: '2016 - 2018',
-    description:
-      'Contributed to the development of a large-scale data processing pipeline using Apache Spark. Gained foundational experience in software development best practices and cloud computing on AWS.',
+      "Collaborated with fellow members to develop innovative project ideas and solutions. Improved problem-solving and teamwork skills through active participation in club activities. Contributed to organizing events that fostered peer learning and networking within the university's tech community.",
   },
 ];
 
 export const projectsData = [
   {
-    title: 'Generative Art Platform',
+    title: 'PhishDetector - Phishing Website Detection System',
+    period: 'Jun 25 - Jul 25',
     description:
-      'A web platform that uses generative adversarial networks (GANs) to create unique pieces of art based on user text prompts. The system is built with Python, TensorFlow, and a React frontend.',
-    tech: ['TensorFlow', 'Python', 'React', 'Node.js', 'Google Cloud'],
-    github: 'https://github.com/alex-doe/generative-art',
-    live: 'https://generative-art.alex-doe.com',
-  },
-  {
-    title: 'Real-time Object Detection App',
-    description:
-      'A mobile application that performs real-time object detection using a lightweight deep learning model (MobileNetV2). Optimized for on-device performance on Android and iOS.',
-    tech: ['PyTorch', 'CoreML', 'Swift', 'Kotlin', 'Firebase'],
-    github: 'https://github.com/alex-doe/object-detection-app',
+      'Developed a robust ML solution to detect phishing websites using URL and metadata features. Trained multiple models (Random Forest, SVC, KNN, Logistic Regression, Ridge) and identified the best-performing one (Random Forest: 97.11% accuracy). Deployed a real-time inference API using FastAPI and containerized it with Docker for scalable deployment.',
+    tech: [],
+    github: 'https://github.com/sujeetgund/phishdetector',
     live: '',
   },
   {
-    title: 'AI-Powered Chatbot',
+    title: 'LaptopWise - AI-powered Laptop Price Estimation',
+    period: 'May 25 - Jun 25',
     description:
-      'A customer service chatbot for an e-commerce website, built using retrieval-augmented generation (RAG) techniques to provide accurate and context-aware responses. Integrated with a vector database for efficient document retrieval.',
-    tech: ['LangChain', 'Hugging Face Transformers', 'Pinecone', 'FastAPI', 'Next.js'],
-    github: 'https://github.com/alex-doe/ai-chatbot',
-    live: 'https://chatbot.alex-doe.com',
+      'Developed a web application that estimates laptop prices using custom ML model and Gemini API. Built the ML model in Python, trained it on real-world hardware specifications, and deployed it via FastAPI. Containerized the solution with Docker and integrated it into a Next.js front end for production ready deployment.',
+    tech: [],
+    github: 'https://github.com/sujeetgund/laptopwise',
+    live: 'https://laptopwise.sujeetgund.com',
+  },
+  {
+    title: 'Subscription Tracker API - RESTful Management System',
+    period: 'Apr 25 - May 25',
+    description:
+      'Developed a scalable RESTful API with JWT authentication, comprehensive CRUD operations, and automated renewal notifications. Engineered robust backend infrastructure using Node.js with modular API design. Deployed containerized architecture using Docker, enabling seamless CI/CD pipeline integration and 99.9% uptime.',
+    tech: [],
+    github: 'https://github.com/sujeetgund/subscription-tracker',
+    live: '',
   },
 ];
 
 export const skillsData = [
   {
-    category: 'Programming Languages',
-    skills: ['Python', 'Go', 'JavaScript/TypeScript', 'SQL', 'C++'],
+    category: 'Programming & ML',
+    skills: ['Python', 'SQL', 'Machine Learning', 'NLP', 'Generative AI (LLMs)', 'Agentic AI'],
   },
   {
-    category: 'Frameworks & Libraries',
-    skills: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'LangChain', 'React/Next.js', 'Node.js'],
+    category: 'Frameworks & Tools',
+    skills: ['Next.js', 'Docker', 'Git', 'MongoDB', 'AWS', 'GCP', 'FastAPI'],
   },
   {
-    category: 'Tools & Platforms',
-    skills: ['Docker', 'Kubernetes', 'Google Cloud (GCP)', 'AWS', 'MLflow', 'Git & GitHub'],
-  },
-  {
-    category: 'Databases',
-    skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Pinecone', 'Weaviate'],
+    category: 'Development & Deployment',
+    skills: ['Model Deployment', 'API Integration', 'Containerization', 'Version Control'],
   },
 ];
 
 export const certificationsData = [
   {
-    name: 'Google Cloud Professional Machine Learning Engineer',
-    issuer: 'Google Cloud',
-    year: '2022',
+    name: 'Applied Machine Learning in Python',
+    issuer: 'University of Michigan',
+    year: 'Dec 24',
   },
   {
-    name: 'Deep Learning Specialization',
-    issuer: 'DeepLearning.AI (Coursera)',
-    year: '2021',
+    name: 'Supervised Machine Learning: Regression and Classification',
+    issuer: 'DeepLearning.AI',
+    year: 'Jul 23',
+  },
+  {
+    name: 'AWS Cloud Essentials',
+    issuer: 'Amazon Web Services (AWS)',
+    year: 'Jun 23',
   },
 ];
 
 export const educationData = [
   {
-    institution: 'Stanford University',
-    degree: 'M.S. in Computer Science, specialization in AI',
-    period: '2014 - 2016',
-  },
-  {
-    institution: 'University of Texas at Austin',
-    degree: 'B.S. in Computer Science',
-    period: '2010 - 2014',
+    institution: 'VIT Bhopal University',
+    degree: 'Integrated M.Tech in Artificial Intelligence',
+    period: '2023 - 2028',
+    details: 'CGPA: 9.26 | Relevant Coursework: Data Science, Machine Learning, Deep Learning, Statistics, Algorithms',
   },
 ];

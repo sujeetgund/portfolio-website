@@ -6,11 +6,11 @@ import { Github, ExternalLink, Wand2 } from 'lucide-react';
 import { projectsData } from '@/lib/data';
 import { updateProjectsAction } from '@/lib/actions';
 import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Section } from './section';
 import { SectionHeader } from './section-header';
 import { useToast } from "@/hooks/use-toast";
+
+type Project = (typeof projectsData)[0];
 
 export function ProjectsSection() {
   const [currentProjects, setCurrentProjects] = useState(projectsData);
@@ -40,44 +40,38 @@ export function ProjectsSection() {
 
   return (
     <Section id="projects">
-      <SectionHeader title="Projects" description="A selection of my work. Feel free to explore." />
-       <div className="mb-8 text-center">
-          <Button onClick={handleUpdate} disabled={isLoading} variant="secondary">
-            <Wand2 className="mr-2 h-4 w-4" />
-            {isLoading ? 'Updating Summaries...' : 'Update Summaries with AI'}
-          </Button>
-        </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {currentProjects.map((project, index) => (
-          <Card key={index} className="flex flex-col">
-            <CardHeader>
-              <CardTitle className="font-headline text-xl">{project.title}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <CardDescription>{project.description}</CardDescription>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {project.tech.map((tech, i) => (
-                  <Badge key={i} variant="secondary">{tech}</Badge>
-                ))}
-              </div>
-            </CardContent>
-            <CardFooter className="flex gap-2">
-              <Button asChild variant="outline" size="sm">
+      <div className="flex justify-between items-center mb-6">
+        <SectionHeader title="Projects" />
+        <Button onClick={handleUpdate} disabled={isLoading} variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
+          <Wand2 className="mr-2 h-4 w-4" />
+          {isLoading ? 'Updating...' : 'Update with AI'}
+        </Button>
+      </div>
+      <div className="space-y-6">
+        {currentProjects.map((project: Project, index: number) => (
+          <div key={index}>
+            <div className="flex justify-between items-baseline">
+              <h3 className="font-bold text-base">{project.title}</h3>
+              <p className="text-sm text-muted-foreground">{project.period}</p>
+            </div>
+            <p className="mt-2 text-sm text-foreground/70 whitespace-pre-wrap">{project.description}</p>
+            <div className="mt-3 flex gap-2">
+              <Button asChild variant="link" size="sm" className="p-0 h-auto text-muted-foreground hover:text-foreground">
                 <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-4 w-4" />
+                  <Github className="mr-1 h-3 w-3" />
                   GitHub
                 </Link>
               </Button>
               {project.live && (
-                <Button asChild variant="default" size="sm">
+                <Button asChild variant="link" size="sm" className="p-0 h-auto text-muted-foreground hover:text-foreground">
                   <Link href={project.live} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Live Demo
+                    <ExternalLink className="mr-1 h-3 w-3" />
+                    Live Preview
                   </Link>
                 </Button>
               )}
-            </CardFooter>
-          </Card>
+            </div>
+          </div>
         ))}
       </div>
     </Section>

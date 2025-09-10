@@ -10,16 +10,17 @@ import { Footer } from '@/components/footer';
 
 export default function Home() {
   return (
-    <div className="flex min-h-dvh flex-col">
-      <Header />
-      <main className="flex-1">
-        <ProfileSection />
-        <AboutSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <CertificationsSection />
-        <EducationSection />
+    <div className="flex min-h-dvh flex-col bg-muted">
+      <main className="flex-1 py-8 md:py-12">
+        <div className="container mx-auto max-w-4xl bg-card p-6 md:p-12 rounded-lg shadow-lg">
+          <ProfileSection />
+          <AboutSection />
+          <ExperienceSection />
+          <ProjectsSection />
+          <SkillsSection />
+          <CertificationsSection />
+          <EducationSection />
+        </div>
       </main>
       <Footer />
     </div>

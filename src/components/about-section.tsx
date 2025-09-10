@@ -32,11 +32,11 @@ export function AboutSection() {
 
   return (
     <Section id="about">
-      <SectionHeader title="About Me" />
-      <div className="max-w-3xl mx-auto">
-        <p className="text-lg leading-relaxed text-foreground/80 whitespace-pre-wrap">{aboutText}</p>
-        <div className="mt-8 text-center">
-          <Button onClick={handleRefine} disabled={isLoading} variant="secondary">
+      <SectionHeader title="About" />
+      <div className="relative">
+        <p className="text-base leading-relaxed text-foreground/80 whitespace-pre-wrap">{aboutText}</p>
+        <div className="mt-4 text-left">
+          <Button onClick={handleRefine} disabled={isLoading} variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
             <Wand2 className="mr-2 h-4 w-4" />
             {isLoading ? 'Refining...' : 'Refine with AI'}
           </Button>
