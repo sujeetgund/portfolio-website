@@ -24,7 +24,7 @@ export function PhishDetectorPage() {
               PhishDetector
             </h1>
             <p className="max-w-3xl mx-auto text-foreground/80 text-base">
-              End-to-end ML system that detects phishing websites with 97.11% accuracy, protecting users from fraudulent sites through real-time API inference.
+              An end-to-end ML system that detects phishing websites with 97.11% accuracy, protecting users from fraudulent sites through real-time API inference.
             </p>
             <div className="mt-4">
               <Button asChild>
@@ -72,6 +72,24 @@ export function PhishDetectorPage() {
                 </div>
                 <p className="text-sm text-foreground/80"><span className="font-bold text-foreground">Architecture:</span> Modular pipeline with separate components for ingestion, validation, training, and inference. FastAPI provides a lightweight, high-performance API.</p>
              </div>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="font-headline text-xl font-bold mb-3">Role & Credits</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-muted/50 p-4 rounded-lg">
+                <h3 className="font-bold text-sm mb-2 text-primary">My Role</h3>
+                <p className="text-sm text-foreground/80">
+                  I was the sole developer for this project, responsible for everything from data analysis and model training to API development and containerization.
+                </p>
+              </div>
+              <div className="bg-muted/50 p-4 rounded-lg">
+                <h3 className="font-bold text-sm mb-2 text-primary">Credits</h3>
+                <p className="text-sm text-foreground/80">
+                  The dataset was sourced from the UCI Machine Learning Repository.
+                </p>
+              </div>
+            </div>
           </section>
           
           <section className="mb-8">
