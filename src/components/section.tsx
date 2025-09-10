@@ -1,5 +1,7 @@
+'use client';
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
+import { motion } from 'framer-motion';
 
 type SectionProps = {
   id: string;
@@ -9,8 +11,15 @@ type SectionProps = {
 
 export function Section({ id, className, children }: SectionProps) {
   return (
-    <section id={id} className={cn("py-8", className)}>
+    <motion.section
+      id={id}
+      className={cn("py-8", className)}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="px-4 md:px-6">{children}</div>
-    </section>
+    </motion.section>
   );
 }
