@@ -2,50 +2,21 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Github, ExternalLink, Wand2 } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 import { projectsData } from '@/lib/data';
-import { updateProjectsAction } from '@/lib/actions';
 import { Button } from '@/components/ui/button';
 import { Section } from './section';
 import { SectionHeader } from './section-header';
-import { useToast } from "@/hooks/use-toast";
 
 type Project = (typeof projectsData)[0];
 
 export function ProjectsSection() {
-  const [currentProjects, setCurrentProjects] = useState(projectsData);
-  const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
-
-  const handleUpdate = async () => {
-    setIsLoading(true);
-    try {
-      const updatedDescriptions = await updateProjectsAction(currentProjects);
-      setCurrentProjects(prevProjects =>
-        prevProjects.map(project => {
-          const updated = updatedDescriptions.find(u => u.title === project.title);
-          return updated ? { ...project, description: updated.updatedDescription } : project;
-        })
-      );
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: error instanceof Error ? error.message : "An unknown error occurred.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const [currentProjects] = useState(projectsData);
 
   return (
     <Section id="projects">
       <div className="flex justify-between items-center mb-6">
         <SectionHeader title="Projects" />
-        <Button onClick={handleUpdate} disabled={isLoading} variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
-          <Wand2 className="mr-2 h-4 w-4" />
-          {isLoading ? 'Updating...' : 'Update with AI'}
-        </Button>
       </div>
       <div className="space-y-6">
         {currentProjects.map((project: Project, index: number) => (
