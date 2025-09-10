@@ -12,7 +12,7 @@ export function AboutSection() {
     <Section id="about">
       <SectionHeader title="About" />
       <div className="relative">
-        <p className="text-base leading-relaxed text-foreground/80 whitespace-pre-wrap">{aboutText}</p>
+        <p className="text-sm leading-relaxed text-foreground/80 whitespace-pre-wrap">{aboutText}</p>
       </div>
     </Section>
   );

@@ -1,7 +1,6 @@
 import { educationData } from '@/lib/data';
 import { Section } from './section';
 import { SectionHeader } from './section-header';
-import { Badge } from './ui/badge';
 
 export function EducationSection() {
   return (
@@ -15,7 +14,7 @@ export function EducationSection() {
                 <p className="text-sm text-muted-foreground">{edu.period}</p>
             </div>
             <p className="text-sm font-medium text-foreground/80">{edu.degree}</p>
-            {edu.details && <p className="text-sm text-foreground/70 mt-2">{edu.details}</p>}
+            {edu.details && <p className="text-sm text-foreground/70 mt-1">{edu.details}</p>}
           </div>
         ))}
       </div>

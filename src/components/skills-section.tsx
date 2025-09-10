@@ -13,7 +13,7 @@ export function SkillsSection() {
             <h3 className="font-bold text-sm mb-2">{category.category}</h3>
             <div className="flex flex-wrap gap-1">
               {category.skills.map((skill, i) => (
-                <Badge key={i} variant="secondary" className="font-normal">
+                <Badge key={i} variant="secondary" className="font-normal text-sm">
                   {skill}
                 </Badge>
               ))}

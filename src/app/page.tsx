@@ -1,4 +1,3 @@
-import { Header } from '@/components/header';
 import { ProfileSection } from '@/components/profile-section';
 import { AboutSection } from '@/components/about-section';
 import { ExperienceSection } from '@/components/experience-section';
@@ -11,8 +10,8 @@ import { Footer } from '@/components/footer';
 export default function Home() {
   return (
     <div className="flex min-h-dvh flex-col bg-muted">
-      <main className="flex-1 py-8 md:py-12">
-        <div className="container mx-auto max-w-4xl bg-card p-6 md:p-12 rounded-lg shadow-lg">
+      <main className="flex-1">
+        <div className="container mx-auto max-w-4xl bg-card p-6 md:p-12 rounded-lg shadow-lg my-8">
           <ProfileSection />
           <AboutSection />
           <ExperienceSection />

@@ -14,7 +14,7 @@ export function ExperienceSection() {
               <p className="text-sm text-muted-foreground">{item.period}</p>
             </div>
             <p className="text-sm font-medium text-foreground/80">{item.company}</p>
-            <p className="mt-2 text-sm text-foreground/70">{item.description}</p>
+            <p className="mt-1 text-sm text-foreground/70">{item.description}</p>
           </div>
         ))}
       </div>
