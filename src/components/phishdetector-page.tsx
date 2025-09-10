@@ -3,252 +3,230 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import {
-  AlertTriangle,
-  Target,
-  FileCode,
-  BarChart,
-  GitBranch,
-  Box,
-  Layers,
-  Code,
   ArrowLeft,
   Github,
-  CheckCircle,
+  FileText,
+  Lightbulb,
+  CheckCircle2,
+  GitBranch,
+  Rocket,
+  Wrench,
+  BookOpen,
+  Box,
+  BrainCircuit,
+  Database,
+  Users,
+  AlertTriangle,
+  Target,
+  FlaskConical,
+  Linkedin,
 } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { Section } from '@/components/section';
-import { SectionHeader } from './section-header';
 import { Badge } from './ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
-
-const heroImage = PlaceHolderImages.find((p) => p.id === 'phishdetector-hero');
-const galleryImage1 = PlaceHolderImages.find((p) => p.id === 'phishdetector-gallery-1');
-const galleryImage2 = PlaceHolderImages.find((p) => p.id === 'phishdetector-gallery-2');
-
-const objectives = [
-  'Ingest and validate the Phishing Websites dataset.',
-  'Preprocess and transform features for machine learning readiness.',
-  'Train multiple ML models (Random Forest, SVC, KNN, Logistic Regression, Ridge) and identify the best-performing one.',
-  'Evaluate the best model on unseen data and document its performance.',
-  'Deploy an API using FastAPI for real-time predictions on new website data.',
-  'Provide clear documentation and modular code for reproducibility and future improvements.',
-];
-
-const techStack = [
-  { category: 'Language', skills: ['Python 3.10+'] },
-  { category: 'Libraries', skills: ['pandas', 'scikit-learn', 'fastapi'] },
-  { category: 'Models', skills: ['Random Forest', 'Support Vector Machines', 'KNeighbours', 'Logistic Regression', 'Ridge'] },
-  { category: 'API', skills: ['FastAPI'] },
-  { category: 'Packaging', skills: ['Docker'] },
-];
-
-const results = [
-    { model: 'RandomForest', fitTime: 1.02, testScore: 0.9711, std: 0.0041 },
-    { model: 'SVC', fitTime: 5.03, testScore: 0.9629, std: 0.0064 },
-    { model: 'KNeighbors', fitTime: 0.01, testScore: 0.9623, std: 0.0046 },
-    { model: 'Logistic', fitTime: 0.1, testScore: 0.927, std: 0.0047 },
-    { model: 'Ridge', fitTime: 0.01, testScore: 0.9206, std: 0.0053 },
-];
 
 export function PhishDetectorPage() {
   return (
-    <>
-      <div className="relative h-64 md:h-80 w-full">
-        <Image
-          src={heroImage?.imageUrl || ''}
-          alt="PhishDetector Hero Image"
-          data-ai-hint={heroImage?.imageHint}
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-transparent" />
-      </div>
-      <div className="container mx-auto max-w-5xl -mt-24 md:-mt-32">
-        <Section className="bg-card p-6 md:p-12 rounded-lg shadow-lg relative">
-            <Button asChild variant="ghost" size="sm" className="absolute top-4 left-4 text-muted-foreground hover:text-foreground">
-                <Link href="/#projects">
-                    <ArrowLeft className="mr-2 h-4 w-4" />
-                    Back to Projects
+    <div className="bg-muted min-h-dvh">
+      <div className="container mx-auto max-w-4xl py-8 md:py-12">
+        <Button asChild variant="ghost" size="sm" className="mb-4 text-muted-foreground hover:text-foreground">
+          <Link href="/#projects">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Portfolio
+          </Link>
+        </Button>
+        <div className="bg-card p-6 md:p-10 rounded-xl shadow-lg">
+          <header className="mb-8 text-center">
+            <h1 className="font-headline text-4xl md:text-5xl font-bold mb-2">
+              PhishDetector
+            </h1>
+            <p className="max-w-3xl mx-auto text-foreground/80">
+              End-to-end ML system that detects phishing websites with 97.11% accuracy, protecting users from fraudulent sites through real-time API inference.
+            </p>
+            <div className="mt-4">
+              <Button asChild>
+                <Link href="https://github.com/sujeetgund/phishing-website-detection" target="_blank" rel="noopener noreferrer">
+                  <Github className="mr-2" />
+                  View Code
                 </Link>
-            </Button>
-            <div className="pt-12 text-center">
-                <h1 className="font-headline text-4xl md:text-5xl font-bold">
-                    PhishDetector
-                </h1>
-                <p className="mt-2 text-lg text-foreground/80 max-w-2xl mx-auto">
-                    An End-to-End Machine Learning Solution to Detect Phishing Websites.
-                </p>
-                 <Button asChild size="sm" className="mt-4">
-                    <Link href="https://github.com/sujeetgund/phishing-website-detection" target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-4 w-4" />
-                        View on GitHub
+              </Button>
+            </div>
+          </header>
+
+          <section className="mb-8">
+            <div className="bg-muted p-4 rounded-lg">
+              <h2 className="font-bold text-sm mb-1 text-primary">TL;DR</h2>
+              <p className="text-sm text-foreground/80">
+                I built a complete phishing detection pipeline using Random Forest ML model, achieving 97.11% accuracy. The system processes URL features, trains on 30 website attributes, and serves predictions via FastAPI, fully containerized with Docker for scalable deployment.
+              </p>
+            </div>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="font-headline text-xl font-bold mb-3">Demo</h2>
+            <div className="border rounded-lg p-4">
+              <p className="text-sm font-medium mb-2 flex items-center"><Rocket className="mr-2 h-4 w-4 text-primary" /> API Demo</p>
+              <p className="text-sm text-muted-foreground mb-4">Real-time phishing detection API that analyzes website features and returns probability scores.</p>
+              <div className="bg-gray-900 text-white p-4 rounded-md font-code text-xs overflow-x-auto">
+                <pre>{`curl -X POST "http://localhost:8000/predict" \\
+  -H "Content-Type: application/json" \\
+  -d '{"features":[1,-1,1,1,-1,...,1]}'
+
+{
+  "prediction": "phishing",
+  "confidence": 0.97
+}`}</pre>
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="font-headline text-xl font-bold mb-3">Problem → Solution</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-red-50 border border-red-200 p-4 rounded-lg">
+                <h3 className="font-bold text-red-800 mb-2">Problem</h3>
+                <p className="text-sm text-red-700">Phishing websites steal sensitive user data by mimicking legitimate sites. Traditional detection methods are slow and often miss sophisticated attacks.</p>
+              </div>
+              <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                <h3 className="font-bold text-green-800 mb-2">Solution</h3>
+                <p className="text-sm text-green-700">I developed an ML pipeline that analyzes 30 URL/metadata features using Random Forest, achieving 97.11% accuracy with real-time FastAPI deployment.</p>
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="font-headline text-xl font-bold mb-3">Key Features</h2>
+            <div className="grid md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-foreground/80">
+                <div className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary shrink-0"/>End-to-end ML pipeline with automated data validation</div>
+                <div className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary shrink-0"/>Multi-model comparison (Random Forest, SVC, etc.)</div>
+                <div className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary shrink-0"/>Real-time inference API with FastAPI framework</div>
+                <div className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary shrink-0"/>Docker containerization for scalable deployment</div>
+                <div className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary shrink-0"/>Comprehensive evaluation with detailed performance reports</div>
+                <div className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary shrink-0"/>Modular architecture for easy maintenance and updates</div>
+            </div>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="font-headline text-xl font-bold mb-3">Tech Stack & Architecture</h2>
+             <div className="bg-muted p-4 rounded-lg">
+                <div className="flex flex-wrap gap-2 mb-3">
+                    <Badge variant="secondary">Python 3.10+</Badge>
+                    <Badge variant="secondary">scikit-learn</Badge>
+                    <Badge variant="secondary">FastAPI</Badge>
+                    <Badge variant="secondary">pandas</Badge>
+                    <Badge variant="secondary">Docker</Badge>
+                    <Badge variant="secondary">Random Forest</Badge>
+                </div>
+                <p className="text-sm text-foreground/80"><span className="font-bold text-foreground">Architecture:</span> Modular pipeline design with separate components for ingestion, validation, training, and inference. FastAPI provides a lightweight, high-performance API serving with automatic documentation generation.</p>
+             </div>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="font-headline text-xl font-bold mb-3">Results & Metrics</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+              <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                <p className="text-3xl font-bold text-blue-800">97.11%</p>
+                <p className="text-xs text-blue-600">Best Model Accuracy</p>
+              </div>
+              <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                <p className="text-3xl font-bold text-green-800">5</p>
+                <p className="text-xs text-green-600">Models Compared</p>
+              </div>
+              <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
+                <p className="text-3xl font-bold text-purple-800">30</p>
+                <p className="text-xs text-purple-600">Feature Attributes</p>
+              </div>
+            </div>
+             <p className="text-center text-sm text-muted-foreground mt-3">Random Forest outperformed SVC (96.29%), KNN (96.23%), Logistic Regression (92.70%), and Ridge (92.06%) with the most stable performance across validation folds.</p>
+          </section>
+          
+           <section className="mb-8">
+            <h2 className="font-headline text-xl font-bold mb-3">Quickstart</h2>
+            <div className="bg-gray-900 text-white p-4 rounded-md font-code text-xs overflow-x-auto">
+              <pre>{`# Clone and setup
+git clone https://github.com/sujeetgund/phishing-website-detection.git
+cd phishing-website-detection
+pip install -r requirements.txt
+
+# Run API server
+uvicorn run_api:app --reload`}</pre>
+            </div>
+             <div className="text-center mt-3">
+                 <Button asChild variant="link" size="sm" className="text-accent-foreground hover:text-primary">
+                    <Link href="https://github.com/sujeetgund/phishing-website-detection/blob/main/README.md" target="_blank" rel="noopener noreferrer">
+                        View complete README
+                        <ArrowLeft className="ml-1 h-3 w-3 -rotate-180" />
                     </Link>
                 </Button>
             </div>
-        </Section>
-        
-        <div className="my-8 space-y-8">
-            <Card>
-                <CardHeader>
-                    <CardTitle className="flex items-center gap-2 font-headline text-2xl"><AlertTriangle className="text-primary"/>Problem Statement</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-foreground/80">Phishing websites are fraudulent sites designed to mimic legitimate ones, aiming to steal sensitive information from unsuspecting users. Detecting these websites in real-time is crucial to protect users from scams, data breaches, and financial losses. The challenge lies in accurately distinguishing phishing websites from legitimate ones using measurable features derived from the site’s URL and metadata.</p>
-                </CardContent>
-            </Card>
-            
-            <Card>
-                <CardHeader>
-                    <CardTitle className="flex items-center gap-2 font-headline text-2xl"><Target className="text-primary"/>Objectives</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <ul className="space-y-2">
-                        {objectives.map((obj, i) => (
-                            <li key={i} className="flex items-start gap-2">
-                                <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 shrink-0"/>
-                                <span className="text-foreground/80">{obj}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </CardContent>
-            </Card>
+          </section>
 
-            <div className="grid md:grid-cols-2 gap-8">
-                 {galleryImage1 && (
-                    <Image src={galleryImage1.imageUrl} alt="Project gallery image 1" data-ai-hint={galleryImage1.imageHint} width={600} height={400} className="rounded-lg object-cover shadow-md"/>
-                )}
-                 {galleryImage2 && (
-                    <Image src={galleryImage2.imageUrl} alt="Project gallery image 2" data-ai-hint={galleryImage2.imageHint} width={600} height={400} className="rounded-lg object-cover shadow-md"/>
-                )}
+          <section className="mb-8">
+            <h2 className="font-headline text-xl font-bold mb-3">Reproducibility Assets</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="border p-4 rounded-lg">
+                <h3 className="font-bold mb-1">Dataset</h3>
+                <p className="text-sm text-muted-foreground mb-2">UCI ML Repository - Phishing Websites</p>
+                <Button asChild variant="link" size="sm" className="p-0 h-auto">
+                  <a href="https://archive.ics.uci.edu/dataset/327/phishing+websites" target="_blank" rel="noopener noreferrer">
+                    Download Dataset
+                    <ArrowLeft className="ml-1 h-3 w-3 -rotate-180" />
+                  </a>
+                </Button>
+              </div>
+              <div className="border p-4 rounded-lg">
+                <h3 className="font-bold mb-1">Trained Model</h3>
+                <p className="text-sm text-muted-foreground">Random Forest Classifier (97.11% accuracy)</p>
+                <p className="text-sm text-muted-foreground">Available in <code className="bg-muted px-1 py-0.5 rounded text-xs">artifacts/models/model.pkl</code></p>
+              </div>
             </div>
+          </section>
 
-            <Card>
-                <CardHeader>
-                    <CardTitle className="flex items-center gap-2 font-headline text-2xl"><Layers className="text-primary"/>Tech Stack</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                     {techStack.map((category) => (
-                        <div key={category.category}>
-                            <h3 className="font-bold text-sm mb-2">{category.category}</h3>
-                            <div className="flex flex-wrap gap-2">
-                                {category.skills.map((skill) => (
-                                    <Badge key={skill} variant="secondary" className="font-normal">{skill}</Badge>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </CardContent>
-            </Card>
-            
-            <Card>
-                <CardHeader>
-                    <CardTitle className="flex items-center gap-2 font-headline text-2xl"><BarChart className="text-primary"/>Results & Performance</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="mb-4 text-foreground/80">The Random Forest model demonstrated the best performance, achieving ~97.1% accuracy with high stability across validation folds.</p>
-                    <div className="overflow-x-auto">
-                        <Table>
-                            <TableHeader>
-                                <TableRow>
-                                <TableHead>Model</TableHead>
-                                <TableHead className="text-right">Mean Fit Time (s)</TableHead>
-                                <TableHead className="text-right">Mean Test Score</TableHead>
-                                <TableHead className="text-right">Std Test Score</TableHead>
-                                </TableRow>
-                            </TableHeader>
-                            <TableBody>
-                                {results.map((res) => (
-                                <TableRow key={res.model} className={res.model === 'RandomForest' ? 'bg-primary/10' : ''}>
-                                    <TableCell className="font-medium">{res.model}</TableCell>
-                                    <TableCell className="text-right">{res.fitTime.toFixed(2)}</TableCell>
-                                    <TableCell className="text-right">{res.testScore.toFixed(4)}</TableCell>
-                                    <TableCell className="text-right">{res.std.toFixed(4)}</TableCell>
-                                </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </div>
-                </CardContent>
-            </Card>
+          <section className="mb-8">
+            <h2 className="font-headline text-xl font-bold mb-3">Role & Credits</h2>
+            <div className="bg-muted p-4 rounded-lg">
+              <p className="text-sm text-foreground/80"><span className="font-bold text-foreground">Solo Project:</span> I designed and implemented the entire system from data ingestion to API deployment. This includes feature engineering, model selection evaluation framework, and containerized deployment architecture.</p>
+            </div>
+          </section>
 
-            <Card>
-                <CardHeader>
-                    <CardTitle className="flex items-center gap-2 font-headline text-2xl"><GitBranch className="text-primary"/>Repository Structure</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <div className="bg-muted p-4 rounded-lg font-code text-xs text-foreground/70 overflow-x-auto">
-                        <pre>{`.
-├── Dockerfile
-├── requirements.txt
-├── run_api.py
-├── data/
-│   ├── phishingData.csv
-│   └── schema.yaml
-├── artifacts/
-│   ├── models/model.pkl
-│   └── reports/
-└── src/phishdetector/
-    ├── api/
-    ├── components/
-    ├── config/
-    ├── entity/
-    ├── pipelines/
-    └── utils/`}</pre>
-                    </div>
-                </CardContent>
-            </Card>
+          <section className="mb-8">
+            <h2 className="font-headline text-xl font-bold mb-3">Challenges & Lessons Learned</h2>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <div className="flex-shrink-0 h-6 w-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold">1</div>
+                <p className="text-sm text-foreground/80"><span className="font-semibold">Feature engineering</span> required deep understanding of web security patterns and URL structure analysis.</p>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="flex-shrink-0 h-6 w-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold">2</div>
+                <p className="text-sm text-foreground/80"><span className="font-semibold">Model selection</span> involved balancing accuracy vs inference speed - Random Forest provided optimal trade-off.</p>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="flex-shrink-0 h-6 w-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold">3</div>
+                <p className="text-sm text-foreground/80"><span className="font-semibold">API design</span> needed careful consideration of input validation and error handling for production readiness.</p>
+              </li>
+            </ul>
+          </section>
 
-             <Card>
-                <CardHeader>
-                    <CardTitle className="flex items-center gap-2 font-headline text-2xl"><Code className="text-primary"/>How to Run</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                    <div>
-                        <h4 className="font-bold mb-1">1. Clone the Repository</h4>
-                        <div className="bg-muted p-3 rounded-lg font-code text-sm">
-                            <code className="text-foreground/80">git clone https://github.com/sujeetgund/phishing-website-detection.git</code>
-                        </div>
-                    </div>
-                     <div>
-                        <h4 className="font-bold mb-1">2. Install Dependencies</h4>
-                        <div className="bg-muted p-3 rounded-lg font-code text-sm">
-                            <code className="text-foreground/80">pip install -r requirements.txt</code>
-                        </div>
-                    </div>
-                     <div>
-                        <h4 className="font-bold mb-1">3. Run API Server</h4>
-                        <div className="bg-muted p-3 rounded-lg font-code text-sm">
-                            <code className="text-foreground/80">uvicorn run_api:app</code>
-                        </div>
-                    </div>
-                </CardContent>
-            </Card>
-
-             <Card>
-                <CardHeader>
-                    <CardTitle className="flex items-center gap-2 font-headline text-2xl"><Box className="text-primary"/>Docker Usage</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                     <div>
-                        <h4 className="font-bold mb-1">Build the Image</h4>
-                        <div className="bg-muted p-3 rounded-lg font-code text-sm">
-                            <code className="text-foreground/80">docker build -t phishdetector .</code>
-                        </div>
-                    </div>
-                     <div>
-                        <h4 className="font-bold mb-1">Run the Container</h4>
-                        <div className="bg-muted p-3 rounded-lg font-code text-sm">
-                            <code className="text-foreground/80">docker run -p 8000:8000 phishdetector</code>
-                        </div>
-                    </div>
-                </CardContent>
-            </Card>
+          <section>
+            <div className="bg-muted p-6 rounded-lg text-center">
+              <h2 className="font-headline text-xl font-bold mb-2">Interested in This Work?</h2>
+              <p className="text-sm text-foreground/80 max-w-xl mx-auto mb-4">I'm passionate about building ML systems that solve real-world security problems. Let's discuss how we can collaborate on similar projects or explore opportunities together.</p>
+              <div className="flex items-center justify-center gap-4">
+                <Button asChild>
+                  <a href="mailto:sujeetgund@email.com">
+                    Get in Touch
+                  </a>
+                </Button>
+                <Button asChild variant="outline">
+                  <a href="https://linkedin.com/in/sujeetgund" target="_blank" rel="noopener noreferrer">
+                    Connect on LinkedIn
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
-    </>
+    </div>
   );
 }
