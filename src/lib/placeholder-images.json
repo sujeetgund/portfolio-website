@@ -6,6 +6,24 @@
       "description": "A professional headshot of an AI engineer.",
       "imageUrl": "https://picsum.photos/seed/100/400/400",
       "imageHint": "professional headshot"
+    },
+    {
+      "id": "phishdetector-hero",
+      "description": "Abstract image for PhishDetector hero section.",
+      "imageUrl": "https://picsum.photos/seed/phish-hero/1200/400",
+      "imageHint": "cyber security abstract"
+    },
+    {
+      "id": "phishdetector-gallery-1",
+      "description": "First gallery image for PhishDetector page.",
+      "imageUrl": "https://picsum.photos/seed/phish-1/600/400",
+      "imageHint": "code screen"
+    },
+    {
+      "id": "phishdetector-gallery-2",
+      "description": "Second gallery image for PhishDetector page.",
+      "imageUrl": "https://picsum.photos/seed/phish-2/600/400",
+      "imageHint": "data network"
     }
   ]
 }

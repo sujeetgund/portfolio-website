@@ -60,6 +60,7 @@ export const projectsData = [
   {
     title: 'PhishDetector - Phishing Website Detection System',
     period: 'Jun 25 - Jul 25',
+    slug: 'phishdetector',
     description:
       'Developed a robust ML solution to detect phishing websites using URL and metadata features. Trained multiple models (Random Forest, SVC, KNN, Logistic Regression, Ridge) and identified the best-performing one (Random Forest: 97.11% accuracy). Deployed a real-time inference API using FastAPI and containerized it with Docker for scalable deployment.',
     tech: [],
