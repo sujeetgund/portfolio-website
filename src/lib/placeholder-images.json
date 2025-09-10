@@ -1,3 +1,11 @@
+
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "profile-headshot",
+      "description": "A professional headshot of an AI engineer.",
+      "imageUrl": "https://picsum.photos/seed/100/400/400",
+      "imageHint": "professional headshot"
+    }
+  ]
 }
