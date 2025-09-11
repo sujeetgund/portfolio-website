@@ -3,6 +3,7 @@
 import {
   ArrowLeft,
   Github,
+  CheckCircle2,
 } from 'lucide-react';
 import Link from 'next/link';
 import { Badge } from './ui/badge';
@@ -56,6 +57,25 @@ export function PhishDetectorPage() {
                 <h3 className="font-bold text-primary mb-2">Solution</h3>
                 <p className="text-sm text-primary/90">I developed an ML pipeline that analyzes 30 URL and metadata features using Random Forest, achieving 97.11% accuracy with a real-time FastAPI deployment for instant protection.</p>
               </div>
+            </div>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="font-headline text-xl font-bold mb-3">Key Features</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                'End-to-End ML Pipeline',
+                'High Accuracy (97.11%)',
+                'Real-Time Inference API',
+                'Containerized with Docker',
+                'Multi-Model Training',
+                'Feature-Rich Analysis',
+              ].map(feature => (
+                <div key={feature} className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 mt-1 text-primary flex-shrink-0" />
+                  <p className="text-sm text-foreground/80">{feature}</p>
+                </div>
+              ))}
             </div>
           </section>
 
