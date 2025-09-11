@@ -1,16 +1,14 @@
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Github, Linkedin, Twitter, Mail, Link as LinkIcon, Phone, ExternalLink } from 'lucide-react';
 
-const profileImage = PlaceHolderImages.find(p => p.id === 'profile-headshot');
-
 export const profileData = {
   name: 'Sujeet Gund',
   title: 'AI Engineer specializing in building Machine Learning applications and intelligent systems.',
   location: 'Bhopal, Madhya Pradesh, IN',
   resumeUrl: 'https://sujeetgund.github.io/sujeetgund/RESUME.pdf',
   image: {
-    src: profileImage?.imageUrl || 'https://picsum.photos/seed/100/400/400',
-    hint: profileImage?.imageHint || 'professional headshot',
+    src: '/Sujeet Gund.jpg',
+    hint: 'professional headshot',
   },
   contacts: [
     {
@@ -58,7 +56,7 @@ export const experienceData = [
 ];
 
 export const projectsData = [
-  {
+    {
     title: 'IPDR Graph Engine - AI-Powered Investigative Platform',
     period: 'CIIS Hackathon, Sept 2025',
     slug: 'ipdr-graph-engine',

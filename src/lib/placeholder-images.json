@@ -2,12 +2,6 @@
 {
   "placeholderImages": [
     {
-      "id": "profile-headshot",
-      "description": "A professional headshot of an AI engineer.",
-      "imageUrl": "https://picsum.photos/seed/100/400/400",
-      "imageHint": "professional headshot"
-    },
-    {
       "id": "phishdetector-hero",
       "description": "Abstract image for PhishDetector hero section.",
       "imageUrl": "https://picsum.photos/seed/phish-hero/1200/400",
