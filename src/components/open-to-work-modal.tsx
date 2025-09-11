@@ -43,7 +43,7 @@ export function OpenToWorkModal() {
   
   const handleOpenToWorkClick = () => {
     handleDismiss();
-    window.location.href = 'mailto:sujeetgund@email.com';
+    window.location.href = 'mailto:sujeetgund@gmail.com';
   }
 
   return (
