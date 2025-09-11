@@ -1,8 +1,11 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { profileData } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { Section } from './section';
+import { ArrowDownToLine } from 'lucide-react';
 
 export function ProfileSection() {
   return (
@@ -18,15 +21,23 @@ export function ProfileSection() {
           <p className="mt-2 text-sm text-muted-foreground">
             {profileData.location}
           </p>
-          <div className="mt-4 flex items-center justify-center sm:justify-start gap-1">
-            {profileData.contacts.map((contact) => (
-              <Button asChild variant="ghost" size="icon" key={contact.label}>
-                <Link href={contact.value} target="_blank" rel="noopener noreferrer">
-                  <contact.icon className="h-4 w-4 text-muted-foreground hover:text-foreground" />
-                  <span className="sr-only">{contact.label}</span>
-                </Link>
-              </Button>
-            ))}
+          <div className="mt-4 flex items-center justify-center sm:justify-start gap-2">
+            <Button asChild>
+              <Link href={profileData.resumeUrl} target="_blank" rel="noopener noreferrer">
+                <ArrowDownToLine className="mr-2" />
+                Resume
+              </Link>
+            </Button>
+            <div className="flex items-center gap-1">
+              {profileData.contacts.map((contact) => (
+                <Button asChild variant="ghost" size="icon" key={contact.label}>
+                  <Link href={contact.value} target="_blank" rel="noopener noreferrer">
+                    <contact.icon className="h-4 w-4 text-muted-foreground hover:text-foreground" />
+                    <span className="sr-only">{contact.label}</span>
+                  </Link>
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
         <div className="relative h-28 w-28 md:h-32 md:w-32 shrink-0">

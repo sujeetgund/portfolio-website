@@ -7,6 +7,7 @@ export const profileData = {
   name: 'Sujeet Gund',
   title: 'AI Engineer specializing in building Machine Learning applications and intelligent systems.',
   location: 'Bhopal, Madhya Pradesh, IN',
+  resumeUrl: 'https://sujeetgund.github.io/sujeetgund/RESUME.pdf',
   image: {
     src: profileImage?.imageUrl || 'https://picsum.photos/seed/100/400/400',
     hint: profileImage?.imageHint || 'professional headshot',
@@ -14,7 +15,7 @@ export const profileData = {
   contacts: [
     {
       label: 'Email',
-      value: 'mailto:sujeetgund@email.com',
+      value: 'mailto:sujeetgund@gmail.com',
       icon: Mail,
     },
      {
@@ -24,7 +25,7 @@ export const profileData = {
     },
     {
       label: 'Website',
-      value: 'https://sujeetgund.com',
+      value: 'https://sujeetgund.in',
       icon: LinkIcon,
     },
     {
