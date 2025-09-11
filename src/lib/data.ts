@@ -58,6 +58,16 @@ export const experienceData = [
 
 export const projectsData = [
   {
+    title: 'FastAPI RAG Service',
+    period: 'HackRx 6.0, 2025',
+    slug: 'fastapi-rag-service',
+    description:
+      'A high-performance document question-answering service built with FastAPI and LangChain, implementing Retrieval-Augmented Generation (RAG) for intelligent document analysis.',
+    tech: [],
+    github: 'https://github.com/sujeetgund/fastapi-rag-service',
+    live: 'https://hackrx-rag-app.onrender.com/docs',
+  },
+  {
     title: 'IPDR Graph Engine - AI-Powered Investigative Platform',
     period: 'CIIS 2025 Hackathon',
     slug: 'ipdr-graph-engine',
