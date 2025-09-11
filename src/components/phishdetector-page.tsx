@@ -8,8 +8,12 @@ import {
 import Link from 'next/link';
 import { Badge } from './ui/badge';
 import { Button } from '@/components/ui/button';
+import { profileData } from '@/lib/data';
 
 export function PhishDetectorPage() {
+  const emailLink = profileData.contacts.find(c => c.label === 'Email')?.value || '#';
+  const linkedinLink = profileData.contacts.find(c => c.label === 'LinkedIn')?.value || '#';
+
   return (
     <div className="bg-muted min-h-dvh">
       <div className="container mx-auto max-w-4xl px-4 py-4 sm:py-8 md:py-12">
@@ -131,12 +135,12 @@ uvicorn run_api:app --reload`}</pre>
               <p className="text-sm text-foreground/80 max-w-xl mx-auto mb-4">I'm passionate about building ML systems that solve real-world security problems. Let's discuss how we can collaborate.</p>
               <div className="flex items-center justify-center gap-4">
                 <Button asChild>
-                  <a href="mailto:sujeetgund@email.com">
+                  <a href={emailLink}>
                     Get in Touch
                   </a>
                 </Button>
                 <Button asChild variant="outline">
-                  <a href="https://linkedin.com/in/sujeetgund" target="_blank" rel="noopener noreferrer">
+                  <a href={linkedinLink} target="_blank" rel="noopener noreferrer">
                     Connect on LinkedIn
                   </a>
                 </Button>

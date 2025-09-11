@@ -8,8 +8,12 @@ import {
 import Link from 'next/link';
 import { Badge } from './ui/badge';
 import { Button } from '@/components/ui/button';
+import { profileData } from '@/lib/data';
 
 export function SubscriptionTrackerPage() {
+  const emailLink = profileData.contacts.find(c => c.label === 'Email')?.value || '#';
+  const linkedinLink = profileData.contacts.find(c => c.label === 'LinkedIn')?.value || '#';
+
   return (
     <div className="bg-muted min-h-dvh">
       <div className="container mx-auto max-w-4xl px-4 py-4 sm:py-8 md:py-12">
@@ -132,12 +136,12 @@ pnpm run dev`}</pre>
               <p className="text-sm text-foreground/80 max-w-xl mx-auto mb-4">I enjoy creating scalable backend systems. If you have a similar project in mind, let's connect and discuss how I can help.</p>
               <div className="flex items-center justify-center gap-4">
                 <Button asChild>
-                  <a href="mailto:sujeetgund@email.com">
+                  <a href={emailLink}>
                     Get in Touch
                   </a>
                 </Button>
                 <Button asChild variant="outline">
-                  <a href="https://linkedin.com/in/sujeetgund" target="_blank" rel="noopener noreferrer">
+                  <a href={linkedinLink} target="_blank" rel="noopener noreferrer">
                     Connect on LinkedIn
                   </a>
                 </Button>

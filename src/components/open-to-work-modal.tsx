@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import {
   AlertDialog,
-  AlertDialogAction,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
@@ -11,7 +10,8 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 import { Button } from './ui/button';
-import { Rocket, X } from 'lucide-react';
+import { Rocket } from 'lucide-react';
+import { profileData } from '@/lib/data';
 
 const MODAL_TIMEOUT = 10000; // 10 seconds
 const DISMISS_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
@@ -19,6 +19,7 @@ const LOCAL_STORAGE_KEY = 'openToWorkDismissedTimestamp';
 
 export function OpenToWorkModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const emailLink = profileData.contacts.find(c => c.label === 'Email')?.value || 'mailto:sujeetgund@email.com';
 
   useEffect(() => {
     const dismissedTimestamp = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -43,12 +44,12 @@ export function OpenToWorkModal() {
   
   const handleOpenToWorkClick = () => {
     handleDismiss();
-    window.location.href = 'mailto:sujeetgund@gmail.com';
+    window.location.href = emailLink;
   }
 
   return (
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
-      <AlertDialogContent className="max-w-md">
+      <AlertDialogContent className="max-w-md bg-card">
         <AlertDialogHeader>
           <div className="flex justify-center mb-4">
              <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center">
