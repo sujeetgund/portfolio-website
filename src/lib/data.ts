@@ -83,7 +83,7 @@ export const projectsData = [
     period: 'Jun 25 - Jul 25',
     slug: 'phishdetector',
     description:
-      'Developed a robust ML solution to detect phishing websites using URL and metadata features. Trained multiple models (Random Forest, SVC, KNN, Logistic Regression, Ridge) and identified the best-performing one (Random Forest: 97.11% accuracy). Deployed a real-time inference API using FastAPI and containerized it with Docker for scalable deployment.',
+      'An end-to-end ML system that detects phishing websites with 97.11% accuracy, protecting users from fraudulent sites through real-time API inference.',
     tech: [],
     github: 'https://github.com/sujeetgund/phishdetector',
     live: '',
@@ -92,7 +92,7 @@ export const projectsData = [
     title: 'LaptopWise - AI-powered Laptop Price Estimation',
     period: 'May 25 - Jun 25',
     description:
-      'Developed a web application that estimates laptop prices using custom ML model and Gemini API. Built the ML model in Python, trained it on real-world hardware specifications, and deployed it via FastAPI. Containerized the solution with Docker and integrated it into a Next.js front end for production ready deployment.',
+      'An intelligent web app that estimates laptop prices using a custom ML model and the Gemini API, all deployed in a scalable, containerized architecture.',
     tech: [],
     github: 'https://github.com/sujeetgund/laptopwise',
     live: 'https://laptopwise.sujeetgund.com',
@@ -102,7 +102,7 @@ export const projectsData = [
     period: 'Apr 25 - May 25',
     slug: 'subscription-tracker',
     description:
-      'Developed a scalable RESTful API with JWT authentication, comprehensive CRUD operations, and automated renewal notifications. Engineered robust backend infrastructure using Node.js with modular API design. Deployed containerized architecture using Docker, enabling seamless CI/CD pipeline integration and 99.9% uptime.',
+      'A scalable RESTful API for managing user subscriptions, featuring JWT authentication, full CRUD operations, and automated renewal notifications in a containerized environment.',
     tech: [],
     github: 'https://github.com/sujeetgund/subscription-tracker',
     live: '',
