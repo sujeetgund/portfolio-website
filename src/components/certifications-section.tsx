@@ -24,7 +24,7 @@ export function CertificationsSection() {
                   by {cert.issuer} - {cert.year}
                 </span>
               </p>
-              <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+              <ExternalLink className="hidden sm:block h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
             </div>
           </Link>
         ))}
