@@ -58,24 +58,24 @@ export const experienceData = [
 
 export const projectsData = [
   {
-    title: 'FastAPI RAG Service',
-    period: 'HackRx 6.0, 2025',
-    slug: 'fastapi-rag-service',
-    description:
-      'A high-performance document question-answering service built with FastAPI and LangChain, implementing Retrieval-Augmented Generation (RAG) for intelligent document analysis.',
-    tech: [],
-    github: 'https://github.com/sujeetgund/fastapi-rag-service',
-    live: 'https://hackrx-rag-app.onrender.com/docs',
-  },
-  {
     title: 'IPDR Graph Engine - AI-Powered Investigative Platform',
-    period: 'CIIS 2025 Hackathon',
+    period: 'CIIS Hackathon, Sept 2025',
     slug: 'ipdr-graph-engine',
     description:
       'A web-based investigative platform that transforms complex telecommunications IPDR data into actionable intelligence through ML-powered anomaly detection (94.16% accuracy) and interactive visualizations.',
     tech: [],
     github: 'https://github.com/sujeetgund/ipdr-graph-engine',
     live: 'https://ipdr-graph-engine.vercel.app/',
+  },
+  {
+    title: 'FastAPI RAG Service',
+    period: 'HackRx 6.0, Jul 2025',
+    slug: 'fastapi-rag-service',
+    description:
+      'A high-performance document question-answering service built with FastAPI and LangChain, implementing Retrieval-Augmented Generation (RAG) for intelligent document analysis.',
+    tech: [],
+    github: 'https://github.com/sujeetgund/fastapi-rag-service',
+    live: 'https://hackrx-rag-app.onrender.com/docs',
   },
   {
     title: 'PhishDetector - Phishing Website Detection System',
