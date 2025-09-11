@@ -58,6 +58,16 @@ export const experienceData = [
 
 export const projectsData = [
   {
+    title: 'IPDR Graph Engine - AI-Powered Investigative Platform',
+    period: 'CIIS 2025 Hackathon',
+    slug: 'ipdr-graph-engine',
+    description:
+      'A web-based investigative platform that transforms complex telecommunications IPDR data into actionable intelligence through ML-powered anomaly detection (94.16% accuracy) and interactive visualizations.',
+    tech: [],
+    github: 'https://github.com/sujeetgund/ipdr-graph-engine',
+    live: 'https://ipdr-graph-engine.vercel.app/',
+  },
+  {
     title: 'PhishDetector - Phishing Website Detection System',
     period: 'Jun 25 - Jul 25',
     slug: 'phishdetector',
