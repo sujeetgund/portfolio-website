@@ -2,7 +2,6 @@ import { certificationsData } from '@/lib/data';
 import { Section } from './section';
 import { SectionHeader } from './section-header';
 import Link from 'next/link';
-import { ExternalLink } from 'lucide-react';
 
 export function CertificationsSection() {
   return (
@@ -17,15 +16,12 @@ export function CertificationsSection() {
             rel="noopener noreferrer"
             className="block group"
           >
-            <div className="flex items-center justify-between">
-              <p className="text-sm font-medium group-hover:text-primary transition-colors">
-                {cert.name}{' '}
-                <span className="text-muted-foreground">
-                  by {cert.issuer} - {cert.year}
-                </span>
-              </p>
-              <ExternalLink className="hidden sm:block h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-            </div>
+            <p className="text-sm font-medium group-hover:text-primary transition-colors">
+              {cert.name}{' '}
+              <span className="text-muted-foreground">
+                by {cert.issuer} - {cert.year}
+              </span>
+            </p>
           </Link>
         ))}
       </div>
