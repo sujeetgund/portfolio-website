@@ -49,7 +49,7 @@ export function OpenToWorkModal() {
 
   return (
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
-      <AlertDialogContent className="max-w-md bg-card">
+      <AlertDialogContent className="max-w-md bg-white">
         <AlertDialogHeader>
           <div className="flex justify-center mb-4">
              <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center">

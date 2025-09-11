@@ -1,5 +1,5 @@
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Github, Linkedin, Twitter, Mail, Link as LinkIcon, Phone } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, Link as LinkIcon, Phone, ExternalLink } from 'lucide-react';
 
 const profileImage = PlaceHolderImages.find(p => p.id === 'profile-headshot');
 
@@ -129,16 +129,19 @@ export const certificationsData = [
     name: 'Applied Machine Learning in Python',
     issuer: 'University of Michigan',
     year: 'Dec 24',
+    url: 'https://coursera.org/verify/RSR0JIUKTTW4'
   },
   {
     name: 'Supervised Machine Learning: Regression and Classification',
     issuer: 'DeepLearning.AI',
     year: 'Jul 23',
+    url: 'https://www.coursera.org/verify/M98N3YQCSD2U'
   },
   {
     name: 'AWS Cloud Essentials',
     issuer: 'Amazon Web Services (AWS)',
     year: 'Jun 23',
+    url: 'https://www.credly.com/badges/430abe70-f242-4db2-b47a-42542fbc0335/public_url'
   },
 ];
 
