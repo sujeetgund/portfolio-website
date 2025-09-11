@@ -6,6 +6,7 @@ import { SkillsSection } from '@/components/skills-section';
 import { CertificationsSection } from '@/components/certifications-section';
 import { EducationSection } from '@/components/education-section';
 import { Footer } from '@/components/footer';
+import { OpenToWorkModal } from '@/components/open-to-work-modal';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         </div>
       </main>
       <Footer />
+      <OpenToWorkModal />
     </div>
   );
 }
