@@ -44,8 +44,7 @@ export function ProfileSection() {
           <Image
             src={profileData.image.src}
             alt={profileData.name}
-            width={200}
-            height={200}
+            fill
             priority
             data-ai-hint={profileData.image.hint}
             className="rounded-xl object-cover border-4 border-background shadow-lg"
