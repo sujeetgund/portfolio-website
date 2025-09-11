@@ -79,6 +79,7 @@ export const projectsData = [
   {
     title: 'Subscription Tracker API - RESTful Management System',
     period: 'Apr 25 - May 25',
+    slug: 'subscription-tracker',
     description:
       'Developed a scalable RESTful API with JWT authentication, comprehensive CRUD operations, and automated renewal notifications. Engineered robust backend infrastructure using Node.js with modular API design. Deployed containerized architecture using Docker, enabling seamless CI/CD pipeline integration and 99.9% uptime.',
     tech: [],
