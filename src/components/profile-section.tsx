@@ -48,7 +48,7 @@ export function ProfileSection() {
             height={200}
             priority
             data-ai-hint={profileData.image.hint}
-            className="rounded-full object-cover border-4 border-background shadow-lg"
+            className="rounded-xl object-cover border-4 border-background shadow-lg"
           />
         </div>
       </div>
