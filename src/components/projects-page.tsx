@@ -30,16 +30,16 @@ export function ProjectsPage() {
           </p>
         </header>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {projectsData.map((project, index) => (
             <div
               key={index}
-              className="bg-card p-6 rounded-xl shadow-lg flex flex-col"
+              className="bg-card p-4 sm:p-6 rounded-xl shadow-lg flex flex-col"
             >
               <div className="flex-grow">
-                <div className="flex justify-between items-baseline mb-1">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
                   <h3 className="font-bold text-base">{project.title}</h3>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-xs text-muted-foreground mt-1 sm:mt-0">
                     {project.period}
                   </p>
                 </div>
