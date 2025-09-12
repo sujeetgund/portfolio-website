@@ -4,7 +4,6 @@ import { ArrowLeft, Github, ExternalLink, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { projectsData } from '@/lib/data';
-import { Badge } from './ui/badge';
 
 export function ProjectsPage() {
   return (
@@ -31,7 +30,7 @@ export function ProjectsPage() {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-8">
           {projectsData.map((project, index) => (
             <div
               key={index}

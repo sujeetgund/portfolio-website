@@ -11,7 +11,8 @@ import { SectionHeader } from './section-header';
 type Project = (typeof projectsData)[0];
 
 export function ProjectsSection() {
-  const projectsToShow = projectsData.slice(0, 3);
+  const [showAll, setShowAll] = useState(false);
+  const projectsToShow = showAll ? projectsData : projectsData.slice(0, 3);
 
   return (
     <Section id="projects">
@@ -55,11 +56,18 @@ export function ProjectsSection() {
       </div>
       {projectsData.length > 3 && (
         <div className="mt-6 text-center">
-          <Button asChild variant="outline">
-            <Link href="/projects">
-              View All Projects
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+          <Button variant="outline" onClick={() => setShowAll(!showAll)}>
+            {showAll ? (
+              <>
+                Show Less
+                <ChevronUp className="ml-2 h-4 w-4" />
+              </>
+            ) : (
+              <>
+                Show More
+                <ChevronDown className="ml-2 h-4 w-4" />
+              </>
+            )}
           </Button>
         </div>
       )}
