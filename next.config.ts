@@ -31,7 +31,7 @@ const nextConfig: NextConfig = {
     ],
   },
   env: {
-    SITE_URL: process.env.NODE_ENV === 'production' ? 'https://your-domain.com' : 'http://localhost:3000',
+    SITE_URL: process.env.NODE_ENV === 'production' ? 'https://sujeetgund.in' : 'http://localhost:3000',
   }
 };
 

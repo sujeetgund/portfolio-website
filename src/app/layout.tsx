@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: 'Sujeet Gund | AI Engineer',
     description: profileData.title,
     images: [`${siteUrl}/Sujeet Gund.jpg`],
-    creator: '@sujeetgund', // Replace with your actual Twitter handle
+    creator: '@Sujeet_Gund',
   },
 };
 

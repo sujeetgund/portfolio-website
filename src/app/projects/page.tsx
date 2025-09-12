@@ -1,7 +1,7 @@
 import { ProjectsPage } from '@/components/projects-page';
 
 export const metadata = {
-  title: 'Projects | Sujeet Gund',
+  title: 'Projects',
   description: 'A showcase of projects by Sujeet Gund, an AI Engineer.',
 };
 
