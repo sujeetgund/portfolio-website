@@ -16,16 +16,16 @@ export const profileData = {
       value: 'mailto:sujeetgund@gmail.com',
       icon: Mail,
     },
-     {
-      label: 'Phone',
-      value: 'tel:+919999999999',
-      icon: Phone,
-    },
-    {
-      label: 'Website',
-      value: 'https://sujeetgund.in',
-      icon: LinkIcon,
-    },
+    //  {
+    //   label: 'Phone',
+    //   value: 'tel:+919999999999',
+    //   icon: Phone,
+    // },
+    // {
+    //   label: 'Website',
+    //   value: 'https://sujeetgund.in',
+    //   icon: LinkIcon,
+    // },
     {
       label: 'LinkedIn',
       value: 'https://linkedin.com/in/sujeetgund',
@@ -83,7 +83,7 @@ export const projectsData = [
     description:
       'An end-to-end ML system that detects phishing websites with 97.11% accuracy, protecting users from fraudulent sites through real-time API inference.',
     tech: [],
-    github: 'https://github.com/sujeetgund/phishdetector',
+    github: 'https://github.com/sujeetgund/phishing-website-detection',
     live: '',
   },
   {
