@@ -20,6 +20,7 @@ const LOCAL_STORAGE_KEY = 'openToWorkDismissedTimestamp';
 export function OpenToWorkModal() {
   const [isOpen, setIsOpen] = useState(false);
   const emailLink = profileData.contacts.find(c => c.label === 'Email')?.value || 'mailto:sujeetgund@email.com';
+  const connectLink = profileData.contacts.find(c => c.label === 'LinkedIn')?.value || 'https://linkedin.com/in/sujeetgund';
 
   useEffect(() => {
     const dismissedTimestamp = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -44,7 +45,7 @@ export function OpenToWorkModal() {
   
   const handleOpenToWorkClick = () => {
     handleDismiss();
-    window.location.href = emailLink;
+    window.location.href = connectLink;
   }
 
   return (

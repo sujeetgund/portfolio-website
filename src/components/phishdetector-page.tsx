@@ -66,7 +66,7 @@ export function PhishDetectorPage() {
 
           <section className="mb-8">
             <h2 className="font-headline text-xl font-bold mb-3">Key Features</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 'End-to-End ML Pipeline',
                 'High Accuracy (97.11%)',
