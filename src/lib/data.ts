@@ -61,7 +61,7 @@ export const projectsData = [
     slug: "ipdr-graph-engine",
     description:
       "A web-based investigative platform that transforms complex telecommunications IPDR data into actionable intelligence through ML-powered anomaly detection (94.16% accuracy) and interactive visualizations.",
-    tech: [],
+tech: ["Python", "FastAPI", "scikit-learn", "CatBoost", "Next.js", "TypeScript", "MongoDB", "Google Cloud"],
     github: "https://github.com/sujeetgund/ipdr-graph-engine",
     live: "https://ipdr-graph-engine.vercel.app/",
   },
@@ -70,7 +70,7 @@ export const projectsData = [
     slug: "fastapi-rag-service",
     description:
       "A high-performance document question-answering service built with FastAPI and LangChain, implementing Retrieval-Augmented Generation (RAG) for intelligent document analysis.",
-    tech: [],
+    tech: ["FastAPI", "LangChain", "Pydantic", "FAISS", "Gemini API", "Docker"],
     github: "https://github.com/sujeetgund/fastapi-rag-service",
     live: "https://hackrx-rag-app.onrender.com/docs",
   },
@@ -79,7 +79,7 @@ export const projectsData = [
     slug: "phishdetector",
     description:
       "An end-to-end ML system that detects phishing websites with 97.11% accuracy, protecting users from fraudulent sites through real-time API inference.",
-    tech: [],
+    tech: ["FastAPI", "scikit-learn", "pandas", "Docker"],
     github: "https://github.com/sujeetgund/phishing-website-detection",
     live: "",
   },
@@ -88,7 +88,7 @@ export const projectsData = [
     slug: "subscription-tracker",
     description:
       "A scalable RESTful API for managing user subscriptions, featuring JWT authentication, full CRUD operations, and automated renewal notifications in a containerized environment.",
-    tech: [],
+    tech: ["JavaScript (ES6+)", "ExpressJS", "MongoDB", "Docker", "JWT", "Arcjet"],
     github: "https://github.com/sujeetgund/subscription-tracker",
     live: "",
   },

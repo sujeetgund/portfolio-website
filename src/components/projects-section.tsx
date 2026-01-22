@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { projectsData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Section } from "./section";
 import { SectionHeader } from "./section-header";
 
@@ -30,6 +31,19 @@ export function ProjectsSection() {
             <p className="mt-1 text-sm text-foreground/70 whitespace-pre-wrap">
               {project.description}
             </p>
+            {project.tech && project.tech.length > 0 && (
+              <div className="mt-2 flex flex-wrap gap-1.5">
+                {project.tech.map((tech, techIndex) => (
+                  <Badge
+                    key={techIndex}
+                    variant="secondary"
+                    className="text-xs"
+                  >
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
+            )}
             <div className="mt-3 flex items-center flex-wrap gap-x-4 gap-y-2">
               {project.github && (
                 <Button
