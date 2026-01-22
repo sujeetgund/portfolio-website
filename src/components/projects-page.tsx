@@ -21,13 +21,14 @@ export function ProjectsPage() {
             Back to Portfolio
           </Link>
         </Button>
-        
+
         <header className="mb-12 text-center">
-          <h1 className="font-headline text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+          <h1 className="font-headline text-5xl md:text-6xl font-bold mb-4 text-foreground">
             Featured Projects
           </h1>
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
-            Explore my portfolio of AI/ML solutions, full-stack applications, and intelligent systems
+            Explore my portfolio of AI/ML solutions, full-stack applications,
+            and intelligent systems
           </p>
         </header>
 
@@ -41,18 +42,18 @@ export function ProjectsPage() {
               <div className="bg-card p-6 rounded-2xl border border-border hover:border-primary/50 shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                 <div className="flex-grow">
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="font-bold text-xl group-hover:text-primary transition-colors pr-2 leading-tight">
+                    <h3 className="font-bold text-xl group-hover:text-primary transition-colors pr-2 leading-tight line-clamp-2">
                       {project.title}
                     </h3>
                   </div>
-                  
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">
                     {project.description}
                   </p>
-                  
+
                   {project.tech && project.tech.length > 0 && (
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tech.map((tech, techIndex) => (
+                      {project.tech.slice(0, 4).map((tech, techIndex) => (
                         <Badge
                           key={techIndex}
                           variant="secondary"
@@ -61,6 +62,14 @@ export function ProjectsPage() {
                           {tech}
                         </Badge>
                       ))}
+                      {project.tech.length > 4 && (
+                        <Badge
+                          variant="secondary"
+                          className="text-xs bg-muted/50"
+                        >
+                          +{project.tech.length - 4}
+                        </Badge>
+                      )}
                     </div>
                   )}
                 </div>
@@ -71,7 +80,7 @@ export function ProjectsPage() {
                       className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
                       onClick={(e) => {
                         e.preventDefault();
-                        window.open(project.github, '_blank');
+                        window.open(project.github, "_blank");
                       }}
                     >
                       <Github className="mr-1.5 h-4 w-4" />
@@ -83,7 +92,7 @@ export function ProjectsPage() {
                       className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
                       onClick={(e) => {
                         e.preventDefault();
-                        window.open(project.live, '_blank');
+                        window.open(project.live, "_blank");
                       }}
                     >
                       <ExternalLink className="mr-1.5 h-4 w-4" />
