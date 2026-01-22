@@ -1,0 +1,40 @@
+name: Update Resume
+
+on:
+  schedule:
+    # Run every day at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  download-resume:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download resume
+        run: |
+          curl -o public/RESUME.pdf https://sujeetgund.github.io/sujeetgund/RESUME.pdf
+          ls -lh public/RESUME.pdf
+
+      - name: Check if resume was updated
+        id: check-changes
+        run: |
+          if git diff --quiet public/RESUME.pdf; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push if changed
+        if: steps.check-changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add public/RESUME.pdf
+          git commit -m "chore: update resume from sujeetgund.io"
+          git push

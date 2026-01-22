@@ -1,50 +1,59 @@
-import type {Metadata} from 'next';
-import './globals.css';
+import type { Metadata } from "next";
+import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import { Inter } from 'next/font/google';
-import { Newsreader } from 'next/font/google';
-import { profileData } from '@/lib/data';
+import { Inter } from "next/font/google";
+import { Newsreader } from "next/font/google";
+import { profileData } from "@/lib/data";
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const newsreader = Newsreader({ subsets: ['latin'], variable: '--font-newsreader' });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  variable: "--font-newsreader",
+});
 
-const siteUrl = process.env.SITE_URL || 'https://your-domain.com';
+const siteUrl = process.env.SITE_URL || "https://sujeetgund.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Sujeet Gund | AI Engineer',
-    template: '%s | Sujeet Gund',
+    default: "Sujeet Gund | AI Engineer",
+    template: "%s | Sujeet Gund",
   },
   description: profileData.title,
-  keywords: ['AI Engineer', 'Machine Learning', 'Generative AI', 'Portfolio', 'Sujeet Gund'],
-  authors: [{ name: 'Sujeet Gund', url: siteUrl }],
-  creator: 'Sujeet Gund',
+  keywords: [
+    "AI Engineer",
+    "Machine Learning",
+    "Generative AI",
+    "Portfolio",
+    "Sujeet Gund",
+  ],
+  authors: [{ name: "Sujeet Gund", url: siteUrl }],
+  creator: "Sujeet Gund",
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
+    type: "website",
+    locale: "en_US",
     url: siteUrl,
-    title: 'Sujeet Gund | AI Engineer',
+    title: "Sujeet Gund | AI Engineer",
     description: profileData.title,
-    siteName: 'Sujeet Gund Portfolio',
+    siteName: "Sujeet Gund Portfolio",
     images: [
       {
         url: `${siteUrl}/Sujeet Gund.jpg`,
         width: 800,
         height: 600,
-        alt: 'Sujeet Gund',
+        alt: "Sujeet Gund",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Sujeet Gund | AI Engineer',
+    card: "summary_large_image",
+    title: "Sujeet Gund | AI Engineer",
     description: profileData.title,
     images: [`${siteUrl}/Sujeet Gund.jpg`],
-    creator: '@Sujeet_Gund',
+    creator: "@Sujeet_Gund",
   },
 };
 
@@ -54,7 +63,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`!scroll-smooth ${inter.variable} ${newsreader.variable}`}>
+    <html
+      lang="en"
+      className={`!scroll-smooth ${inter.variable} ${newsreader.variable}`}
+    >
       <body className="font-body antialiased">
         {children}
         <Toaster />
