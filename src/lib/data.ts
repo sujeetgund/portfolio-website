@@ -1,15 +1,11 @@
-import {
-  Github,
-  Linkedin,
-  Mail,
-} from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export const profileData = {
   name: "Sujeet Gund",
   title:
     "AI Engineering Student specializing in Machine Learning, LLMs, and intelligent system development.",
   location: "Bhopal, Madhya Pradesh, IN",
-  resumeUrl: "https://sujeetgund.github.io/sujeetgund/RESUME.pdf",
+  resumeUrl: "/resume",
   image: {
     src: "/Sujeet Gund.jpg",
     hint: "Sujeet Gund",
@@ -62,7 +58,6 @@ export const experienceData = [
 export const projectsData = [
   {
     title: "IPDR Graph Engine - AI-Powered Investigative Platform",
-    period: "CIIS Hackathon, Sept 2025",
     slug: "ipdr-graph-engine",
     description:
       "A web-based investigative platform that transforms complex telecommunications IPDR data into actionable intelligence through ML-powered anomaly detection (94.16% accuracy) and interactive visualizations.",
@@ -72,7 +67,6 @@ export const projectsData = [
   },
   {
     title: "FastAPI RAG Service",
-    period: "HackRx 6.0, Jul 2025",
     slug: "fastapi-rag-service",
     description:
       "A high-performance document question-answering service built with FastAPI and LangChain, implementing Retrieval-Augmented Generation (RAG) for intelligent document analysis.",
@@ -82,7 +76,6 @@ export const projectsData = [
   },
   {
     title: "PhishDetector - Phishing Website Detection System",
-    period: "Jun 2025 - Jul 2025",
     slug: "phishdetector",
     description:
       "An end-to-end ML system that detects phishing websites with 97.11% accuracy, protecting users from fraudulent sites through real-time API inference.",
@@ -91,17 +84,7 @@ export const projectsData = [
     live: "",
   },
   {
-    title: "LaptopWise - AI-powered Laptop Price Estimation",
-    period: "May 2025 - Jun 2025",
-    description:
-      "An intelligent web app that estimates laptop prices using a custom ML model and the Gemini API, all deployed in a scalable, containerized architecture.",
-    tech: [],
-    github: "https://github.com/sujeetgund/laptopwise",
-    live: "https://laptopwise.vercel.app",
-  },
-  {
     title: "Subscription Tracker API - RESTful Management System",
-    period: "Apr 2025 - May 2025",
     slug: "subscription-tracker",
     description:
       "A scalable RESTful API for managing user subscriptions, featuring JWT authentication, full CRUD operations, and automated renewal notifications in a containerized environment.",
@@ -150,6 +133,12 @@ export const skillsData = [
 ];
 
 export const certificationsData = [
+  {
+    name: "Complete Data Science, Machine Learning, DL, NLP Bootcamp",
+    issuer: "Udemy",
+    year: "Dec 25",
+    url: "https://www.udemy.com/certificate/UC-e84ea371-05b8-45d4-92fc-4853e8f8d642/",
+  },
   {
     name: "Applied Machine Learning in Python",
     issuer: "University of Michigan",

@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { ArrowLeft, Github, ExternalLink, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { projectsData } from '@/lib/data';
+import { ArrowLeft, Github, ExternalLink, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { projectsData } from "@/lib/data";
 
 export function ProjectsPage() {
   return (
@@ -37,12 +37,7 @@ export function ProjectsPage() {
               className="bg-card p-4 sm:p-6 rounded-xl shadow-lg flex flex-col"
             >
               <div className="flex-grow">
-                <div className="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
-                  <h3 className="font-bold text-base">{project.title}</h3>
-                  <p className="text-xs text-muted-foreground mt-1 sm:mt-0">
-                    {project.period}
-                  </p>
-                </div>
+                <h3 className="font-bold text-base mb-1">{project.title}</h3>
                 <p className="mt-1 text-sm text-foreground/70 flex-grow">
                   {project.description}
                 </p>
