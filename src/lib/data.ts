@@ -61,7 +61,16 @@ export const projectsData = [
     slug: "ipdr-graph-engine",
     description:
       "A web-based investigative platform that transforms complex telecommunications IPDR data into actionable intelligence through ML-powered anomaly detection (94.16% accuracy) and interactive visualizations.",
-tech: ["Python", "FastAPI", "scikit-learn", "CatBoost", "Next.js", "TypeScript", "MongoDB", "Google Cloud"],
+    tech: [
+      "Python",
+      "FastAPI",
+      "scikit-learn",
+      "CatBoost",
+      "Next.js",
+      "TypeScript",
+      "MongoDB",
+      "Google Cloud",
+    ],
     github: "https://github.com/sujeetgund/ipdr-graph-engine",
     live: "https://ipdr-graph-engine.vercel.app/",
   },
@@ -88,7 +97,14 @@ tech: ["Python", "FastAPI", "scikit-learn", "CatBoost", "Next.js", "TypeScript",
     slug: "subscription-tracker",
     description:
       "A scalable RESTful API for managing user subscriptions, featuring JWT authentication, full CRUD operations, and automated renewal notifications in a containerized environment.",
-    tech: ["JavaScript (ES6+)", "ExpressJS", "MongoDB", "Docker", "JWT", "Arcjet"],
+    tech: [
+      "JavaScript (ES6+)",
+      "ExpressJS",
+      "MongoDB",
+      "Docker",
+      "JWT",
+      "Arcjet",
+    ],
     github: "https://github.com/sujeetgund/subscription-tracker",
     live: "",
   },
@@ -167,3 +183,68 @@ export const educationData = [
     details: "CGPA: 9.29 (as of Dec 2025)",
   },
 ];
+
+export const cardNavData = {
+  logo: "/logo.svg",
+  logoAlt: "Sujeet Gund",
+  items: [
+    {
+      label: "Projects",
+      bgColor: "#1a1a2e",
+      textColor: "#ffffff",
+      links: [
+        {
+          label: "IPDR Graph Engine",
+          href: "/projects/ipdr-graph-engine",
+          ariaLabel: "View IPDR Graph Engine project",
+        },
+        {
+          label: "FastAPI RAG Service",
+          href: "/projects/fastapi-rag-service",
+          ariaLabel: "View FastAPI RAG Service project",
+        },
+        {
+          label: "PhishDetector",
+          href: "/projects/phishdetector",
+          ariaLabel: "View PhishDetector project",
+        },
+      ],
+    },
+    {
+      label: "Resources",
+      bgColor: "#16213e",
+      textColor: "#ffffff",
+      links: [
+        { label: "Skills", href: "#skills", ariaLabel: "View skills section" },
+        {
+          label: "Certifications",
+          href: "/certifications",
+          ariaLabel: "View certifications",
+        },
+        { label: "Resume", href: "/resume", ariaLabel: "Download resume" },
+      ],
+    },
+    {
+      label: "Connect",
+      bgColor: "#0f172a",
+      textColor: "#ffffff",
+      links: [
+        {
+          label: "GitHub",
+          href: "https://github.com/sujeetgund",
+          ariaLabel: "Visit GitHub profile",
+        },
+        {
+          label: "LinkedIn",
+          href: "https://linkedin.com/in/sujeetgund",
+          ariaLabel: "Visit LinkedIn profile",
+        },
+        {
+          label: "Email",
+          href: "mailto:sujeetgund@gmail.com",
+          ariaLabel: "Send email",
+        },
+      ],
+    },
+  ],
+};

@@ -97,8 +97,13 @@ export function ProjectsSection() {
         ))}
       </div>
       {projectsData.length > 3 && (
-        <div className="mt-6 text-center">
-          <Button variant="outline" onClick={() => setShowAll(!showAll)}>
+        <div className="mt-8 flex justify-center">
+          <Button 
+            variant="default" 
+            size="lg"
+            onClick={() => setShowAll(!showAll)}
+            className="min-w-[160px] font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 shadow-lg"
+          >
             {showAll ? (
               <>
                 Show Less
@@ -106,7 +111,7 @@ export function ProjectsSection() {
               </>
             ) : (
               <>
-                Show More
+                Show More Projects
                 <ChevronDown className="ml-2 h-4 w-4" />
               </>
             )}
