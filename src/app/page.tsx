@@ -23,7 +23,7 @@ export default function Home() {
         buttonBgColor="#1a1a2e"
         buttonTextColor="#ffffff"
       />
-      <main className="flex-1 mt-24">
+      <main className="flex-1">
         <div className="container mx-auto max-w-4xl bg-card p-4 sm:p-6 md:p-12 rounded-lg shadow-lg my-4 sm:my-8">
           <ProfileSection />
           <AboutSection />

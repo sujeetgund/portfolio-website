@@ -98,24 +98,22 @@ export function ProjectsSection() {
       </div>
       {projectsData.length > 3 && (
         <div className="mt-8 flex justify-center">
-          <Button 
-            variant="default" 
-            size="lg"
+          <button
             onClick={() => setShowAll(!showAll)}
-            className="min-w-[160px] font-medium bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 shadow-lg"
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-[1px] hover:shadow-xl focus:outline-none focus-visible:ring focus-visible:ring-offset-2 bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90"
           >
             {showAll ? (
               <>
                 Show Less
-                <ChevronUp className="ml-2 h-4 w-4" />
+                <ChevronUp className="h-5 w-5" aria-hidden="true" />
               </>
             ) : (
               <>
                 Show More Projects
-                <ChevronDown className="ml-2 h-4 w-4" />
+                <ChevronDown className="h-5 w-5" aria-hidden="true" />
               </>
             )}
-          </Button>
+          </button>
         </div>
       )}
     </Section>

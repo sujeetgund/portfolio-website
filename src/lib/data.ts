@@ -4,10 +4,10 @@ export const profileData = {
   name: "Sujeet Gund",
   title:
     "AI Engineering Student specializing in Machine Learning, LLMs, and intelligent system development.",
-  location: "Bhopal, Madhya Pradesh, IN",
+  location: "Barshi, Maharashtra, IN",
   resumeUrl: "/resume",
   image: {
-    src: "/Sujeet Gund.jpg",
+    src: "/sujeetgund.jpg",
     hint: "Sujeet Gund",
   },
   contacts: [
@@ -79,7 +79,15 @@ export const projectsData = [
     slug: "fastapi-rag-service",
     description:
       "A high-performance document question-answering service built with FastAPI and LangChain, implementing Retrieval-Augmented Generation (RAG) for intelligent document analysis.",
-    tech: ["FastAPI", "LangChain", "Pydantic", "FAISS", "Gemini API", "Docker"],
+    tech: [
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "Pydantic",
+      "FAISS",
+      "Gemini API",
+      "Docker",
+    ],
     github: "https://github.com/sujeetgund/fastapi-rag-service",
     live: "https://hackrx-rag-app.onrender.com/docs",
   },
@@ -88,7 +96,7 @@ export const projectsData = [
     slug: "phishdetector",
     description:
       "An end-to-end ML system that detects phishing websites with 97.11% accuracy, protecting users from fraudulent sites through real-time API inference.",
-    tech: ["FastAPI", "scikit-learn", "pandas", "Docker"],
+    tech: ["Python", "FastAPI", "scikit-learn", "pandas", "Docker"],
     github: "https://github.com/sujeetgund/phishing-website-detection",
     live: "",
   },
@@ -185,7 +193,7 @@ export const educationData = [
 ];
 
 export const cardNavData = {
-  logo: "/logo.svg",
+  logo: "/logo.png",
   logoAlt: "Sujeet Gund",
   items: [
     {

@@ -66,6 +66,18 @@
   }
 }
 
+@layer base {
+  :is(button, [role="button"], a, input, textarea, select) {
+    transition:
+      color 180ms ease,
+      background-color 180ms ease,
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      transform 200ms ease,
+      opacity 180ms ease;
+  }
+}
+
 /* CardNav custom styles */
 .card-nav-container {
   font-family:
