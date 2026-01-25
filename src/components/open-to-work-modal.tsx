@@ -100,7 +100,12 @@ export function OpenToWorkModal() {
           <motion.div
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.1, duration: 0.5, type: "spring", stiffness: 100 }}
+            transition={{
+              delay: 0.1,
+              duration: 0.5,
+              type: "spring",
+              stiffness: 100,
+            }}
             className="inline-block"
           >
             <div className="relative h-16 w-16 rounded-2xl bg-gradient-to-br from-primary/15 to-amber-400/10 flex items-center justify-center border border-primary/20 shadow-lg">
@@ -130,7 +135,8 @@ export function OpenToWorkModal() {
             transition={{ delay: 0.3, duration: 0.4 }}
             className="text-sm text-foreground/70 leading-relaxed"
           >
-            AI/ML Engineer ready to take on exciting challenges. Let&apos;s connect and build something great.
+            AI/ML Engineer ready to take on exciting challenges. Let&apos;s
+            connect and build something great.
           </motion.p>
 
           {/* CTAs - Prominent and Clear */}
