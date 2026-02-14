@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { profileData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
-import { Section } from "./section";
+import { Section } from "@/components/section";
 import { ArrowDownToLine, MapPin, Sparkles } from "lucide-react";
 
 export function ProfileSection() {

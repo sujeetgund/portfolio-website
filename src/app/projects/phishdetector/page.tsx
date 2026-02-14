@@ -1,9 +1,9 @@
-import { PhishDetectorPage } from '@/components/phishdetector-page';
-import { projectsData } from '@/lib/data';
-import type { Metadata } from 'next';
+import { PhishDetectorPage } from "@/components/pages/phishdetector-page";
+import { projectsData } from "@/lib/data";
+import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const project = projectsData.find(p => p.slug === 'phishdetector');
+  const project = projectsData.find((p) => p.slug === "phishdetector");
   if (!project) {
     return {};
   }

@@ -21,11 +21,6 @@ export const profileData = {
     //   value: 'tel:+919999999999',
     //   icon: Phone,
     // },
-    // {
-    //   label: "Website",
-    //   value: "https://sujeetgund.in",
-    //   icon: GlobeIcon,
-    // },
     {
       label: "LinkedIn",
       value: "https://linkedin.com/in/sujeetgund",
@@ -123,10 +118,10 @@ export const skillsData = [
     category: "Programming & ML",
     skills: [
       "Python",
-      "SQL",
+      "PostgreSQL",
       "Machine Learning",
       "NLP",
-      "Generative AI (LLMs)",
+      "RAG Systems",
       "Agentic AI",
     ],
   },
@@ -135,6 +130,8 @@ export const skillsData = [
     skills: [
       "PyTorch",
       "TensorFlow",
+      "LangChain",
+      "LangGraph",
       "FastAPI",
       "Docker",
       "Git",
@@ -151,6 +148,7 @@ export const skillsData = [
       "Model Deployment",
       "API Integration",
       "Containerization",
+      "GitHub Actions",
       "Version Control",
     ],
   },
@@ -160,25 +158,25 @@ export const certificationsData = [
   {
     name: "Complete Data Science, Machine Learning, DL, NLP Bootcamp",
     issuer: "Udemy",
-    year: "Dec 25",
+    year: "Dec 2025",
     url: "https://www.udemy.com/certificate/UC-e84ea371-05b8-45d4-92fc-4853e8f8d642/",
   },
   {
     name: "Applied Machine Learning in Python",
     issuer: "University of Michigan",
-    year: "Dec 24",
+    year: "Dec 2024",
     url: "https://coursera.org/verify/RSR0JIUKTTW4",
   },
   {
     name: "Supervised Machine Learning: Regression and Classification",
     issuer: "DeepLearning.AI",
-    year: "Jul 23",
+    year: "Jul 2023",
     url: "https://www.coursera.org/verify/M98N3YQCSD2U",
   },
   {
     name: "AWS Cloud Essentials",
     issuer: "Amazon Web Services (AWS)",
-    year: "Jun 23",
+    year: "Jun 2023",
     url: "https://www.credly.com/badges/430abe70-f242-4db2-b47a-42542fbc0335/public_url",
   },
 ];
@@ -187,8 +185,8 @@ export const educationData = [
   {
     institution: "VIT Bhopal University",
     degree: "Integrated M.Tech in Artificial Intelligence",
-    period: "2023 - 2028",
-    details: "CGPA: 9.29 (as of Dec 2025)",
+    period: "Sep 2023 - Mar 2028",
+    details: "CGPA: 9.24 (as of Feb 2026)",
   },
 ];
 

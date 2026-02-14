@@ -1,4 +1,4 @@
-import { CertificationsPage } from "@/components/certifications-page";
+import { CertificationsPage } from "@/components/pages/certifications-page";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -10,7 +10,7 @@ import {
   Linkedin,
 } from "lucide-react";
 import Link from "next/link";
-import { Badge } from "./ui/badge";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { profileData, projectsData } from "@/lib/data";
 

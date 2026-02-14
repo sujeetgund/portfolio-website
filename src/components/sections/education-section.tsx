@@ -1,6 +1,6 @@
 import { educationData } from '@/lib/data';
-import { Section } from './section';
-import { SectionHeader } from './section-header';
+import { Section } from '@/components/section';
+import { SectionHeader } from '@/components/section-header';
 
 export function EducationSection() {
   return (

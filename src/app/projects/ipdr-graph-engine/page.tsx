@@ -1,9 +1,9 @@
-import { IpdrGraphEnginePage } from '@/components/ipdr-graph-engine-page';
-import { projectsData } from '@/lib/data';
-import type { Metadata } from 'next';
+import { IpdrGraphEnginePage } from "@/components/pages/ipdr-graph-engine-page";
+import { projectsData } from "@/lib/data";
+import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const project = projectsData.find(p => p.slug === 'ipdr-graph-engine');
+  const project = projectsData.find((p) => p.slug === "ipdr-graph-engine");
   if (!project) {
     return {};
   }

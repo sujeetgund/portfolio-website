@@ -1,7 +1,7 @@
 import { skillsData } from '@/lib/data';
-import { Section } from './section';
-import { SectionHeader } from './section-header';
-import { Badge } from './ui/badge';
+import { Section } from '@/components/section';
+import { SectionHeader } from '@/components/section-header';
+import { Badge } from '@/components/ui/badge';
 
 export function SkillsSection() {
   return (

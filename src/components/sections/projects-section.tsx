@@ -12,8 +12,8 @@ import {
 import { projectsData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Section } from "./section";
-import { SectionHeader } from "./section-header";
+import { Section } from "@/components/section";
+import { SectionHeader } from "@/components/section-header";
 
 type Project = (typeof projectsData)[0];
 

@@ -1,7 +1,7 @@
-import { certificationsData } from '@/lib/data';
-import { Section } from './section';
-import { SectionHeader } from './section-header';
-import Link from 'next/link';
+import { certificationsData } from "@/lib/data";
+import { Section } from "@/components/section";
+import { SectionHeader } from "@/components/section-header";
+import Link from "next/link";
 
 export function CertificationsSection() {
   return (
@@ -17,10 +17,8 @@ export function CertificationsSection() {
             className="block group"
           >
             <p className="text-sm font-medium group-hover:text-primary transition-colors">
-              {cert.name}{' '}
-              <span className="text-muted-foreground">
-                by {cert.issuer} - {cert.year}
-              </span>
+              {cert.name}{" "}
+              <span className="text-muted-foreground">by {cert.issuer}</span>
             </p>
           </Link>
         ))}

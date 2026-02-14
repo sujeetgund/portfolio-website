@@ -1,12 +1,12 @@
 "use client";
 
-import { ProfileSection } from "@/components/profile-section";
-import { AboutSection } from "@/components/about-section";
-import { ProjectsSection } from "@/components/projects-section";
-import { SkillsSection } from "@/components/skills-section";
-import { CertificationsSection } from "@/components/certifications-section";
-import { EducationSection } from "@/components/education-section";
-import { Footer } from "@/components/footer";
+import { ProfileSection } from "@/components/sections/profile-section";
+import { AboutSection } from "@/components/sections/about-section";
+import { ProjectsSection } from "@/components/sections/projects-section";
+import { SkillsSection } from "@/components/sections/skills-section";
+import { CertificationsSection } from "@/components/sections/certifications-section";
+import { EducationSection } from "@/components/sections/education-section";
+import { Footer } from "@/components/layout/footer";
 import { OpenToWorkModal } from "@/components/open-to-work-modal";
 import CardNav from "@/components/CardNav";
 import { cardNavData } from "@/lib/data";

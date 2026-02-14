@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "Sujeet Gund Portfolio",
     images: [
       {
-        url: `${siteUrl}/Sujeet Gund.jpg`,
+        url: `${siteUrl}/sujeetgund.jpg`,
         width: 800,
         height: 600,
         alt: "Sujeet Gund",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sujeet Gund | AI Engineer",
     description: profileData.title,
-    images: [`${siteUrl}/Sujeet Gund.jpg`],
+    images: [`${siteUrl}/sujeetgund.jpg`],
     creator: "@Sujeet_Gund",
   },
 };
