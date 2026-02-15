@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowLeft, Github, CheckCircle2, Mail, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";

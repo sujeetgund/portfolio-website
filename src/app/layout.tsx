@@ -3,7 +3,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Inter } from "next/font/google";
 import { Newsreader } from "next/font/google";
-import { profileData } from "@/lib/data";
+import { siteMetadata } from "@/lib/site-metadata";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const newsreader = Newsreader({
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: "Sujeet Gund | AI Engineer",
     template: "%s | Sujeet Gund",
   },
-  description: profileData.title,
+  description: siteMetadata.title,
   keywords: [
     "AI Engineer",
     "Machine Learning",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     title: "Sujeet Gund | AI Engineer",
-    description: profileData.title,
+    description: siteMetadata.title,
     siteName: "Sujeet Gund Portfolio",
     images: [
       {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Sujeet Gund | AI Engineer",
-    description: profileData.title,
+    description: siteMetadata.title,
     images: [`${siteUrl}/sujeetgund.jpg`],
     creator: "@Sujeet_Gund",
   },

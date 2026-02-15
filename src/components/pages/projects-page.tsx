@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -48,11 +46,7 @@ export function ProjectsPage() {
 
         <div className="grid gap-6 md:grid-cols-2">
           {projectsData.map((project, index) => (
-            <Link
-              key={index}
-              href={`/projects/${project.slug}`}
-              className="group relative"
-            >
+            <div key={index} className="group relative">
               <div className="relative h-full overflow-hidden rounded-2xl border border-border/70 bg-card/90 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-primary/50">
                 <div
                   className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -101,37 +95,38 @@ export function ProjectsPage() {
 
                   <div className="mt-auto pt-5 flex items-center gap-3 text-sm">
                     {project.github && (
-                      <span
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-background/70 px-3 py-1 text-muted-foreground transition-colors duration-200 hover:text-foreground"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          window.open(project.github, "_blank");
-                        }}
                       >
                         <Github className="h-4 w-4" />
                         Code
-                      </span>
+                      </a>
                     )}
                     {project.live && (
-                      <span
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-background/70 px-3 py-1 text-muted-foreground transition-colors duration-200 hover:text-foreground"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          window.open(project.live, "_blank");
-                        }}
                       >
                         <ExternalLink className="h-4 w-4" />
                         Live
-                      </span>
+                      </a>
                     )}
-                    <span className="ml-auto inline-flex items-center gap-1 text-primary font-semibold transition-transform duration-200 group-hover:translate-x-1">
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="ml-auto inline-flex items-center gap-1 text-primary font-semibold transition-transform duration-200 group-hover:translate-x-1"
+                    >
                       View Details
                       <span aria-hidden>→</span>
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
