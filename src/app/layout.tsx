@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Inter } from "next/font/google";
 import { Newsreader } from "next/font/google";
 import { siteMetadata } from "@/lib/site-metadata";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const newsreader = Newsreader({
@@ -67,6 +68,7 @@ export default function RootLayout({
       lang="en"
       className={`!scroll-smooth ${inter.variable} ${newsreader.variable}`}
     >
+      <GoogleTagManager gtmId="GTM-P2ZJJ7SG" />
       <body className="font-body antialiased">
         {children}
         <Toaster />
