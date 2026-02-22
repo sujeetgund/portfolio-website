@@ -1,5 +1,6 @@
 import { SubscriptionTrackerPage } from "@/components/pages/subscription-tracker-page";
 import { projectsData } from "@/lib/data";
+import { buildProjectMetadata } from "@/lib/site-metadata";
 import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -7,13 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   if (!project) {
     return {};
   }
-  return {
-    title: project.title,
-    description: project.description,
-    alternates: {
-      canonical: `/projects/${project.slug}`,
-    },
-  };
+  return buildProjectMetadata(project);
 }
 
 export default function SubscriptionTrackerProjectPage() {
