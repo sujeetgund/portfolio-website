@@ -52,6 +52,22 @@ export const experienceData = [
 
 export const projectsData = [
   {
+    title: "LinkedIn Post Generator Agent System",
+    slug: "linkedin-post-generator-agent-system",
+    description:
+      "A modular, multi-agent system built with Google ADK to generate authentic LinkedIn posts through phased orchestration: intent capture, storytelling, hashtag generation, full-post drafting, and optional image creation.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "Google ADK",
+      "Gemini API",
+      "Cloudinary",
+      "Agentic AI",
+    ],
+    github: "https://github.com/sujeetgund/linkedin-post-generator-agent",
+    live: "",
+  },
+  {
     title: "IPDR Graph Engine - AI-Powered Investigative Platform",
     slug: "ipdr-graph-engine",
     description:
@@ -199,6 +215,11 @@ export const cardNavData = {
       bgColor: "#1a1a2e",
       textColor: "#ffffff",
       links: [
+        {
+          label: "LinkedIn Post Generator Agent",
+          href: "/projects/linkedin-post-generator-agent-system",
+          ariaLabel: "View LinkedIn Post Generator Agent project",
+        },
         {
           label: "IPDR Graph Engine",
           href: "/projects/ipdr-graph-engine",
