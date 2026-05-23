@@ -13,7 +13,7 @@ export function Section({ id, className, children }: SectionProps) {
   return (
     <motion.section
       id={id}
-      className={cn("py-6 border-b last-of-type:border-b-0", className)}
+      className={cn("py-16 border-none", className)}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

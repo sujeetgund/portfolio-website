@@ -4,56 +4,65 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
+    --background: 0 0% 100%; /* canvas #ffffff */
+    --foreground: 0 0% 0%; /* ink #000000 */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
+    --card-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.625rem;
+    --popover-foreground: 0 0% 0%;
+    
+    /* NVIDIA Green #76b900 is HSL 85, 100%, 36.3% */
+    --primary: 85 100% 36.3%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* NVIDIA Green Dark #5a8d00 */
+    --primary-dark: 85 100% 27.6%;
+    
+    /* surface-soft #f7f7f7 */
+    --secondary: 0 0% 96.9%;
+    --secondary-foreground: 0 0% 0%;
+    
+    --muted: 0 0% 96.9%;
+    /* mute #757575 */
+    --muted-foreground: 0 0% 45.9%;
+    
+    --accent: 85 100% 36.3%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* error #e52020 */
+    --destructive: 0 79% 51.2%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* hairline #cccccc */
+    --border: 0 0% 80%;
+    --input: 0 0% 80%;
+    --ring: 85 100% 36.3%;
+    
+    --radius: 2px;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* The system uses dark components, but canvas is white.
+       We will keep standard dark mode mapping to surface-dark for reference,
+       although DESIGN.md prefers dark mode explicitly per section. */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 85 100% 36.3%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 10.2%; /* surface-elevated #1a1a1a */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10.2%;
+    --muted-foreground: 0 0% 65.5%; /* ash #a7a7a7 */
+    --accent: 85 100% 36.3%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --border: 0 0% 36.9%; /* hairline-strong #5e5e5e */
+    --input: 0 0% 36.9%;
+    --ring: 85 100% 36.3%;
   }
 }
 
@@ -64,6 +73,31 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Reset shadows and rounded corners globally to enforce design */
+  .shadow-xl, .shadow-lg, .shadow-md, .shadow-sm, .shadow-2xl {
+    box-shadow: none !important;
+  }
+}
+
+/* Custom DESIGN.md variables */
+:root {
+  --colors-primary: #76b900;
+  --colors-primary-dark: #5a8d00;
+  --colors-canvas: #ffffff;
+  --colors-surface-soft: #f7f7f7;
+  --colors-surface-dark: #000000;
+  --colors-surface-elevated: #1a1a1a;
+  --colors-hairline: #cccccc;
+  --colors-hairline-strong: #5e5e5e;
+  --colors-ink: #000000;
+  --colors-body: #1a1a1a;
+  --colors-mute: #757575;
+  --colors-stone: #898989;
+  --colors-ash: #a7a7a7;
+  --colors-on-dark: #ffffff;
+  --colors-on-dark-mute: rgba(255, 255, 255, 0.7);
+  --colors-link-blue: #0046a4;
 }
 
 @layer base {
@@ -72,26 +106,17 @@
       color 180ms ease,
       background-color 180ms ease,
       border-color 180ms ease,
-      box-shadow 180ms ease,
-      transform 200ms ease,
       opacity 180ms ease;
   }
 }
 
-/* CardNav custom styles */
 .card-nav-container {
-  font-family:
-    var(--font-inter),
-    system-ui,
-    -apple-system,
-    sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
-
 .card-nav a {
   color: inherit;
   text-decoration: none;
 }
-
 .card-nav-cta-button:hover {
   opacity: 0.85;
 }

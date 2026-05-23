@@ -5,18 +5,30 @@ import { SectionHeader } from '@/components/section-header';
 export function EducationSection() {
   return (
     <Section id="education">
-      <SectionHeader title="Education" />
-      <div className="space-y-4">
-        {educationData.map((edu, index) => (
-          <div key={index}>
-            <div className="flex justify-between items-baseline">
-                <h3 className="font-bold text-base">{edu.institution}</h3>
-                <p className="text-sm text-muted-foreground">{edu.period}</p>
+      <div className="max-w-[1280px] mx-auto px-6 md:px-12 w-full">
+        <SectionHeader title="Education" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {educationData.map((edu, index) => (
+            <div key={index} className="bg-[#ffffff] border border-[#cccccc] p-[24px] rounded-[2px]">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-baseline mb-2">
+                <h3 className="text-[20px] font-bold leading-[1.25] text-[#1a1a1a] m-0">
+                  {edu.institution}
+                </h3>
+                <p className="text-[14px] font-bold text-[#757575] mt-1 md:mt-0 uppercase tracking-wide">
+                  {edu.period}
+                </p>
+              </div>
+              <p className="text-[16px] font-bold text-[#1a1a1a] leading-[1.5] m-0">
+                {edu.degree}
+              </p>
+              {edu.details && (
+                <p className="text-[15px] leading-[1.67] text-[#1a1a1a] mt-2 m-0">
+                  {edu.details}
+                </p>
+              )}
             </div>
-            <p className="text-sm font-medium text-foreground/80">{edu.degree}</p>
-            {edu.details && <p className="text-sm text-foreground/70 mt-1">{edu.details}</p>}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </Section>
   );

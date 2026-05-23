@@ -2,120 +2,132 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import {
-  Github,
-  ExternalLink,
-  ArrowRight,
-  ChevronDown,
-  ChevronUp,
-} from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import { VscGithub } from "react-icons/vsc";
 import { projectsData } from "@/lib/data";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Section } from "@/components/section";
-import { SectionHeader } from "@/components/section-header";
+import { RxExternalLink } from "react-icons/rx";
+import { LuArrowUpRight } from "react-icons/lu";
 
 type Project = (typeof projectsData)[0];
 
 export function ProjectsSection() {
   const [showAll, setShowAll] = useState(false);
-  const projectsToShow = showAll ? projectsData : projectsData.slice(0, 3);
+  const projectsToShow = showAll ? projectsData : projectsData.slice(0, 4);
 
   return (
-    <Section id="projects">
-      <SectionHeader title="Projects" />
-      <div className="space-y-6">
-        {projectsToShow.map((project: Project, index: number) => (
-          <div key={index}>
-            <h3 className="font-bold text-base">{project.title}</h3>
-            <p className="mt-1 text-sm text-foreground/70 whitespace-pre-wrap">
-              {project.description}
-            </p>
-            {project.tech && project.tech.length > 0 && (
-              <div className="mt-2 flex flex-wrap gap-1.5">
-                {project.tech.map((tech, techIndex) => (
-                  <Badge
-                    key={techIndex}
-                    variant="secondary"
-                    className="text-xs"
-                  >
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-            )}
-            <div className="mt-3 flex items-center flex-wrap gap-x-4 gap-y-2">
-              {project.github && (
-                <Button
-                  asChild
-                  variant="link"
-                  size="sm"
-                  className="p-0 h-auto text-sm text-muted-foreground hover:text-foreground"
-                >
-                  <Link
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github className="mr-1 h-3 w-3" />
-                    GitHub
-                  </Link>
-                </Button>
-              )}
-              {project.live && (
-                <Button
-                  asChild
-                  variant="link"
-                  size="sm"
-                  className="p-0 h-auto text-sm text-muted-foreground hover:text-foreground"
-                >
-                  <Link
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink className="mr-1 h-3 w-3" />
-                    Live Preview
-                  </Link>
-                </Button>
-              )}
-              {project.slug && (
-                <Button
-                  asChild
-                  variant="link"
-                  size="sm"
-                  className="p-0 h-auto text-sm text-accent-foreground hover:text-primary font-medium"
-                >
-                  <Link href={`/projects/${project.slug}`}>
-                    View Project
-                    <ArrowRight className="ml-1 h-3 w-3" />
-                  </Link>
-                </Button>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-      {projectsData.length > 3 && (
-        <div className="mt-8 flex justify-center">
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-[1px] hover:shadow-xl focus:outline-none focus-visible:ring focus-visible:ring-offset-2 bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90"
-          >
-            {showAll ? (
-              <>
-                Show Less
-                <ChevronUp className="h-5 w-5" aria-hidden="true" />
-              </>
-            ) : (
-              <>
-                Show More Projects
-                <ChevronDown className="h-5 w-5" aria-hidden="true" />
-              </>
-            )}
-          </button>
+    <section
+      id="projects"
+      className="w-full bg-[#000000] text-[#ffffff] py-[80px] px-6 md:px-12"
+    >
+      <div className="max-w-[1280px] mx-auto w-full">
+        <div className="flex items-center gap-4 mb-16">
+          <h2 className="text-[36px] md:text-[48px] font-bold leading-[1.25] tracking-tight text-[#ffffff] m-0">
+            Featured Projects
+          </h2>
+          <Link href="/projects" className="text-[#76b900] hover:text-[#ffffff] transition-colors" aria-label="View all projects">
+            <LuArrowUpRight className="h-8 w-8 md:h-10 md:w-10" />
+          </Link>
         </div>
-      )}
-    </Section>
+
+        <div className="flex flex-col border-t border-[#5e5e5e]">
+          {projectsToShow.map((project: Project, index: number) => {
+            const projectNum = String(index + 1).padStart(2, "0");
+            return (
+              <div
+                key={index}
+                className="flex flex-col lg:flex-row gap-6 lg:gap-12 py-12 border-b border-[#5e5e5e] group"
+              >
+                {/* Numeric Callout */}
+                <div className="lg:w-[120px] shrink-0">
+                  <span className="text-[36px] font-bold text-[#76b900] leading-[1.25]">
+                    {projectNum}
+                  </span>
+                </div>
+
+                {/* Content Block */}
+                <div className="flex-1 flex flex-col gap-4">
+                  <h3 className="text-[24px] font-bold leading-[1.25] m-0 text-[#ffffff] group-hover:text-[#76b900] transition-colors">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-[16px] font-normal leading-[1.5] text-[rgba(255,255,255,0.7)] m-0 max-w-[800px]">
+                    {project.description}
+                  </p>
+
+                  {project.tech && project.tech.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {project.tech.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="border border-[#5e5e5e] text-[#ffffff] text-[11px] font-bold uppercase tracking-wider px-[10px] py-[4px] rounded-[2px]"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Actions Block */}
+                <div className="lg:w-[200px] shrink-0 flex flex-row lg:flex-col items-center lg:items-start gap-4 mt-6 lg:mt-0">
+                  {project.github && (
+                    <Link
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#ffffff] hover:text-[#76b900] text-[15px] font-normal inline-flex items-center transition-colors"
+                    >
+                      <VscGithub className="mr-3 h-5 w-5" />
+                      See Code
+                    </Link>
+                  )}
+                  {project.live && (
+                    <Link
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#ffffff] hover:text-[#76b900] text-[15px] font-normal inline-flex items-center transition-colors"
+                    >
+                      <RxExternalLink className="mr-3 h-5 w-5" />
+                      Live Demo
+                    </Link>
+                  )}
+                  {project.slug && (
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="bg-[#76b900] text-[#ffffff] hover:bg-[#5a8d00] font-bold text-[16px] leading-[1.25] px-[24px] py-[11px] h-[44px] rounded-[2px] inline-flex items-center justify-center transition-colors w-full sm:w-auto mt-2"
+                    >
+                      Read More
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {projectsData.length > 4 && (
+          <div className="mt-16 flex justify-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="bg-transparent border border-[#ffffff] text-[#ffffff] hover:bg-[#1a1a1a] text-[16px] font-bold leading-[1.25] px-[24px] py-[11px] h-[44px] rounded-[2px] inline-flex items-center transition-colors"
+            >
+              {showAll ? (
+                <>
+                  Collapse View
+                  <ChevronUp className="h-5 w-5 ml-2" aria-hidden="true" />
+                </>
+              ) : (
+                <>
+                  View All Projects
+                  <ChevronDown className="h-5 w-5 ml-2" aria-hidden="true" />
+                </>
+              )}
+            </button>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }

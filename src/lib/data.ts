@@ -1,4 +1,6 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { VscGithub } from "react-icons/vsc";
+import { ImLinkedin } from "react-icons/im";
+import { MdEmail } from "react-icons/md";
 
 export const profileData = {
   name: "Sujeet Gund",
@@ -14,39 +16,42 @@ export const profileData = {
     {
       label: "Email",
       value: "mailto:sujeetgund@gmail.com",
-      icon: Mail,
+      icon: MdEmail,
     },
-    //  {
-    //   label: 'Phone',
-    //   value: 'tel:+919999999999',
-    //   icon: Phone,
-    // },
     {
       label: "LinkedIn",
       value: "https://linkedin.com/in/sujeetgund",
-      icon: Linkedin,
+      icon: ImLinkedin,
     },
     {
       label: "GitHub",
       value: "https://github.com/sujeetgund",
-      icon: Github,
+      icon: VscGithub,
     },
   ],
 };
 
 export const aboutData = {
-  summary:
-    "I'm an AI Engineering student at VIT Bhopal, specializing in Machine Learning, Deep Learning, and Generative AI.  \nI build end-to-end AI systems — from data preprocessing and model development to scalable deployment using modern tools like FastAPI, LangChain, and cloud platforms. \n\nMy work focuses on practical, real-world problem solving, with hands-on experience in LLMs, agentic AI, and production-ready ML pipelines. I enjoy creating intelligent, efficient systems that deliver measurable impact.",
+  title: "Engineering Intelligent Systems for the Real World",
+  paragraphs: [
+    "I'm an AI Engineering student at VIT Bhopal, specializing in Machine Learning, Deep Learning, and Generative AI. My passion lies in transforming complex data into actionable intelligence.",
+    "I build end-to-end AI systems — from rigorous data preprocessing and custom model architecture to scalable deployment using modern tools like FastAPI, LangChain, and cloud platforms.",
+    "My work focuses on practical problem solving. With hands-on experience in LLMs, agentic workflows, and production-ready ML pipelines, I thrive on creating efficient systems that deliver measurable impact."
+  ],
+  stats: [
+    { value: "15+", label: "Advanced AI Projects" },
+    { value: "9.3", label: "University CGPA" },
+    { value: "100%", label: "Commitment to Innovation" }
+  ]
 };
 
 export const experienceData = [
   {
-    company: "The Eureka Club, VIT Bhopal University",
-    location: "Bhopal, India",
-    role: "Technical Club Member",
-    period: "Jul 2024 - Feb 2025",
-    description:
-      "Collaborated with fellow members to develop innovative project ideas and solutions. Improved problem-solving and teamwork skills through active participation in club activities. Contributed to organizing events that fostered peer learning and networking within the university's tech community.",
+    company: "Divam Technologies",
+    location: "",
+    role: "GenAI Developer",
+    period: "Apr 2026 - Present",
+    description: "Developing and optimizing GenAI solutions, leveraging LLMs and agentic AI frameworks to build scalable applications.",
   },
 ];
 
@@ -206,72 +211,17 @@ export const educationData = [
   },
 ];
 
-export const cardNavData = {
-  logo: "/logo.png",
-  logoAlt: "Sujeet Gund",
-  items: [
-    {
-      label: "Projects",
-      bgColor: "#1a1a2e",
-      textColor: "#ffffff",
-      links: [
-        {
-          label: "LinkedIn Post Generator Agent",
-          href: "/projects/linkedin-post-generator-agent-system",
-          ariaLabel: "View LinkedIn Post Generator Agent project",
-        },
-        {
-          label: "IPDR Graph Engine",
-          href: "/projects/ipdr-graph-engine",
-          ariaLabel: "View IPDR Graph Engine project",
-        },
-        {
-          label: "FastAPI RAG Service",
-          href: "/projects/fastapi-rag-service",
-          ariaLabel: "View FastAPI RAG Service project",
-        },
-        {
-          label: "PhishDetector",
-          href: "/projects/phishdetector",
-          ariaLabel: "View PhishDetector project",
-        },
-      ],
-    },
-    {
-      label: "Resources",
-      bgColor: "#16213e",
-      textColor: "#ffffff",
-      links: [
-        { label: "Skills", href: "#skills", ariaLabel: "View skills section" },
-        {
-          label: "Certifications",
-          href: "/certifications",
-          ariaLabel: "View certifications",
-        },
-        { label: "Resume", href: "/resume", ariaLabel: "Download resume" },
-      ],
-    },
-    {
-      label: "Connect",
-      bgColor: "#0f172a",
-      textColor: "#ffffff",
-      links: [
-        {
-          label: "GitHub",
-          href: "https://github.com/sujeetgund",
-          ariaLabel: "Visit GitHub profile",
-        },
-        {
-          label: "LinkedIn",
-          href: "https://linkedin.com/in/sujeetgund",
-          ariaLabel: "Visit LinkedIn profile",
-        },
-        {
-          label: "Email",
-          href: "mailto:sujeetgund@gmail.com",
-          ariaLabel: "Send email",
-        },
-      ],
-    },
-  ],
-};
+export const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Certifications", href: "/#certifications" },
+  { label: "Education", href: "/#education" },
+  { label: "Resume", href: "/resume" },
+];
+
+export const socialLinks = [
+  { label: "GitHub", href: "https://github.com/sujeetgund" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/sujeetgund" },
+  { label: "Email", href: "mailto:sujeetgund@gmail.com" },
+];

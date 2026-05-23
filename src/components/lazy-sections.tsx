@@ -3,6 +3,11 @@
 import dynamic from "next/dynamic";
 
 // Dynamic imports for below-the-fold sections (code splitting)
+const ExperienceSection = dynamic(() =>
+  import("@/components/sections/experience-section").then((mod) => ({
+    default: mod.ExperienceSection,
+  })),
+);
 const ProjectsSection = dynamic(() =>
   import("@/components/sections/projects-section").then((mod) => ({
     default: mod.ProjectsSection,
@@ -27,6 +32,7 @@ const EducationSection = dynamic(() =>
 export function LazySections() {
   return (
     <>
+      <ExperienceSection />
       <ProjectsSection />
       <SkillsSection />
       <CertificationsSection />

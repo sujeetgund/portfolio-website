@@ -6,14 +6,12 @@ import { LazySections } from "@/components/lazy-sections";
 
 export default function Home() {
   return (
-    <div className="flex min-h-dvh flex-col bg-muted relative">
+    <div className="flex min-h-dvh flex-col bg-[#ffffff] text-[#1a1a1a] relative font-body overflow-x-hidden">
       <HomeClientShell />
-      <main className="flex-1">
-        <div className="container mx-auto max-w-4xl bg-card p-4 sm:p-6 md:p-12 rounded-lg shadow-lg my-4 sm:my-8">
-          <ProfileSection />
-          <AboutSection />
-          <LazySections />
-        </div>
+      <main className="flex-1 w-full">
+        <ProfileSection />
+        <AboutSection />
+        <LazySections />
       </main>
       <Footer />
     </div>

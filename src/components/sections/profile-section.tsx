@@ -3,102 +3,74 @@
 import Image from "next/image";
 import Link from "next/link";
 import { profileData } from "@/lib/data";
-import { Button } from "@/components/ui/button";
-import { Section } from "@/components/section";
-import { ArrowDownToLine, MapPin, Sparkles } from "lucide-react";
+import { ArrowDownToLine, MapPin } from "lucide-react";
 
 export function ProfileSection() {
   return (
-    <Section id="profile" className="pt-0">
-      <div className="relative overflow-hidden rounded-2xl border bg-card/80 shadow-xl">
-        <div
-          className="absolute -left-16 -top-24 h-56 w-56 rounded-full bg-primary/15 blur-3xl"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute -right-10 bottom-0 h-40 w-40 rounded-full bg-amber-500/10 blur-3xl"
-          aria-hidden="true"
-        />
+    <section id="profile" className="w-full bg-[#000000] text-[#ffffff] px-6 py-[80px] md:px-12 relative overflow-hidden">
+      <div className="max-w-[1280px] mx-auto flex flex-col-reverse md:flex-row items-center relative z-10 gap-8">
+        
+        {/* Copy Slot at Left */}
+        <div className="flex-1 w-full flex flex-col items-start gap-6">
+          <h1 className="text-[32px] md:text-[48px] font-bold leading-[1.25] m-0">
+            {profileData.name}
+          </h1>
+          <p className="text-[22px] font-normal leading-[1.75] text-[rgba(255,255,255,0.7)] max-w-[600px] m-0">
+            {profileData.title}
+          </p>
 
-        <div className="relative flex flex-col md:flex-row items-center md:items-start gap-6 sm:gap-8 p-6 sm:p-8">
-          <div className="relative h-32 w-32 md:h-36 md:w-36 shrink-0">
+          <div className="flex items-center gap-2 text-[14px] text-[#a7a7a7] mt-2 mb-4 font-bold tracking-wide uppercase">
+            <MapPin className="h-4 w-4" aria-hidden="true" />
+            {profileData.location}
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+            {/* Primary CTA button */}
+            <a
+              href={profileData.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#76b900] text-[#ffffff] hover:bg-[#5a8d00] font-bold text-[18px] leading-[1.25] px-6 py-[11px] h-[44px] rounded-[2px] inline-flex items-center justify-center transition-colors w-full sm:w-auto"
+            >
+              <ArrowDownToLine className="h-4 w-4 mr-2" aria-hidden="true" />
+              View Resume
+            </a>
+
+            {/* Secondary CTA buttons (Outline on Dark) */}
+            <div className="flex gap-4">
+              {profileData.contacts.map((contact) => (
+                <Link
+                  key={contact.label}
+                  href={contact.value}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-transparent text-[#ffffff] border border-[#ffffff] hover:bg-[#1a1a1a] font-bold text-[16px] leading-[1.25] h-[44px] w-[44px] rounded-[2px] flex items-center justify-center transition-colors"
+                  aria-label={contact.label}
+                >
+                  <contact.icon className="h-5 w-5" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Hero Imagery at Right */}
+        <div className="w-full md:w-1/2 flex justify-end relative h-[300px] md:h-[400px]">
+          <div className="relative w-full md:w-[80%] h-full">
             <Image
               src={profileData.image.src}
               alt={profileData.name}
               fill
               priority
               data-ai-hint={profileData.image.hint}
-              className="rounded-[2rem] object-cover shadow-2xl"
+              className="object-cover"
             />
-            <div className="absolute -bottom-3 right-2 inline-flex items-center gap-1 rounded-full bg-background/90 px-3 py-1 text-[11px] font-semibold shadow-lg ring-1 ring-border/80">
-              <Sparkles
-                className="h-3.5 w-3.5 text-primary"
-                aria-hidden="true"
-              />
-              Builder
-            </div>
-          </div>
-
-          <div className="flex-1 text-center md:text-left space-y-3">
-            <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 py-1 text-xs font-semibold text-primary shadow-sm">
-              <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-              LLMs · ML Systems
-            </div>
-
-            <h1 className="font-headline text-4xl md:text-5xl font-bold">
-              {profileData.name}
-            </h1>
-
-            <p className="text-base text-foreground/80 leading-relaxed max-w-2xl md:max-w-xl mx-auto md:mx-0">
-              {profileData.title}
-            </p>
-
-            <div className="flex flex-wrap justify-center md:justify-start gap-2 text-sm text-muted-foreground">
-              <span className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 py-1">
-                <MapPin className="h-4 w-4 text-primary" aria-hidden="true" />
-                {profileData.location}
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 py-1">
-                <Sparkles className="h-4 w-4 text-primary" aria-hidden="true" />
-                Building intelligent products
-              </span>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 pt-1">
-              <a
-                href={profileData.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-[1px] hover:shadow-xl focus:outline-none focus-visible:ring focus-visible:ring-offset-2 bg-black text-white hover:bg-black/90"
-              >
-                <ArrowDownToLine className="h-4 w-4" aria-hidden="true" />
-                View Resume
-              </a>
-
-              <div className="flex items-center gap-2">
-                {profileData.contacts.map((contact) => (
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="icon"
-                    key={contact.label}
-                    className="h-10 w-10 rounded-full border-border/70 bg-background/70"
-                  >
-                    <Link
-                      href={contact.value}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <contact.icon className="h-4 w-4 text-foreground" />
-                      <span className="sr-only">{contact.label}</span>
-                    </Link>
-                  </Button>
-                ))}
-              </div>
-            </div>
+            {/* Gradient overlay for blending */}
+            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#000000] via-transparent to-transparent opacity-80" />
           </div>
         </div>
+        
       </div>
-    </Section>
+    </section>
   );
 }

@@ -1,0 +1,54 @@
+---
+title: "PhishDetector - Phishing Website Detection System"
+description: "An end-to-end ML system that detects phishing websites with 97.11% accuracy, protecting users from fraudulent sites through real-time API inference."
+tech:
+  - Python
+  - FastAPI
+  - scikit-learn
+  - pandas
+  - Docker
+github: "https://github.com/sujeetgund/phishing-website-detection"
+live: ""
+---
+
+## TL;DR
+I built a complete phishing detection pipeline using a Random Forest model, achieving 97.11% accuracy. The system processes URL features, trains on 30 website attributes, and serves predictions via a FastAPI, all containerized with Docker for scalable deployment.
+
+## Problem → Solution
+
+**Problem**
+Phishing websites steal sensitive user data by mimicking legitimate sites. Traditional detection methods are often slow and fail to catch sophisticated attacks, leaving users vulnerable.
+
+**Solution**
+I developed an ML pipeline that analyzes 30 URL and metadata features using Random Forest, achieving 97.11% accuracy with a real-time FastAPI deployment for instant protection.
+
+## Key Features
+- End-to-End ML Pipeline
+- High Accuracy (97.11%)
+- Real-Time Inference API
+- Containerized with Docker
+- Multi-Model Training
+- Feature-Rich Analysis
+
+## Architecture
+Modular pipeline with separate components for ingestion, validation, training, and inference. FastAPI provides a lightweight, high-performance API.
+
+## Role & Credits
+
+**My Role**
+I was the sole developer for this project, responsible for everything from data analysis and model training to API development and containerization.
+
+**Credits**
+The dataset was sourced from the UCI Machine Learning Repository.
+
+## Quickstart
+
+```bash
+# Clone and setup
+git clone https://github.com/sujeetgund/phishing-website-detection.git
+cd phishing-website-detection
+pip install -r requirements.txt
+
+# Run API server
+uvicorn run_api:app --reload
+```

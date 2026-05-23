@@ -1,0 +1,62 @@
+---
+title: "IPDR Graph Engine - AI-Powered Investigative Platform"
+description: "A web-based investigative platform that transforms complex telecommunications IPDR data into actionable intelligence through ML-powered anomaly detection (94.16% accuracy) and interactive visualizations."
+tech:
+  - Python
+  - FastAPI
+  - scikit-learn
+  - CatBoost
+  - Next.js
+  - TypeScript
+  - MongoDB
+  - Google Cloud
+github: "https://github.com/sujeetgund/ipdr-graph-engine"
+live: "https://ipdr-graph-engine.vercel.app/"
+---
+
+## TL;DR
+This platform ingests heterogeneous IPDR logs, constructs communication graphs, and applies ML-based anomaly detection (94.16% accuracy) to deliver interactive visualizations. It features multi-format support, real-time processing, and end-to-end encryption.
+
+## Problem → Solution
+
+**Problem**
+Manual analysis of massive IPDR data is inefficient and inaccessible to non-technical stakeholders, making it difficult to detect fraud and respond to security incidents quickly.
+
+**Solution**
+An integrated platform that automates data parsing, applies ML for anomaly detection, and provides interactive graph visualizations for intuitive investigation and reporting.
+
+## Key Features
+- Multi-Format Data Upload
+- AI-Powered Anomaly Detection
+- Interactive 2D & 3D Graphs
+- Automated Relationship Mapping
+- Comprehensive Reports History
+- Search & Isolate Functionality
+
+## Architecture
+A decoupled frontend and backend with a FastAPI serving ML models and a Next.js client for interactive visualizations.
+
+## Role & Credits
+
+**CIIS 2025 Hackathon Project**
+This project was developed for the CIIS 2025 Hackathon to address the challenge of "Mapping A-Party to B-Party in IPDR Logs." I was part of a 5-member team, "Team Brigade," from VIT Bhopal University.
+
+**My Role:** My primary responsibilities included developing the backend infrastructure with FastAPI, integrating the ML models, and designing the API for the frontend to consume.
+
+## Quickstart
+
+```bash
+# Clone the repository
+git clone https://github.com/sujeetgund/ipdr-graph-engine.git
+cd ipdr-graph-engine
+
+# Backend setup
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+
+# Frontend setup (in a new terminal)
+cd frontend
+npm install
+npm start
+```
