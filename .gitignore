@@ -37,9 +37,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.genkit/*
+# environment variables
 .env*
 
-# firebase
-firebase-debug.log
-firestore-debug.log
+# agent skills
+.agents
+skills-lock.json

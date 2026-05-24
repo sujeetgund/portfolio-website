@@ -12,6 +12,9 @@ import { MermaidDiagram } from "@/components/ui/mermaid-diagram";
 import matter from "gray-matter";
 import "highlight.js/styles/github-dark.css";
 
+import { buildProjectMetadata } from "@/lib/site-metadata";
+import type { Metadata } from "next";
+
 export async function generateStaticParams() {
   const projectsDir = path.join(process.cwd(), "src/content/projects");
   try {
@@ -24,6 +27,38 @@ export async function generateStaticParams() {
   } catch (error) {
     return [];
   }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  const { slug } = resolvedParams;
+
+  const filePath = path.join(
+    process.cwd(),
+    "src/content/projects",
+    `${slug}.mdx`
+  );
+  let fileContent = "";
+  try {
+    fileContent = fs.readFileSync(filePath, "utf-8");
+  } catch (error) {
+    return {
+      title: "Project Not Found",
+    };
+  }
+
+  const { data: frontmatter } = matter(fileContent);
+
+  return buildProjectMetadata({
+    title: frontmatter.title,
+    description: frontmatter.description,
+    slug: slug,
+    tech: frontmatter.tech,
+  });
 }
 
 const extractText = (node: any): string => {

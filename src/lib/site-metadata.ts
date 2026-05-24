@@ -19,7 +19,7 @@ export function buildProjectMetadata(project: ProjectSeoInput): Metadata {
   const projectUrl = `${siteUrl}${projectPath}`;
 
   return {
-    title: project.title,
+    title: `${project.title}`,
     description: project.description,
     keywords: [
       project.title,
@@ -33,23 +33,14 @@ export function buildProjectMetadata(project: ProjectSeoInput): Metadata {
     openGraph: {
       type: "article",
       url: projectUrl,
-      title: project.title,
+      title: `${project.title} | Case Study`,
       description: project.description,
       siteName: "Sujeet Gund Portfolio",
-      images: [
-        {
-          url: `${siteUrl}/sujeetgund.jpg`,
-          width: 800,
-          height: 600,
-          alt: "Sujeet Gund",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: project.title,
+      title: `${project.title} | Case Study`,
       description: project.description,
-      images: [`${siteUrl}/sujeetgund.jpg`],
       creator: "@Sujeet_Gund",
     },
   };
