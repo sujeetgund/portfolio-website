@@ -90,7 +90,7 @@ export default function Image() {
               marginTop: "32px",
             }}
           >
-            {profileData.title}
+            {profileData.title} <br /> {profileData.subtitle}
           </p>
         </div>
 

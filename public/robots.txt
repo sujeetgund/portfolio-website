@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://sujeetgund.in/sitemap.xml
+Sitemap: https://sujeetgund.in/llms.txt

@@ -4,8 +4,8 @@ import { MdEmail } from "react-icons/md";
 
 export const profileData = {
   name: "Sujeet Gund",
-  title:
-    "AI Engineering Student specializing in Machine Learning, LLMs, and intelligent system development.",
+  title: "GenAI Developer · M.Tech AI @ VIT Bhopal",
+  subtitle: "Building agentic systems, RAG pipelines, and LLM-powered products.",
   location: "Barshi, Maharashtra, IN",
   resumeUrl: "/resume",
   image: {
@@ -32,16 +32,16 @@ export const profileData = {
 };
 
 export const aboutData = {
-  title: "Engineering Intelligent Systems for the Real World",
+  title: "Engineering intelligent systems from first principles to production",
   paragraphs: [
-    "I'm an AI Engineering student at VIT Bhopal, specializing in Machine Learning, Deep Learning, and Generative AI. My passion lies in transforming complex data into actionable intelligence.",
-    "I build end-to-end AI systems — from rigorous data preprocessing and custom model architecture to scalable deployment using modern tools like FastAPI, LangChain, and cloud platforms.",
-    "My work focuses on practical problem solving. With hands-on experience in LLMs, agentic workflows, and production-ready ML pipelines, I thrive on creating efficient systems that deliver measurable impact."
+    "Final-year Integrated M.Tech in AI at VIT Bhopal, currently building production AI systems at Divam Technologies.",
+    "I specialize in agentic architectures — LangGraph multi-agent workflows with HITL checkpoints, hybrid RAG with pgvector, and FastAPI backends on Google Cloud Run. The kind of systems that handle real workloads, not just demos.",
+    "Outside work, I ship ambitious side projects: an email processing SaaS, an anonymous geo-social platform, and tooling that pushes LLM orchestration further than most tutorials go."
   ],
   stats: [
     { value: "15+", label: "Advanced AI Projects" },
-    { value: "9.3", label: "University CGPA" },
-    { value: "100%", label: "Commitment to Innovation" }
+    { value: "9.31", label: "University CGPA" },
+    { value: "5+", label: "RAG Pipelines Built" }
   ]
 };
 
@@ -51,7 +51,7 @@ export const experienceData = [
     location: "",
     role: "GenAI Developer",
     period: "Apr 2026 - Present",
-    description: "Developing and optimizing GenAI solutions, leveraging LLMs and agentic AI frameworks to build scalable applications.",
+    description: "Sole architect of Publie.ai, an AI-powered LinkedIn automation platform — built the FastAPI backend, LinkedIn OAuth + publishing API integration, BullMQ scheduled posting, and deployed the full stack on AWS. Also delivered a production LangGraph chat agent with pgvector RAG for an enterprise client.",
   },
 ];
 
@@ -136,42 +136,16 @@ export const projectsData = [
 
 export const skillsData = [
   {
-    category: "Programming & ML",
-    skills: [
-      "Python",
-      "PostgreSQL",
-      "Machine Learning",
-      "NLP",
-      "RAG Systems",
-      "Agentic AI",
-    ],
+    category: "Languages & Databases",
+    skills: ["Python", "TypeScript", "PostgreSQL", "MongoDB"],
   },
   {
-    category: "Frameworks & Tools",
-    skills: [
-      "PyTorch",
-      "TensorFlow",
-      "LangChain",
-      "LangGraph",
-      "FastAPI",
-      "Docker",
-      "Git",
-      "Google ADK",
-      "Langchain",
-      "MongoDB",
-      "AWS",
-      "GCP",
-    ],
+    category: "AI & ML",
+    skills: ["LangGraph", "LangChain", "RAG Systems", "pgvector", "PyTorch", "NLP", "Agentic AI"],
   },
   {
-    category: "Development & Deployment",
-    skills: [
-      "Model Deployment",
-      "API Integration",
-      "Containerization",
-      "GitHub Actions",
-      "Version Control",
-    ],
+    category: "Backend & Infrastructure",
+    skills: ["FastAPI", "Next.js", "Docker", "BullMQ", "AWS", "GCP", "GitHub Actions"],
   },
 ];
 
@@ -207,7 +181,7 @@ export const educationData = [
     institution: "VIT Bhopal University",
     degree: "Integrated M.Tech in Artificial Intelligence",
     period: "Sep 2023 - Mar 2028",
-    details: "CGPA: 9.24 (as of Feb 2026)",
+    details: "CGPA: 9.31",
   },
 ];
 

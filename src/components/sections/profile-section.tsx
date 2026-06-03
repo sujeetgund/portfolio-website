@@ -15,9 +15,14 @@ export function ProfileSection() {
           <h1 className="text-[32px] md:text-[48px] font-bold leading-[1.25] m-0">
             {profileData.name}
           </h1>
-          <p className="text-[22px] font-normal leading-[1.75] text-[rgba(255,255,255,0.7)] max-w-[600px] m-0">
-            {profileData.title}
-          </p>
+          <div className="flex flex-col gap-2 max-w-[600px]">
+            <h2 className="text-[24px] font-bold leading-[1.25] m-0">
+              {profileData.title}
+            </h2>
+            <p className="text-[22px] font-normal leading-[1.75] text-[rgba(255,255,255,0.7)] m-0">
+              {profileData.subtitle}
+            </p>
+          </div>
 
           <div className="flex items-center gap-2 text-[14px] text-[#a7a7a7] mt-2 mb-4 font-bold tracking-wide uppercase">
             <MapPin className="h-4 w-4" aria-hidden="true" />
