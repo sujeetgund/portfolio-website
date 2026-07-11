@@ -1,4 +1,5 @@
 import { educationData } from '@/lib/data';
+import { formatDateRange } from '@/lib/date-utils';
 import { Section } from '@/components/section';
 import { SectionHeader } from '@/components/section-header';
 
@@ -15,7 +16,7 @@ export function EducationSection() {
                   {edu.institution}
                 </h3>
                 <p className="text-[14px] font-bold text-[#757575] mt-1 md:mt-0 uppercase tracking-wide">
-                  {edu.period}
+                  {formatDateRange(edu.startDate, edu.endDate)}
                 </p>
               </div>
               <p className="text-[16px] font-bold text-[#1a1a1a] leading-[1.5] m-0">

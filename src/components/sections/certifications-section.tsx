@@ -1,4 +1,5 @@
 import { certificationsData } from "@/lib/data";
+import { formatMonthYear } from "@/lib/date-utils";
 import { Section } from "@/components/section";
 import { SectionHeader } from "@/components/section-header";
 import Link from "next/link";

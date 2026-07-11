@@ -1,8 +1,19 @@
 import { VscGithub } from "react-icons/vsc";
 import { ImLinkedin } from "react-icons/im";
 import { MdEmail } from "react-icons/md";
+import type { 
+  ProfileData, 
+  AboutData, 
+  Experience, 
+  Project, 
+  SkillCategory, 
+  Certification, 
+  Education, 
+  NavLink, 
+  SiteConfig 
+} from "@/types/data.types";
 
-export const profileData = {
+export const profileData: ProfileData = {
   name: "Sujeet Gund",
   title: "GenAI Developer · M.Tech AI @ VIT Bhopal",
   subtitle: "Building agentic systems, RAG pipelines, and LLM-powered products.",
@@ -31,7 +42,7 @@ export const profileData = {
   ],
 };
 
-export const aboutData = {
+export const aboutData: AboutData = {
   title: "Engineering intelligent systems from first principles to production",
   paragraphs: [
     "Final-year Integrated M.Tech in AI at VIT Bhopal, currently building production AI systems at Divam Technologies.",
@@ -45,17 +56,18 @@ export const aboutData = {
   ]
 };
 
-export const experienceData = [
+export const experienceData: Experience[] = [
   {
     company: "Divam Technologies",
     location: "",
     role: "GenAI Developer",
-    period: "Apr 2026 - Present",
+    startDate: "2026-04-01",
+    endDate: null,
     description: "Sole architect of Publie.ai, an AI-powered LinkedIn automation platform — built the FastAPI backend, LinkedIn OAuth + publishing API integration, BullMQ scheduled posting, and deployed the full stack on AWS. Also delivered a production LangGraph chat agent with pgvector RAG for an enterprise client.",
   },
 ];
 
-export const projectsData = [
+export const projectsData: Project[] = [
   {
     title: "LinkedIn Post Generator Agent System",
     slug: "linkedin-post-generator-agent-system",
@@ -134,7 +146,7 @@ export const projectsData = [
   },
 ];
 
-export const skillsData = [
+export const skillsData: SkillCategory[] = [
   {
     category: "Languages & Databases",
     skills: ["Python", "TypeScript", "PostgreSQL", "MongoDB"],
@@ -149,43 +161,44 @@ export const skillsData = [
   },
 ];
 
-export const certificationsData = [
+export const certificationsData: Certification[] = [
   {
     name: "Complete Data Science, Machine Learning, DL, NLP Bootcamp",
     issuer: "Udemy",
-    year: "Dec 2025",
+    date: "2025-12-01",
     url: "https://www.udemy.com/certificate/UC-e84ea371-05b8-45d4-92fc-4853e8f8d642/",
   },
   {
     name: "Applied Machine Learning in Python",
     issuer: "University of Michigan",
-    year: "Dec 2024",
+    date: "2024-12-01",
     url: "https://coursera.org/verify/RSR0JIUKTTW4",
   },
   {
     name: "Supervised Machine Learning: Regression and Classification",
     issuer: "DeepLearning.AI",
-    year: "Jul 2023",
+    date: "2023-07-01",
     url: "https://www.coursera.org/verify/M98N3YQCSD2U",
   },
   {
     name: "AWS Cloud Essentials",
     issuer: "Amazon Web Services (AWS)",
-    year: "Jun 2023",
+    date: "2023-06-01",
     url: "https://www.credly.com/badges/430abe70-f242-4db2-b47a-42542fbc0335/public_url",
   },
 ];
 
-export const educationData = [
+export const educationData: Education[] = [
   {
     institution: "VIT Bhopal University",
     degree: "Integrated M.Tech in Artificial Intelligence",
-    period: "Sep 2023 - Mar 2028",
+    startDate: "2023-09-01",
+    endDate: "2028-03-01",
     details: "CGPA: 9.31",
   },
 ];
 
-export const navLinks = [
+export const navLinks: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/#projects" },
   { label: "Skills", href: "/#skills" },
@@ -194,8 +207,11 @@ export const navLinks = [
   { label: "Resume", href: "/resume" },
 ];
 
-export const socialLinks = [
-  { label: "GitHub", href: "https://github.com/sujeetgund" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/sujeetgund" },
-  { label: "Email", href: "mailto:sujeetgund@gmail.com" },
-];
+export const siteConfig: SiteConfig = {
+  title: "Sujeet Gund | GenAI Developer",
+  description: profileData.subtitle,
+  siteUrl: process.env.SITE_URL || "https://sujeetgund.in",
+  creator: "Sujeet Gund",
+  twitterHandle: "@Sujeet_Gund",
+  defaultKeywords: ["AI Projects", "Sujeet Gund", "GenAI", "Machine Learning"],
+};

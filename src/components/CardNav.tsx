@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ArrowRight } from "lucide-react";
-import { navLinks, socialLinks } from "@/lib/data";
+import { navLinks, profileData } from "@/lib/data";
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -124,16 +124,16 @@ const Navbar: React.FC = () => {
           <div className="mt-auto border-t border-[#5e5e5e] pt-8 flex flex-col gap-6">
             <h3 className="text-[12px] font-bold text-[#757575] uppercase tracking-widest">Connect</h3>
             <div className="flex flex-col gap-4">
-              {socialLinks.map((link, idx) => (
+              {profileData.contacts.map((contact, idx) => (
                 <Link
                   key={idx}
-                  href={link.href}
+                  href={contact.value}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[16px] text-[#ffffff] hover:text-[#76b900] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {link.label}
+                  {contact.label}
                 </Link>
               ))}
             </div>

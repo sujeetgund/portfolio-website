@@ -14,19 +14,12 @@ import "highlight.js/styles/github-dark.css";
 
 import { buildProjectMetadata } from "@/lib/site-metadata";
 import type { Metadata } from "next";
+import { projectsData } from "@/lib/data";
 
 export async function generateStaticParams() {
-  const projectsDir = path.join(process.cwd(), "src/content/projects");
-  try {
-    const files = fs.readdirSync(projectsDir);
-    return files
-      .filter((file) => file.endsWith(".mdx"))
-      .map((file) => ({
-        slug: file.replace(".mdx", ""),
-      }));
-  } catch (error) {
-    return [];
-  }
+  return projectsData.map((project) => ({
+    slug: project.slug,
+  }));
 }
 
 export async function generateMetadata({
@@ -37,27 +30,18 @@ export async function generateMetadata({
   const resolvedParams = await params;
   const { slug } = resolvedParams;
 
-  const filePath = path.join(
-    process.cwd(),
-    "src/content/projects",
-    `${slug}.mdx`
-  );
-  let fileContent = "";
-  try {
-    fileContent = fs.readFileSync(filePath, "utf-8");
-  } catch (error) {
+  const project = projectsData.find((p) => p.slug === slug);
+  if (!project) {
     return {
       title: "Project Not Found",
     };
   }
 
-  const { data: frontmatter } = matter(fileContent);
-
   return buildProjectMetadata({
-    title: frontmatter.title,
-    description: frontmatter.description,
+    title: project.title,
+    description: project.description,
     slug: slug,
-    tech: frontmatter.tech,
+    tech: project.tech,
   });
 }
 
@@ -142,6 +126,11 @@ export default async function ProjectPage({
   const resolvedParams = await params;
   const { slug } = resolvedParams;
 
+  const project = projectsData.find((p) => p.slug === slug);
+  if (!project) {
+    notFound();
+  }
+
   const filePath = path.join(
     process.cwd(),
     "src/content/projects",
@@ -151,18 +140,10 @@ export default async function ProjectPage({
   try {
     fileContent = fs.readFileSync(filePath, "utf-8");
   } catch (error) {
-    notFound();
+    // MDX file is optional now, just catch error
   }
 
-  const { data: frontmatter, content: mdxSource } = matter(fileContent);
-
-  const project = {
-    title: frontmatter.title,
-    description: frontmatter.description,
-    github: frontmatter.github,
-    live: frontmatter.live,
-    tech: frontmatter.tech || [],
-  };
+  const { content: mdxSource } = matter(fileContent);
 
   return (
     <div className="w-full bg-[#ffffff] min-h-screen text-[#1a1a1a]">

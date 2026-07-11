@@ -1,4 +1,5 @@
 import { experienceData } from '@/lib/data';
+import { formatDateRange } from '@/lib/date-utils';
 
 export function ExperienceSection() {
   return (
@@ -16,7 +17,7 @@ export function ExperienceSection() {
                   {item.company}
                 </h3>
                 <p className="text-[14px] font-bold text-[#757575] mt-2 uppercase tracking-wide">
-                  {item.period}
+                  {formatDateRange(item.startDate, item.endDate)}
                 </p>
                 {item.location && (
                   <p className="text-[14px] font-normal text-[#757575] mt-1">

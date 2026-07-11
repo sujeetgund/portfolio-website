@@ -3,7 +3,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Inter } from "next/font/google";
 import { Newsreader } from "next/font/google";
-import { siteMetadata } from "@/lib/site-metadata";
+import { siteConfig } from "@/lib/data";
 import { GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -12,40 +12,32 @@ const newsreader = Newsreader({
   variable: "--font-newsreader",
 });
 
-const siteUrl = process.env.SITE_URL || "https://sujeetgund.in";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: "Sujeet Gund | AI Engineer",
-    template: "%s | Sujeet Gund",
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.creator}`,
   },
-  description: siteMetadata.title,
-  keywords: [
-    "AI Engineer",
-    "Machine Learning",
-    "Generative AI",
-    "Portfolio",
-    "Sujeet Gund",
-  ],
-  authors: [{ name: "Sujeet Gund", url: siteUrl }],
-  creator: "Sujeet Gund",
+  description: siteConfig.description,
+  keywords: siteConfig.defaultKeywords,
+  authors: [{ name: siteConfig.creator, url: siteConfig.siteUrl }],
+  creator: siteConfig.creator,
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteUrl,
-    title: "Sujeet Gund | AI Engineer",
-    description: siteMetadata.title,
-    siteName: "Sujeet Gund Portfolio",
+    url: siteConfig.siteUrl,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    siteName: siteConfig.title,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sujeet Gund | AI Engineer",
-    description: siteMetadata.title,
-    creator: "@Sujeet_Gund",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    creator: siteConfig.twitterHandle,
   },
 };
 
