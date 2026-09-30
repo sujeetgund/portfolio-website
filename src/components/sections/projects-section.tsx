@@ -20,14 +20,16 @@ export function ProjectsSection() {
       className="w-full bg-[#000000] text-[#ffffff] py-[80px] px-6 md:px-12"
     >
       <div className="max-w-[1280px] mx-auto w-full">
-        <div className="flex items-center gap-4 mb-16">
-          <h2 className="text-[36px] md:text-[48px] font-bold leading-[1.25] tracking-tight text-[#ffffff] m-0">
+        <Link
+          href="/projects"
+          className="hover:text-[#76b900] text-[#ffffff] transition-colors flex items-center gap-2 mb-16 cursor-pointer w-fit"
+          aria-label="View all projects"
+        >
+          <h2 className="text-[36px] md:text-[48px] font-bold leading-[1.25] tracking-tight">
             Featured Projects
           </h2>
-          <Link href="/projects" className="text-[#76b900] hover:text-[#ffffff] transition-colors" aria-label="View all projects">
-            <LuArrowUpRight className="h-8 w-8 md:h-10 md:w-10" />
-          </Link>
-        </div>
+          <LuArrowUpRight className="h-8 w-8 md:h-10 md:w-10" />
+        </Link>
 
         <div className="flex flex-col border-t border-[#5e5e5e]">
           {projectsToShow.map((project: Project, index: number) => {
@@ -69,15 +71,24 @@ export function ProjectsSection() {
                 </div>
 
                 {/* Actions Block */}
-                <div className="lg:w-[200px] shrink-0 flex flex-row lg:flex-col items-center lg:items-start gap-4 mt-6 lg:mt-0">
+                <div className="lg:w-[200px] shrink-0 flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-stretch gap-3 mt-4 lg:mt-0 justify-start">
+                  {project.slug && (
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="bg-[#76b900] hover:bg-[#5a8d00] text-[#ffffff] font-bold text-[14px] leading-[1.25] px-4 py-[10px] h-[40px] rounded-[4px] inline-flex items-center justify-center transition-colors w-full sm:w-auto lg:w-full shrink-0 shadow-sm"
+                    >
+                      Read More
+                      <LuArrowUpRight className="ml-1.5 h-4 w-4 stroke-[2.5]" />
+                    </Link>
+                  )}
                   {project.github && (
                     <Link
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#ffffff] hover:text-[#76b900] text-[15px] font-normal inline-flex items-center transition-colors"
+                      className="bg-[#18181b] text-[#ffffff] border border-[#3f3f46] hover:border-[#76b900] hover:text-[#76b900] font-semibold text-[14px] leading-[1.25] px-4 py-[10px] h-[40px] rounded-[4px] inline-flex items-center justify-center transition-colors w-full sm:w-auto lg:w-full shrink-0"
                     >
-                      <VscGithub className="mr-3 h-5 w-5" />
+                      <VscGithub className="mr-2 h-4 w-4" />
                       See Code
                     </Link>
                   )}
@@ -86,19 +97,10 @@ export function ProjectsSection() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#ffffff] hover:text-[#76b900] text-[15px] font-normal inline-flex items-center transition-colors"
+                      className="bg-[#18181b] text-[#ffffff] border border-[#3f3f46] hover:border-[#76b900] hover:text-[#76b900] font-semibold text-[14px] leading-[1.25] px-4 py-[10px] h-[40px] rounded-[4px] inline-flex items-center justify-center transition-colors w-full sm:w-auto lg:w-full shrink-0"
                     >
-                      <RxExternalLink className="mr-3 h-5 w-5" />
+                      <RxExternalLink className="mr-2 h-4 w-4" />
                       Live Demo
-                    </Link>
-                  )}
-                  {project.slug && (
-                    <Link
-                      href={`/projects/${project.slug}`}
-                      className="bg-[#76b900] text-[#ffffff] hover:bg-[#5a8d00] font-bold text-[16px] leading-[1.25] px-[24px] py-[11px] h-[44px] rounded-[2px] inline-flex items-center justify-center transition-colors w-full sm:w-auto mt-2"
-                    >
-                      Read More
-                      <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   )}
                 </div>

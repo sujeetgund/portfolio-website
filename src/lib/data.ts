@@ -52,7 +52,7 @@ export const aboutData: AboutData = {
   ],
   stats: [
     { value: "15+", label: "Advanced AI Projects" },
-    { value: "9.31", label: "University CGPA" },
+    { value: "9.33", label: "University CGPA" },
     { value: "5+", label: "RAG Pipelines Built" },
   ],
 };
@@ -60,53 +60,20 @@ export const aboutData: AboutData = {
 export const experienceData: Experience[] = [
   {
     company: "Divam Technologies",
-    location: "Remote / Hybrid",
-    role: "GenAI Developer Intern",
-    startDate: "2026-04-01",
-    endDate: null,
-    description:
-      "Architecting production AI platforms, omni-channel customer support agents, and multi-tenant SaaS products. Spearheading full-stack GenAI engineering with FastAPI, LangGraph, LiveKit, BullMQ, and AWS.",
-    projects: [
+    companyUrl: "https://divamtech.com",
+    location: "Remote",
+    roles: [
       {
-        title: "OmniAgent",
-        badge: "Active Project · Omni-Channel Support & Marketing",
-        url: "https://omni-agent.publie.ai",
-        isCurrent: true,
+        title: "GenAI Developer Intern",
+        startDate: "2026-04-01",
+        endDate: null,
         description:
-          "Autonomous customer support and outbound marketing platform orchestrating WhatsApp chats, WhatsApp calls, and voice calls.",
-        highlights: [
-          "Orchestrates real-time WhatsApp chat & AI voice calls via Meta Cloud API, LiveKit, and Plivo",
-          "Knowledge base RAG integration for instant customer query resolution with automated human escalation",
-          "Executes broadcast messaging campaigns with automated response handling and analytics",
+          "Led GenAI development across real-time voice AI, multi-agent graph workflows, and enterprise RAG systems from concept to production AWS deployment.",
+        bulletPoints: [
+          "Architected multi-agent state graphs using LangGraph to automate complex decision workflows in [Publie.ai](https://publie.ai) — implemented intent routing (**<200ms decision latency**) and HITL checkpoints yielding an **85%+ autonomous resolution rate**.",
+          "Engineered real-time voice & chat agents integrating Meta Cloud API, LiveKit, and Plivo for [OmniAgent](https://omni-agent.publie.ai) — built resilient webhook pipelines with BullMQ queues guaranteeing **sub-second response latency** and **zero-drop event delivery under high concurrent (~1200rps)** traffic.",
+          "Built context-aware lead capture agent for [Newton On Mars](https://newtononmars.com) using hybrid RAG over live site content — accelerated client technical discovery and automated PRD draft generation (**~70% reduction in onboarding time**).",
         ],
-        tech: ["Meta Cloud API", "LiveKit", "WhatsApp API", "Plivo", "LangGraph RAG", "FastAPI"],
-      },
-      {
-        title: "Publie.ai",
-        badge: "Multi-Tenant LinkedIn Growth SaaS",
-        url: "https://publie.ai",
-        isCurrent: false,
-        description:
-          "Enterprise LinkedIn authority builder and content marketing SaaS powered by custom AI persona engines.",
-        highlights: [
-          "Engineered 12-Week AI Authority Sprints tailoring content strategy to user background, writing style & portfolio",
-          "Integrated official LinkedIn OAuth, publishing APIs, BullMQ scheduled posting, and analytics",
-          "Built multi-tenant workspace management, team member invites, and media-rich post generators",
-        ],
-        tech: ["FastAPI", "LinkedIn APIs", "BullMQ", "AWS", "PostgreSQL", "Next.js"],
-      },
-      {
-        title: "Newton On Mars",
-        badge: "AI Lead Capture & Tech Consultancy Agent",
-        url: "https://newtononmars.com",
-        isCurrent: false,
-        description:
-          "Context-aware AI lead capture and technical consultancy chat agent for agency and SaaS sales.",
-        highlights: [
-          "Grounds responses in live website content including blogs, services, case studies, and contact info",
-          "Automates client discovery, technical requirement gathering, and initial PRD draft generation",
-        ],
-        tech: ["FastAPI", "LangChain", "RAG", "Python", "Next.js"],
       },
     ],
   },
@@ -233,7 +200,7 @@ export const educationData: Education[] = [
     degree: "Integrated M.Tech in Artificial Intelligence",
     startDate: "2023-09-01",
     endDate: "2028-03-01",
-    details: "CGPA: 9.31",
+    details: "CGPA: 9.33",
   },
 ];
 

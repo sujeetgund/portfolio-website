@@ -40,14 +40,30 @@ export interface ExperienceProject {
   isCurrent?: boolean;
 }
 
-export interface Experience {
-  company: string;
-  location?: string;
-  role: string;
+export interface ExperienceBullet {
+  text: string;
+  link?: {
+    label: string;
+    url: string;
+  };
+  badge?: string;
+}
+
+export interface ExperienceRole {
+  title: string;
   startDate: string; // YYYY-MM-DD
   endDate?: string | null; // YYYY-MM-DD, null for Present
-  description: string;
-  projects?: ExperienceProject[];
+  description?: string;
+  bullets?: ExperienceBullet[];
+  bulletPoints?: string[];
+}
+
+export interface Experience {
+  company: string;
+  companyUrl?: string;
+  location?: string;
+  // Primary roles progression list
+  roles: ExperienceRole[];
 }
 
 export interface Project {
