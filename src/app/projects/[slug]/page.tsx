@@ -7,14 +7,19 @@ import { VscGithub } from "react-icons/vsc";
 import { RxExternalLink } from "react-icons/rx";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 import rehypeHighlight from "rehype-highlight";
+import rehypeKatex from "rehype-katex";
 import { MermaidDiagram } from "@/components/ui/mermaid-diagram";
 import matter from "gray-matter";
 import "highlight.js/styles/github-dark.css";
+import "katex/dist/katex.min.css";
 
 import { buildProjectMetadata } from "@/lib/site-metadata";
 import type { Metadata } from "next";
 import { projectsData } from "@/lib/data";
+import { ProjectMetrics } from "@/components/project-metrics";
+import { ZoomableImage } from "@/components/ui/zoomable-image";
 
 export async function generateStaticParams() {
   return projectsData.map((project) => ({
@@ -25,7 +30,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const resolvedParams = await params;
   const { slug } = resolvedParams;
@@ -58,7 +63,7 @@ const extractText = (node: any): string => {
 const components = {
   h2: (props: any) => (
     <h2
-      className="text-[24px] font-bold mt-12 mb-6 text-[#1a1a1a] tracking-tight border-b border-[#cccccc] pb-2"
+      className="text-[24px] md:text-[28px] font-bold mt-12 mb-6 text-[#1a1a1a] tracking-tight border-b border-[#e5e5e5] pb-3"
       {...props}
     />
   ),
@@ -66,49 +71,95 @@ const components = {
     <h3 className="text-[20px] font-bold mt-8 mb-4 text-[#1a1a1a]" {...props} />
   ),
   p: (props: any) => (
-    <p className="text-[16px] leading-[1.67] text-[#1a1a1a] mb-6" {...props} />
+    <p className="text-[16px] leading-[1.7] text-[#333333] mb-6" {...props} />
   ),
   ul: (props: any) => (
     <ul
-      className="list-disc pl-6 mb-6 text-[16px] leading-[1.67] text-[#1a1a1a]"
+      className="list-disc pl-6 mb-6 text-[16px] leading-[1.7] text-[#333333] space-y-2"
       {...props}
     />
   ),
   ol: (props: any) => (
     <ol
-      className="list-decimal pl-6 mb-6 text-[16px] leading-[1.67] text-[#1a1a1a]"
+      className="list-decimal pl-6 mb-6 text-[16px] leading-[1.7] text-[#333333] space-y-2"
       {...props}
     />
   ),
-  li: (props: any) => <li className="mb-2" {...props} />,
+  li: (props: any) => <li className="mb-1" {...props} />,
   a: (props: any) => (
     <a
-      className="text-[#0046a4] hover:text-[#002f6c] underline transition-colors"
+      className="text-[#0046a4] hover:text-[#002f6c] font-semibold underline decoration-[#0046a4]/30 hover:decoration-[#0046a4] transition-all"
       {...props}
     />
   ),
   strong: (props: any) => (
     <strong className="font-bold text-[#1a1a1a]" {...props} />
   ),
-  pre: (props: any) => (
-    <pre
-      className="bg-[#1a1a1a] text-[#ffffff] p-4 rounded-[2px] overflow-x-auto mb-6 text-[14px]"
+  blockquote: (props: any) => (
+    <blockquote
+      className="my-6 border-l-4 border-[#76b900] bg-[#f8faf6] px-5 py-3.5 rounded-r-[4px] text-[#222222] italic leading-[1.6] [&_p]:m-0 [&_p]:mb-0 [&_p]:p-0"
       {...props}
     />
   ),
-  code: ({ node, inline, className, children, ...props }: any) => {
+  img: (props: any) => <ZoomableImage src={props.src} alt={props.alt} />,
+  table: (props: any) => (
+    <div className="my-8 overflow-x-auto rounded-[8px] border border-[#e0e0e0] shadow-sm">
+      <table
+        className="w-full text-left text-[14px] border-collapse bg-[#ffffff]"
+        {...props}
+      />
+    </div>
+  ),
+  thead: (props: any) => (
+    <thead
+      className="bg-[#1a1a1a] text-[#ffffff] font-bold uppercase tracking-wider text-[12px]"
+      {...props}
+    />
+  ),
+  tbody: (props: any) => (
+    <tbody className="divide-y divide-[#eeeeee]" {...props} />
+  ),
+  tr: (props: any) => (
+    <tr className="hover:bg-[#f9f9f9] transition-colors" {...props} />
+  ),
+  th: (props: any) => (
+    <th
+      className="px-5 py-3.5 text-[#ffffff] font-bold border-b border-[#333333]"
+      {...props}
+    />
+  ),
+  td: (props: any) => (
+    <td className="px-5 py-4 text-[#333333] leading-relaxed" {...props} />
+  ),
+  pre: (props: any) => (
+    <pre
+      className="bg-[#1a1a1a] text-[#ffffff] p-5 rounded-[6px] overflow-x-auto mb-6 text-[14px] border border-[#333333] shadow-md"
+      {...props}
+    />
+  ),
+  code: ({ node, className, children, ...props }: any) => {
     const match = /language-(\w+)/.exec(className || "");
-    if (!inline && match && match[1] === "mermaid") {
+    const isBlock =
+      match ||
+      node?.parent?.tagName === "pre" ||
+      String(children).includes("\n");
+
+    if (match && match[1] === "mermaid") {
       const chartCode = extractText(children).replace(/\n$/, "");
       return <MermaidDiagram chart={chartCode} />;
     }
-    return !inline ? (
-      <code className={className} {...props}>
-        {children}
-      </code>
-    ) : (
+
+    if (isBlock) {
+      return (
+        <code className={className} {...props}>
+          {children}
+        </code>
+      );
+    }
+
+    return (
       <code
-        className="bg-[#f0f0f0] text-[#1a1a1a] px-1 py-0.5 rounded-[2px] text-[14px]"
+        className="bg-[#f0f4eb] text-[#2b4c03] font-sans font-semibold text-[13.5px] px-2 py-0.5 rounded-[3px] border border-[#d2e8b8] inline-block my-0.5"
         {...props}
       >
         {children}
@@ -120,7 +171,7 @@ const components = {
 export default async function ProjectPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   // Fix for Next.js 15: params is now a Promise
   const resolvedParams = await params;
@@ -143,7 +194,7 @@ export default async function ProjectPage({
     // MDX file is optional now, just catch error
   }
 
-  const { content: mdxSource } = matter(fileContent);
+  const { content: mdxSource, data: frontmatterData } = matter(fileContent);
 
   return (
     <div className="w-full bg-[#ffffff] min-h-screen text-[#1a1a1a]">
@@ -197,12 +248,12 @@ export default async function ProjectPage({
       <div className="max-w-[800px] mx-auto w-full px-6 py-[80px]">
         {/* Tech Stack Banner */}
         {project.tech && project.tech.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-12 p-6 bg-[#f5f5f5] border border-[#cccccc] rounded-[2px]">
+          <div className="flex flex-wrap gap-2 mb-10 p-6 bg-[#f8f9fa] border border-[#e2e8f0] rounded-[4px] shadow-sm">
             <span className="font-bold text-[#1a1a1a] mr-2">Tech Stack:</span>
             {project.tech.map((tech: string, index: number) => (
               <span
                 key={index}
-                className="text-[#1a1a1a] text-[13px] font-bold bg-[#ffffff] border border-[#cccccc] px-2 py-1 rounded-[2px]"
+                className="text-[#1a1a1a] text-[13px] font-bold bg-[#ffffff] border border-[#cbd5e1] px-2.5 py-1 rounded-[2px]"
               >
                 {tech}
               </span>
@@ -210,10 +261,15 @@ export default async function ProjectPage({
           </div>
         )}
 
+        {/* Stats Component */}
+        {frontmatterData && frontmatterData.stats && (
+          <ProjectMetrics metrics={frontmatterData.stats} />
+        )}
+
         <article className="prose prose-lg max-w-none">
           <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeHighlight]}
+            remarkPlugins={[remarkGfm, remarkMath]}
+            rehypePlugins={[rehypeHighlight, rehypeKatex]}
             components={components}
           >
             {mdxSource}

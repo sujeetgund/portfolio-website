@@ -120,3 +120,125 @@
 .card-nav-cta-button:hover {
   opacity: 0.85;
 }
+
+/* KaTeX rendering & fraction line alignment fixes */
+.katex-display {
+  margin: 1.5em 0 !important;
+  padding: 0.75em 1em;
+  background-color: #f8faf6;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.katex {
+  font-size: 1.15em !important;
+  text-indent: 0;
+  text-rendering: auto;
+}
+
+.katex .katex-html {
+  display: inline-block;
+}
+
+.katex .base {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.katex .frac-line {
+  border-bottom-width: 1.5px !important;
+  border-bottom-style: solid !important;
+  border-bottom-color: currentColor !important;
+  min-height: 1.5px !important;
+}
+
+.katex .bottom {
+  padding-top: 4px !important;
+}
+
+.katex .top {
+  padding-bottom: 4px !important;
+}
+
+/* Disable Tailwind typography default backticks and monospace on inline code */
+.prose code::before {
+  content: "" !important;
+}
+.prose code::after {
+  content: "" !important;
+}
+
+.prose code:not(pre code) {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif !important;
+  font-weight: 600 !important;
+  background-color: #f0f4eb !important;
+  color: #2b4c03 !important;
+  padding: 0.15rem 0.45rem !important;
+  border-radius: 3px !important;
+  border: 1px solid #d2e8b8 !important;
+  font-size: 0.875em !important;
+  display: inline-block !important;
+  margin: 0 0.15rem !important;
+}
+
+/* Remove default paragraph margins inside blockquotes */
+.prose blockquote p,
+blockquote p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+
+/* Mermaid SVG Diagram Custom Styling */
+.mermaid svg {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif !important;
+  max-width: 100% !important;
+}
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node polygon {
+  stroke-width: 1.5px !important;
+}
+.mermaid .edgePath .path {
+  stroke: #76b900 !important;
+  stroke-width: 2px !important;
+}
+.mermaid .arrowheadPath {
+  fill: #76b900 !important;
+}
+.mermaid .label text {
+  fill: #ffffff !important;
+}
+
+/* Edge Label Text Padding & Background styling */
+.mermaid .edgeLabel {
+  background-color: #0f172a !important;
+  border-radius: 4px !important;
+}
+
+.mermaid .edgeLabel rect {
+  fill: #0f172a !important;
+  stroke: #334155 !important;
+  stroke-width: 1px !important;
+  rx: 4px !important;
+  ry: 4px !important;
+  opacity: 0.95 !important;
+}
+
+.mermaid .edgeLabel span,
+.mermaid .edgeLabel p,
+.mermaid .edgeLabel text {
+  color: #e2e8f0 !important;
+  fill: #e2e8f0 !important;
+  padding: 4px 10px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+}
+
+
+
+
+

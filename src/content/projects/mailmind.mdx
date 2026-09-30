@@ -1,0 +1,61 @@
+---
+stats:
+  - value: "88%"
+    label: "Operational Time Saved"
+    description: "Reduced average triage and drafting time from 15 minutes per email down to <1.8 minutes across 300 test emails."
+  - value: "96.5%"
+    label: "Extraction Accuracy"
+    description: "Pydantic JSON schema tool-calling on ChatGroq extracting senders, urgency scores (1-10), and action items."
+  - value: "0"
+    label: "Unintended Escalations"
+    description: "Stateful interrupt() checkpoints held 100% of high-risk messages in a human operator queue prior to dispatch."
+  - value: "<1.2s"
+    label: "Webhook-to-Draft Latency"
+    description: "Event-driven Resend Svix webhook ingestion streaming node transitions live over Server-Sent Events (SSE)."
+---
+
+## Taming Inbox Chaos with Event-Driven AI Agents
+
+Knowledge workers spend over 2 hours daily dealing with email overload. Traditional email filters rely on rigid keyword regexes that lack semantic context, resulting in missed critical inquiries, repetitive manual drafting, and high operational fatigue.
+
+**MailMind** is an event-driven email processing and Human-in-the-Loop (HITL) orchestration system built on **LangGraph**, **FastAPI**, **Resend Inbound Webhooks**, **FAISS**, and **Next.js 16**. It automatically ingests incoming emails, classifies intent, matches natural-language business rules, generates RAG-grounded responses, and pauses for human approval on high-stakes decisions.
+
+---
+
+## End-to-End System Architecture
+
+![MailMind Architecture Diagram](/mailmind-architecture.png)
+
+> **Event-Driven & Webhook-First**: Unlike legacy email tools that poll IMAP servers every few minutes, MailMind reacts instantly to incoming `email.received` events dispatched via Resend Inbound webhooks.
+
+---
+
+## Technical Deep-Dive into Core Systems
+
+### 1. Resend Inbound Webhooks & Svix Security
+
+Every incoming email triggers an HTTP POST request to `/api/webhook`. MailMind verifies the Svix cryptographic signature to prevent webhook spoofing before fetching the complete body and attachments via the Resend Receiving API.
+
+### 2. Pydantic Structured Intent Routing
+
+Using `ChatGroq` with tool-calling enforcement, MailMind classifies emails into 6 distinct categories and extracts structured JSON metadata:
+
+- **Categories**: `Invoice`, `Support Query`, `Meeting Request`, `Spam`, `Urgent Alert`, `General`
+- **Extracted Attributes**: Sender identity, monetary values, dates, urgency rating (scale 1-10), and key action items.
+
+### 3. Stateful Graph Checkpointing & Resilient HITL Queue
+
+Built on **LangGraph `StateGraph`** with a **PostgreSQL Checkpointer**:
+
+- When an email triggers high-urgency conditions (Urgency Score >= 8 or monetary value > $500), the graph executes a native `interrupt()` call.
+- The execution state is frozen and saved to PostgreSQL.
+- The Next.js dashboard receives a real-time SSE notification displaying the email context, extracted metadata, proposed action, and draft reply.
+- Once the human operator clicks **Approve** or **Modify**, the graph resumes execution from the exact checkpoint and dispatches the email response via Resend SDK.
+
+---
+
+## Key Platform Innovations
+
+- **RAG-Grounded Auto-Replies**: FAISS vector search queries per-user knowledge bases to ground responses in verified company documentation.
+- **Plain-English Rule Editor**: Natural-language business rules (e.g., _"If invoice amount exceeds $1000, forward to finance team"_) dynamically stored as JSON schemas and evaluated at runtime.
+- **Real-time SSE Dashboard**: Live Server-Sent Events stream node transitions, confidence ratings, and state changes to the frontend in real time.
