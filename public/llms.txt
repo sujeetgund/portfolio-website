@@ -17,7 +17,7 @@ Outside work, I ship ambitious side projects: an email processing SaaS, an anony
 - Resume: https://sujeetgund.in/resume
 
 ## Experience
-- GenAI Developer at Divam Technologies (Apr 2026 - Present): Sole architect of Publie.ai, an AI-powered LinkedIn automation platform — built the FastAPI backend, LinkedIn OAuth + publishing API integration, BullMQ scheduled posting, and deployed the full stack on AWS. Also delivered a production LangGraph chat agent with pgvector RAG for an enterprise client.
+- GenAI Developer Intern at Divam Technologies (Apr 2026 - Present): Sole architect of Publie.ai, an AI-powered LinkedIn automation platform — built the FastAPI backend, LinkedIn OAuth + publishing API integration, BullMQ scheduled posting, and deployed the full stack on AWS. Also delivered a production LangGraph chat agent with pgvector RAG for an enterprise client.
 
 ## Projects
 - GroundedAI — Self-Correcting Multi-Source Agentic RAG: A self-evaluating agentic RAG platform powered by LangGraph, Reciprocal Rank Fusion (RRF) pgvector + tsvector hybrid search, and local zero-cost DeBERTa v3 NLI faithfulness scoring to eliminate hallucinations (94.2% grounding precision, <45ms CPU NLI latency). (LangGraph, FastAPI, pgvector, Python, Next.js 16, Cross-Encoder DeBERTa, Redis, Tavily API) - https://github.com/sujeetgund/grounded-ai - https://sujeetgund.in/projects/grounded-ai

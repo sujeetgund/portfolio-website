@@ -30,13 +30,24 @@ export interface AboutData {
   stats: Stat[];
 }
 
+export interface ExperienceProject {
+  title: string;
+  badge?: string;
+  url?: string;
+  description: string;
+  highlights: string[];
+  tech?: string[];
+  isCurrent?: boolean;
+}
+
 export interface Experience {
   company: string;
-  location: string;
+  location?: string;
   role: string;
   startDate: string; // YYYY-MM-DD
   endDate?: string | null; // YYYY-MM-DD, null for Present
   description: string;
+  projects?: ExperienceProject[];
 }
 
 export interface Project {
