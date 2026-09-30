@@ -1,6 +1,6 @@
 # Sujeet Gund
-GenAI Developer · M.Tech AI @ VIT Bhopal
-Building agentic systems, RAG pipelines, and LLM-powered products.
+Agentic AI Engineer · M.Tech AI @ VIT Bhopal
+Building autonomous agentic systems, production RAG pipelines, and LLM-powered infrastructure.
 
 ## About
 Engineering intelligent systems from first principles to production.
