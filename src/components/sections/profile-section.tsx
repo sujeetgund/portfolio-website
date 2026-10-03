@@ -21,7 +21,7 @@ export function ProfileSection() {
             <h2 className="text-[24px] font-bold leading-[1.25] m-0">
               {profileData.title}
             </h2>
-            <p className="text-[22px] font-normal leading-[1.75] text-[rgba(255,255,255,0.7)] m-0">
+            <p className="text-[22px] font-normal leading-[1.5] text-[rgba(255,255,255,0.7)] m-0">
               {profileData.subtitle}
             </p>
           </div>
@@ -33,15 +33,15 @@ export function ProfileSection() {
 
           <div className="flex flex-row items-center gap-2 flex-wrap">
             {/* Primary CTA button */}
-            <a
+            <Link
               href={profileData.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#76b900] text-[#ffffff] hover:bg-[#5a8d00] font-bold text-[16px] leading-[1.25] px-5 sm:px-6 py-[11px] h-[44px] rounded-[2px] inline-flex items-center justify-center transition-colors shrink-0"
+              className="bg-[#76b900] text-black hover:bg-[#5a8d00] font-bold text-[16px] leading-[1.25] px-5 sm:px-6 py-[11px] h-[44px] rounded-[2px] inline-flex items-center justify-center transition-colors shrink-0"
             >
               <ArrowDownToLine className="h-4 w-4 mr-2" aria-hidden="true" />
               Resume
-            </a>
+            </Link>
 
             {/* Secondary CTA buttons (Outline on Dark) */}
             <div className="flex items-center gap-2 shrink-0">

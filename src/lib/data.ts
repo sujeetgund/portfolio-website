@@ -65,7 +65,7 @@ export const experienceData: Experience[] = [
     roles: [
       {
         title: "GenAI Developer Intern",
-        startDate: "2026-04-01",
+        startDate: "2024-04-15",
         endDate: null,
         description:
           "Led GenAI development across real-time voice AI, multi-agent graph workflows, and enterprise RAG systems from concept to production AWS deployment.",

@@ -18,10 +18,10 @@ export function ProjectsPage() {
         </Link>
 
         <div className="mb-16">
-          <h1 className="text-[36px] md:text-[48px] font-bold leading-[1.25] tracking-tight mb-4 text-[#ffffff] m-0">
+          <h1 className="text-[28px] sm:text-[38px] md:text-[48px] font-bold leading-[1.25] tracking-tight mb-4 text-[#ffffff] m-0">
             All Projects
           </h1>
-          <p className="text-[18px] leading-[1.5] text-[rgba(255,255,255,0.7)] m-0 max-w-[800px]">
+          <p className="text-[15px] sm:text-[17px] md:text-[18px] leading-[1.5] text-[rgba(255,255,255,0.7)] m-0 max-w-[800px]">
             A complete collection of my work spanning AI/ML products, backend systems, and full-stack web applications.
           </p>
         </div>
@@ -41,10 +41,10 @@ export function ProjectsPage() {
                 </div>
 
                 <div className="mb-6 pr-12">
-                  <h3 className="text-[24px] font-bold leading-[1.25] m-0 text-[#ffffff] mb-3 group-hover:text-[#76b900] transition-colors">
+                  <h3 className="text-[20px] sm:text-[24px] font-bold leading-[1.25] m-0 text-[#ffffff] mb-3 group-hover:text-[#76b900] transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-[16px] font-normal leading-[1.67] text-[rgba(255,255,255,0.7)] m-0">
+                  <p className="text-[14px] sm:text-[16px] font-normal leading-[1.67] text-[rgba(255,255,255,0.7)] m-0">
                     {project.description}
                   </p>
                 </div>

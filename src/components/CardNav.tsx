@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, ChevronRight, MapPin } from "lucide-react";
 import { navLinks, profileData } from "@/lib/data";
 
 const Navbar: React.FC = () => {
@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
               href={linkedInLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#76b900] text-[#ffffff] hover:bg-[#5a8d00] text-[14px] font-bold px-[20px] py-[9px] rounded-[4px] transition-all inline-flex items-center gap-1.5 shadow-sm hover:shadow-[#76b900]/20"
+              className="bg-[#76b900] hover:bg-[#5a8d00] text-[14px] font-bold px-[20px] py-[9px] rounded-[4px] transition-all inline-flex items-center gap-1.5 shadow-sm hover:shadow-[#76b900]/20"
             >
               Let&apos;s Connect
               <ArrowUpRight className="h-4 w-4" />
@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
               href={linkedInLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="sm:inline-flex hidden bg-[#76b900] text-[#ffffff] hover:bg-[#5a8d00] text-[13px] font-bold px-[14px] py-[6px] rounded-[4px] transition-colors items-center"
+              className="sm:inline-flex hidden bg-[#76b900] hover:bg-[#5a8d00] text-[13px] font-bold px-[14px] py-[6px] rounded-[4px] transition-colors items-center"
             >
               Let&apos;s Connect
             </Link>
@@ -110,12 +110,12 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Navigation Drawer */}
       <aside
-        className={`fixed top-0 right-0 h-full w-[85%] max-w-[360px] bg-[#0c0c0c] border-l border-[#262626] z-[70] transform transition-transform duration-300 ease-out lg:hidden flex flex-col shadow-2xl ${
+        className={`fixed top-0 right-0 h-full w-[85%] max-w-[360px] bg-[#0c0c0e] border-l border-[#262626] z-[70] transform transition-transform duration-300 ease-out lg:hidden flex flex-col shadow-2xl ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Drawer Header */}
-        <div className="h-[64px] border-b border-[#262626] flex items-center justify-between px-6 bg-[#121212]">
+        <div className="h-[64px] border-b border-[#262626] flex items-center justify-between px-6 bg-[#121215] shrink-0">
           <span className="text-[16px] font-extrabold uppercase tracking-tight text-[#ffffff]">
             Sujeet Gund
           </span>
@@ -128,11 +128,11 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Drawer Links */}
-        <div className="flex-1 overflow-y-auto p-6 flex flex-col justify-between">
-          {/* Navigation Links */}
-          <nav className="flex flex-col gap-2">
-            <span className="text-[11px] font-bold text-[#737373] uppercase tracking-widest mb-2">
+        {/* Drawer Content Body */}
+        <div className="flex-1 overflow-y-auto p-6 flex flex-col justify-between gap-6">
+          {/* Navigation Links (Scaled up typography and touch targets) */}
+          <nav className="flex flex-col gap-1.5">
+            <span className="text-[12px] font-bold text-[#71717a] uppercase tracking-widest mb-2">
               Navigation
             </span>
             {navLinks.map((link, idx) => {
@@ -141,22 +141,25 @@ const Navbar: React.FC = () => {
                 <Link
                   key={idx}
                   href={link.href}
-                  className="flex items-center gap-3 text-[18px] font-bold text-[#ffffff] hover:text-[#76b900] transition-colors py-2 border-b border-[#1e1e1e]"
+                  className="flex items-center justify-between text-[19px] font-extrabold tracking-tight text-[#ffffff] hover:text-[#76b900] transition-colors py-3.5 px-4 rounded-[8px] hover:bg-[#18181b] border-b border-[#1f1f23] last:border-b-0 group"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <span className="text-[12px] font-mono text-[#76b900]">
-                    {num}.
-                  </span>
-                  {link.label}
+                  <div className="flex items-center gap-3.5">
+                    <span className="text-[14px] font-mono font-bold text-[#76b900]">
+                      {num}.
+                    </span>
+                    {link.label}
+                  </div>
+                  <ChevronRight className="h-5 w-5 text-[#71717a] group-hover:text-[#76b900] group-hover:translate-x-1.5 transition-all" />
                 </Link>
               );
             })}
           </nav>
 
-          {/* Contact Links */}
-          <div className="flex flex-col gap-4">
-            <span className="text-[11px] font-bold text-[#737373] uppercase tracking-widest">
-              Contact
+          {/* Direct Social Contact Cluster (Scaled up buttons & CTA) */}
+          <div className="flex flex-col gap-4 pt-5 border-t border-[#1f1f23]">
+            <span className="text-[12px] font-bold text-[#71717a] uppercase tracking-widest">
+              Direct Contact
             </span>
             <div className="flex flex-col gap-2.5">
               {profileData.contacts.map((contact, idx) => (
@@ -165,25 +168,29 @@ const Navbar: React.FC = () => {
                   href={contact.value}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[14px] font-semibold text-[#a3a3a3] hover:text-[#76b900] transition-colors flex items-center gap-2"
+                  className="text-[14px] font-semibold text-[#a1a1aa] hover:text-[#ffffff] hover:bg-[#18181b] border border-[#27272a] rounded-[8px] px-4 py-3 transition-all flex items-center justify-between group"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#76b900]" />
-                  {contact.label}
+                  <div className="flex items-center gap-3">
+                    <contact.icon className="h-4.5 w-4.5 text-[#76b900]" />
+                    <span>{contact.label}</span>
+                  </div>
+                  <ArrowUpRight className="h-4 w-4 text-[#71717a] group-hover:text-[#76b900] transition-colors" />
                 </Link>
               ))}
             </div>
+
+            <Link
+              href={linkedInLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 bg-[#76b900] text-[#000000] hover:bg-[#5a8d00] hover:text-[#ffffff] text-[15px] font-extrabold px-5 py-3.5 rounded-[8px] transition-all inline-flex items-center justify-center gap-2 w-full text-center shadow-lg hover:shadow-[#76b900]/20"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Let&apos;s Connect
+              <ArrowUpRight className="h-4.5 w-4.5" />
+            </Link>
           </div>
-          <Link
-            href={linkedInLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 bg-[#76b900] text-[#ffffff] hover:bg-[#5a8d00] text-[14px] font-bold px-[20px] py-[11px] rounded-[4px] transition-colors inline-flex items-center justify-center gap-2 w-full text-center"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Let&apos;s Connect
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
         </div>
       </aside>
     </>
@@ -191,3 +198,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+

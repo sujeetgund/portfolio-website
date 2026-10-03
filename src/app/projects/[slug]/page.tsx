@@ -63,15 +63,15 @@ const extractText = (node: any): string => {
 const components = {
   h2: (props: any) => (
     <h2
-      className="text-[24px] md:text-[28px] font-bold mt-12 mb-6 text-[#1a1a1a] tracking-tight border-b border-[#e5e5e5] pb-3"
+      className="text-[20px] sm:text-[24px] md:text-[28px] font-bold mt-10 mb-5 text-[#1a1a1a] tracking-tight border-b border-[#e5e5e5] pb-3"
       {...props}
     />
   ),
   h3: (props: any) => (
-    <h3 className="text-[20px] font-bold mt-8 mb-4 text-[#1a1a1a]" {...props} />
+    <h3 className="text-[17px] sm:text-[19px] md:text-[20px] font-bold mt-8 mb-4 text-[#1a1a1a]" {...props} />
   ),
   p: (props: any) => (
-    <p className="text-[16px] leading-[1.7] text-[#333333] mb-6" {...props} />
+    <p className="text-[15px] sm:text-[16px] leading-[1.7] text-[#333333] mb-6" {...props} />
   ),
   ul: (props: any) => (
     <ul
@@ -209,11 +209,11 @@ export default async function ProjectPage({
             Back to Projects
           </Link>
 
-          <h1 className="text-[36px] md:text-[48px] font-bold leading-[1.25] tracking-tight mb-6">
+          <h1 className="text-[28px] sm:text-[38px] md:text-[48px] font-bold leading-[1.2] tracking-tight mb-6">
             {project.title}
           </h1>
 
-          <p className="text-[18px] leading-[1.5] text-[rgba(255,255,255,0.7)] mb-8">
+          <p className="text-[15px] sm:text-[17px] md:text-[18px] leading-[1.6] text-[rgba(255,255,255,0.75)] mb-8">
             {project.description}
           </p>
 

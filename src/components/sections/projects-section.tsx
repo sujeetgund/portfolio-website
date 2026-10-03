@@ -75,7 +75,7 @@ export function ProjectsSection() {
                   {project.slug && (
                     <Link
                       href={`/projects/${project.slug}`}
-                      className="bg-[#76b900] hover:bg-[#5a8d00] text-[#ffffff] font-bold text-[14px] leading-[1.25] px-4 py-[10px] h-[40px] rounded-[4px] inline-flex items-center justify-center transition-colors w-full sm:w-auto lg:w-full shrink-0 shadow-sm"
+                      className="bg-[#76b900] hover:bg-[#5a8d00] text-black font-bold text-[14px] leading-[1.25] px-4 py-[10px] h-[40px] rounded-[4px] inline-flex items-center justify-center transition-colors w-full sm:w-auto lg:w-full shrink-0 shadow-sm"
                     >
                       Read More
                       <LuArrowUpRight className="ml-1.5 h-4 w-4 stroke-[2.5]" />

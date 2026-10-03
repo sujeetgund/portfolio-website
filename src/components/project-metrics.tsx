@@ -17,7 +17,7 @@ export function ProjectMetrics({ metrics }: ProjectMetricsProps) {
     <div className="my-10 w-full">
       <h2 className="text-[20px] font-bold text-[#1a1a1a] mb-6 flex items-center gap-2">
         <span className="w-2 h-6 bg-[#76b900] rounded-[1px] inline-block"></span>
-        Empirical Performance Metrics & Derivation
+        Empirical Performance Metrics
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {metrics.map((metric, idx) => (

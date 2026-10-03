@@ -20,13 +20,13 @@ export function CertificationsSection() {
               className="group block bg-[#ffffff] border border-[#cccccc] p-[24px] rounded-[2px] hover:border-[#76b900] transition-colors relative"
             >
               <div className="absolute top-0 right-0 w-[12px] h-[12px] bg-transparent group-hover:bg-[#76b900] transition-colors rounded-tr-[2px]" />
-              <h3 className="text-[17px] font-bold leading-[1.47] text-[#1a1a1a] mb-2 m-0 group-hover:text-[#76b900] transition-colors">
+              <h3 className="text-[16px] sm:text-[17px] font-bold leading-[1.47] text-[#1a1a1a] mb-2 m-0 group-hover:text-[#76b900] transition-colors">
                 {cert.name}
               </h3>
-              <p className="text-[15px] font-normal leading-[1.67] text-[#757575] m-0 mb-4">
+              <p className="text-[14px] sm:text-[15px] font-normal leading-[1.67] text-[#757575] m-0 mb-4">
                 Issued by {cert.issuer}
               </p>
-              <div className="text-[#0046a4] font-normal text-[15px] inline-flex items-center group-hover:underline">
+              <div className="text-[#0046a4] font-normal text-[14px] sm:text-[15px] inline-flex items-center group-hover:underline">
                 View Credential
                 <ArrowRight className="ml-2 h-4 w-4" />
               </div>
