@@ -46,9 +46,9 @@ export const profileData: ProfileData = {
 export const aboutData: AboutData = {
   title: "Engineering intelligent systems from first principles to production",
   paragraphs: [
-    "Final-year Integrated M.Tech in AI at VIT Bhopal, currently building production AI systems at Divam Technologies.",
-    "I specialize in agentic architectures — LangGraph multi-agent workflows with HITL checkpoints, hybrid RAG with pgvector, and FastAPI backends on Google Cloud Run. The kind of systems that handle real workloads, not just demos.",
-    "Outside work, I ship ambitious side projects: an email processing SaaS, an anonymous geo-social platform, and tooling that pushes LLM orchestration further than most tutorials go.",
+    "Final-year Integrated M.Tech in AI at VIT Bhopal, with hands-on experience building production AI systems at Divam Technologies.",
+    "I specialize in agentic architectures: LangGraph multi-agent workflows with HITL checkpoints, hybrid RAG with pgvector, and FastAPI backends deployed on AWS and GCP. I focus on building systems that handle real workloads, not just demos.",
+    "Outside work, I ship ambitious side projects: an agentic email processing SaaS, an AI-native commerce engine, and open-source tools that push LLM orchestration beyond tutorial limits.",
   ],
   stats: [
     { value: "15+", label: "Advanced AI Projects" },
@@ -61,18 +61,20 @@ export const experienceData: Experience[] = [
   {
     company: "Divam Technologies",
     companyUrl: "https://divamtech.com",
+    logo: "/divamtech.png",
     location: "Remote",
     roles: [
       {
         title: "GenAI Developer Intern",
-        startDate: "2024-04-15",
-        endDate: null,
+        startDate: "2026-04-15",
+        endDate: "2026-09-30",
         description:
-          "Led GenAI development across real-time voice AI, multi-agent graph workflows, and enterprise RAG systems from concept to production AWS deployment.",
+          "Led end-to-end GenAI development across real-time voice infrastructure, multi-agent systems, and enterprise RAG pipelines deployed on AWS.",
         bulletPoints: [
-          "Architected multi-agent state graphs using LangGraph to automate complex decision workflows in [Publie.ai](https://publie.ai) — implemented intent routing (**<200ms decision latency**) and HITL checkpoints yielding an **85%+ autonomous resolution rate**.",
-          "Engineered real-time voice & chat agents integrating Meta Cloud API, LiveKit, and Plivo for [OmniAgent](https://omni-agent.publie.ai) — built resilient webhook pipelines with BullMQ queues guaranteeing **sub-second response latency** and **zero-drop event delivery under high concurrent (~1200rps)** traffic.",
-          "Built context-aware lead capture agent for [Newton On Mars](https://newtononmars.com) using hybrid RAG over live site content — accelerated client technical discovery and automated PRD draft generation (**~70% reduction in onboarding time**).",
+          "Built a hybrid RAG system combining vector search with file-based lookup to improve factual precision on structured queries and reduce **retrieval latency by 10x (50-100 ms to <5 ms)**.",
+          "Engineered an async user context pipeline that processes resumes, PDFs, and portfolio links using rolling summarization to compress **~15k raw tokens** into structured **2-3k token** context windows.",
+          "Developed a WhatsApp voice agent using Deepgram, OpenAI, Cartesia, and LiveKit WebRTC with sentence-level speech streaming and Redis caching, cutting **time-to-first-audio from ~4s to <700ms** and **lookup silence to <1s**.",
+          "Configured production AWS infrastructure with **GitHub Actions CI/CD** across **isolated dev/prod environments**, integrating LinkedIn OAuth, Razorpay payments, and automated WhatsApp notifications.",
         ],
       },
     ],
@@ -81,56 +83,46 @@ export const experienceData: Experience[] = [
 
 export const projectsData: Project[] = [
   {
-    title: "GroundedAI — Self-Correcting Multi-Source Agentic RAG",
+    title: "GroundedAI",
+    tagline: "Self-Correcting Multi-Source Agentic RAG",
     slug: "grounded-ai",
     description:
-      "A self-evaluating agentic RAG platform powered by LangGraph, Reciprocal Rank Fusion (RRF) pgvector + tsvector hybrid search, and local zero-cost DeBERTa v3 NLI faithfulness scoring to eliminate hallucinations (94.2% grounding precision).",
+      "Eliminates LLM hallucinations across complex multi-source documents by combining hybrid RRF vector search with local NLI faithfulness verification (**94.2% grounding precision**).",
     tech: [
       "LangGraph",
       "FastAPI",
       "pgvector",
-      "Python",
-      "Next.js 16",
-      "Cross-Encoder DeBERTa",
+      "NLI DeBERTa v3",
+      "Next.js",
       "Redis",
-      "Tavily API",
     ],
     github: "https://github.com/sujeetgund/grounded-ai",
     live: "",
   },
   {
-    title: "rzp Merchant — AI-Native E-Commerce & Agentic Commerce (MCP/ACP)",
+    title: "rzp Merchant",
+    tagline: "Autonomous Agentic Commerce Engine (MCP/ACP)",
     slug: "rzp-merchant",
     description:
-      "An autonomous e-commerce platform implementing Model Context Protocol (MCP) and Agentic Commerce Protocol (ACP), allowing external AI agents to discover, basket-optimize, and execute transactions via Razorpay under 3-tier security mandates.",
+      "Implements MCP enabling external AI agents to autonomously discover products, optimize baskets, and execute Razorpay transactions under multi-tier security mandates.",
     tech: [
-      "Next.js 16",
-      "LangGraph.js",
-      "Gemini 2.5 Flash",
+      "Next.js",
+      "LangGraph",
+      "Gemini 2.5",
       "Razorpay SDK",
-      "MCP Protocol",
-      "Drizzle ORM",
+      "MCP",
       "pgvector",
-      "Better Auth",
     ],
     github: "https://github.com/sujeetgund/rzp-merchant",
     live: "",
   },
   {
-    title: "MailMind — Agentic Email Processing & HITL Orchestration Engine",
+    title: "MailMind",
+    tagline: "Agentic Email Processing & HITL Engine",
     slug: "mailmind",
     description:
-      "An event-driven email processing agent built with LangGraph and Resend Inbound APIs. Features intent classification (96.5% accuracy), RAG auto-drafting, and PostgreSQL-persisted Human-in-the-Loop (HITL) approval checkpoints yielding an 88% operational time reduction.",
-    tech: [
-      "LangGraph",
-      "FastAPI",
-      "Resend Webhooks",
-      "ChatGroq",
-      "FAISS",
-      "PostgreSQL",
-      "Next.js 16",
-      "Docker",
-    ],
+      "Automates inbox operations with intent classification (**96.5% accuracy**), RAG draft generation, and PostgreSQL-persisted Human-in-the-Loop approval checkpoints (**88% operational time reduction**).",
+    tech: ["LangGraph", "FastAPI", "Resend", "Groq", "FAISS", "PostgreSQL"],
     github: "https://github.com/sujeetgund/mailmind",
     live: "",
   },
@@ -142,7 +134,7 @@ export const skillsData: SkillCategory[] = [
     skills: ["Python", "TypeScript", "PostgreSQL", "MongoDB"],
   },
   {
-    category: "AI & ML",
+    category: "AI/ML",
     skills: [
       "LangGraph",
       "LangChain",
@@ -169,6 +161,12 @@ export const skillsData: SkillCategory[] = [
 
 export const certificationsData: Certification[] = [
   {
+    name: "Building RAG Agents with LLMs",
+    issuer: "NVIDIA",
+    date: "2026-10-08",
+    url: "https://learn.nvidia.com/certificates?id=d8hqtgKqSeqK8lHoQ5Z0GA",
+  },
+  {
     name: "Complete Data Science, Machine Learning, DL, NLP Bootcamp",
     issuer: "Udemy",
     date: "2025-12-01",
@@ -188,7 +186,7 @@ export const certificationsData: Certification[] = [
   },
   {
     name: "AWS Cloud Essentials",
-    issuer: "Amazon Web Services (AWS)",
+    issuer: "Amazon Web Services",
     date: "2023-06-01",
     url: "https://www.credly.com/badges/430abe70-f242-4db2-b47a-42542fbc0335/public_url",
   },

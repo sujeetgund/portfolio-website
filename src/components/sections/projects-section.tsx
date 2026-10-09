@@ -7,6 +7,7 @@ import { VscGithub } from "react-icons/vsc";
 import { projectsData } from "@/lib/data";
 import { RxExternalLink } from "react-icons/rx";
 import { LuArrowUpRight } from "react-icons/lu";
+import ReactMarkdown from "react-markdown";
 
 type Project = (typeof projectsData)[0];
 
@@ -22,13 +23,13 @@ export function ProjectsSection() {
       <div className="max-w-[1280px] mx-auto w-full">
         <Link
           href="/projects"
-          className="hover:text-[#76b900] text-[#ffffff] transition-colors flex items-center gap-2 mb-16 cursor-pointer w-fit"
+          className="hover:text-[#76b900] text-[#ffffff] transition-colors inline-flex items-center gap-2 mb-10 md:mb-16 cursor-pointer group"
           aria-label="View all projects"
         >
-          <h2 className="text-[36px] md:text-[48px] font-bold leading-[1.25] tracking-tight">
+          <h2 className="text-[28px] sm:text-[36px] md:text-[48px] font-bold leading-[1.2] tracking-tight flex items-center gap-2">
             Featured Projects
+            <LuArrowUpRight className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 shrink-0 text-[#76b900] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </h2>
-          <LuArrowUpRight className="h-8 w-8 md:h-10 md:w-10" />
         </Link>
 
         <div className="flex flex-col border-t border-[#5e5e5e]">
@@ -48,20 +49,39 @@ export function ProjectsSection() {
 
                 {/* Content Block */}
                 <div className="flex-1 flex flex-col gap-4">
-                  <h3 className="text-[24px] font-bold leading-[1.25] m-0 text-[#ffffff] group-hover:text-[#76b900] transition-colors">
-                    {project.title}
-                  </h3>
+                  <div className="flex flex-col gap-1">
+                    <h3 className="text-[22px] sm:text-[25px] font-extrabold leading-[1.25] m-0 text-[#ffffff] group-hover:text-[#76b900] transition-colors">
+                      {project.title}
+                    </h3>
+                    {project.tagline && (
+                      <p className="text-[13.5px] sm:text-[14.5px] font-normal italic text-[#a1a1aa] m-0">
+                        {project.tagline}
+                      </p>
+                    )}
+                  </div>
 
-                  <p className="text-[16px] font-normal leading-[1.5] text-[rgba(255,255,255,0.7)] m-0 max-w-[800px]">
-                    {project.description}
-                  </p>
+                  <div className="text-[15px] sm:text-[16px] font-normal leading-[1.65] text-[#d4d4d8] m-0 max-w-[800px]">
+                    <ReactMarkdown
+                      components={{
+                        strong: ({ node, ...props }) => (
+                          <strong
+                            {...props}
+                            className="font-bold text-[#86efac] px-0.5"
+                          />
+                        ),
+                        p: ({ node, ...props }) => <span {...props} />,
+                      }}
+                    >
+                      {project.description}
+                    </ReactMarkdown>
+                  </div>
 
                   {project.tech && project.tech.length > 0 && (
                     <div className="flex flex-wrap gap-2 mt-2">
                       {project.tech.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="border border-[#5e5e5e] text-[#ffffff] text-[11px] font-bold uppercase tracking-wider px-[10px] py-[4px] rounded-[2px]"
+                          className="bg-[#141417] border border-[#27272a] text-[#d4d4d8] hover:text-[#86efac] hover:border-[#76b900]/50 text-[12px] font-medium px-3 py-1 rounded-[6px] transition-all"
                         >
                           {tech}
                         </span>

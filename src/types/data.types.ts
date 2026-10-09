@@ -61,6 +61,7 @@ export interface ExperienceRole {
 export interface Experience {
   company: string;
   companyUrl?: string;
+  logo?: string;
   location?: string;
   // Primary roles progression list
   roles: ExperienceRole[];
@@ -68,6 +69,7 @@ export interface Experience {
 
 export interface Project {
   title: string;
+  tagline?: string;
   slug: string;
   description: string;
   tech: string[];

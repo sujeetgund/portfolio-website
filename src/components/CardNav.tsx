@@ -35,10 +35,8 @@ const Navbar: React.FC = () => {
     <>
       {/* Primary Navigation Bar */}
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 h-[64px] md:h-[72px] ${
-          isScrolled
-            ? "bg-[#000000]/90 backdrop-blur-md border-b border-[#262626] shadow-xl"
-            : "bg-[#000000]/70 backdrop-blur-sm border-b border-transparent"
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 h-[64px] md:h-[72px] bg-[#000000]/95 backdrop-blur-md border-b border-[#262626] ${
+          isScrolled ? "shadow-xl" : "shadow-md"
         }`}
       >
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 h-full flex items-center justify-between gap-4">

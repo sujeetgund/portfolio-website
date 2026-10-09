@@ -75,13 +75,13 @@ const components = {
   ),
   ul: (props: any) => (
     <ul
-      className="list-disc pl-6 mb-6 text-[16px] leading-[1.7] text-[#333333] space-y-2"
+      className="list-disc pl-6 mb-6 text-[15px] sm:text-[16px] leading-[1.7] text-[#333333] space-y-2"
       {...props}
     />
   ),
   ol: (props: any) => (
     <ol
-      className="list-decimal pl-6 mb-6 text-[16px] leading-[1.7] text-[#333333] space-y-2"
+      className="list-decimal pl-6 mb-6 text-[15px] sm:text-[16px] leading-[1.7] text-[#333333] space-y-2"
       {...props}
     />
   ),
@@ -133,7 +133,7 @@ const components = {
   ),
   pre: (props: any) => (
     <pre
-      className="bg-[#1a1a1a] text-[#ffffff] p-5 rounded-[6px] overflow-x-auto mb-6 text-[14px] border border-[#333333] shadow-md"
+      className="bg-[#1a1a1a] text-[#ffffff] p-3.5 sm:p-5 rounded-[6px] overflow-x-auto mb-6 text-[13px] sm:text-[14px] border border-[#333333] shadow-md"
       {...props}
     />
   ),
@@ -159,7 +159,7 @@ const components = {
 
     return (
       <code
-        className="bg-[#f0f4eb] text-[#2b4c03] font-sans font-semibold text-[13.5px] px-2 py-0.5 rounded-[3px] border border-[#d2e8b8] inline-block my-0.5"
+        className="bg-[#f0f4eb] text-[#2b4c03] font-body font-semibold text-[13.5px] px-2 py-0.5 rounded-[3px] border border-[#d2e8b8] inline-block my-0.5"
         {...props}
       >
         {children}
@@ -199,33 +199,51 @@ export default async function ProjectPage({
   return (
     <div className="w-full bg-[#ffffff] min-h-screen text-[#1a1a1a]">
       {/* Hero Header */}
-      <header className="w-full bg-[#000000] text-[#ffffff] py-[80px] px-6 md:px-12 border-b border-[#5e5e5e]">
+      <header className="w-full bg-[#000000] text-[#ffffff] py-10 sm:py-14 md:py-[80px] px-4 sm:px-6 md:px-12 border-b border-[#5e5e5e]">
         <div className="max-w-[800px] mx-auto w-full flex flex-col items-start">
           <Link
             href="/#projects"
-            className="text-[#ffffff] hover:text-[#76b900] text-[15px] font-bold inline-flex items-center transition-colors mb-12"
+            className="text-[#ffffff] hover:text-[#76b900] text-[14px] sm:text-[15px] font-bold inline-flex items-center transition-colors mb-6 sm:mb-8 md:mb-12"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Projects
           </Link>
 
-          <h1 className="text-[28px] sm:text-[38px] md:text-[48px] font-bold leading-[1.2] tracking-tight mb-6">
+          <h1 className="text-[26px] sm:text-[36px] md:text-[48px] font-bold leading-[1.2] tracking-tight mb-2">
             {project.title}
           </h1>
 
-          <p className="text-[15px] sm:text-[17px] md:text-[18px] leading-[1.6] text-[rgba(255,255,255,0.75)] mb-8">
-            {project.description}
-          </p>
+          {project.tagline && (
+            <p className="text-[14px] sm:text-[16px] md:text-[18px] font-normal italic text-[#a1a1aa] mb-4 sm:mb-6">
+              {project.tagline}
+            </p>
+          )}
 
-          <div className="flex flex-wrap gap-4 items-center">
+          <div className="text-[14px] sm:text-[16px] md:text-[18px] leading-[1.65] text-[rgba(255,255,255,0.75)] mb-6 sm:mb-8">
+            <ReactMarkdown
+              components={{
+                strong: ({ node, ...props }) => (
+                  <strong
+                    {...props}
+                    className="font-bold text-[#86efac] px-0.5"
+                  />
+                ),
+                p: ({ node, ...props }) => <span {...props} />,
+              }}
+            >
+              {project.description}
+            </ReactMarkdown>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center w-full sm:w-auto">
             {project.github && (
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#1a1a1a] text-[#ffffff] hover:bg-[#333333] border border-[#5e5e5e] text-[15px] font-bold px-[24px] py-[8px] rounded-[2px] transition-colors inline-flex items-center"
+                className="bg-[#1a1a1a] text-[#ffffff] hover:bg-[#333333] border border-[#5e5e5e] text-[14px] sm:text-[15px] font-bold px-[20px] sm:px-[24px] py-[10px] sm:py-[8px] rounded-[4px] transition-colors inline-flex items-center justify-center"
               >
-                <VscGithub className="mr-2 h-5 w-5" />
+                <VscGithub className="mr-2 h-5 w-5 text-[#76b900]" />
                 See Code
               </a>
             )}
@@ -234,7 +252,7 @@ export default async function ProjectPage({
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#76b900] text-[#ffffff] hover:bg-[#5a8d00] text-[15px] font-bold px-[24px] py-[8px] rounded-[2px] transition-colors inline-flex items-center"
+                className="bg-[#76b900] text-[#ffffff] hover:bg-[#5a8d00] text-[14px] sm:text-[15px] font-bold px-[20px] sm:px-[24px] py-[10px] sm:py-[8px] rounded-[4px] transition-colors inline-flex items-center justify-center"
               >
                 <RxExternalLink className="mr-2 h-5 w-5" />
                 Live Demo
@@ -245,15 +263,15 @@ export default async function ProjectPage({
       </header>
 
       {/* Content Body */}
-      <div className="max-w-[800px] mx-auto w-full px-6 py-[80px]">
+      <div className="max-w-[800px] mx-auto w-full px-4 sm:px-6 py-8 sm:py-12 md:py-[80px]">
         {/* Tech Stack Banner */}
         {project.tech && project.tech.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-10 p-6 bg-[#f8f9fa] border border-[#e2e8f0] rounded-[4px] shadow-sm">
-            <span className="font-bold text-[#1a1a1a] mr-2">Tech Stack:</span>
+          <div className="flex flex-wrap gap-2 mb-8 sm:mb-10 p-4 sm:p-6 bg-[#f8f9fa] border border-[#e2e8f0] rounded-[6px] shadow-sm">
+            <span className="font-bold text-[#1a1a1a] mr-2 text-[14px] sm:text-[15px] self-center">Tech Stack:</span>
             {project.tech.map((tech: string, index: number) => (
               <span
                 key={index}
-                className="text-[#1a1a1a] text-[13px] font-bold bg-[#ffffff] border border-[#cbd5e1] px-2.5 py-1 rounded-[2px]"
+                className="text-[#1a1a1a] text-[12px] sm:text-[13px] font-bold bg-[#ffffff] border border-[#cbd5e1] px-2.5 py-1 rounded-[4px]"
               >
                 {tech}
               </span>
