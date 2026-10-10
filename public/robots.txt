@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 Sitemap: https://sujeetgund.in/sitemap.xml
 Sitemap: https://sujeetgund.in/llms.txt
+
