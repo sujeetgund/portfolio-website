@@ -207,6 +207,7 @@ export async function GET(request: NextRequest) {
     headers: {
       "Content-Type": "text/markdown; charset=utf-8",
       Vary: "Accept",
+      Link: '</llms.txt>; rel="describedby"; type="text/markdown", </sitemap.xml>; rel="sitemap"; type="application/xml"',
       "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate",
     },
   });

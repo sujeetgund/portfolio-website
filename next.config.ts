@@ -30,6 +30,19 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async headers() {
+    return [
+      {
+        source: '/((?!api|_next/static|_next/image|favicon.ico).*)',
+        headers: [
+          {
+            key: 'Link',
+            value: '</llms.txt>; rel="describedby"; type="text/markdown", </sitemap.xml>; rel="sitemap"; type="application/xml"',
+          },
+        ],
+      },
+    ];
+  },
   env: {
     SITE_URL: process.env.NODE_ENV === 'production' ? 'https://sujeetgund.in' : 'http://localhost:3000',
   }
