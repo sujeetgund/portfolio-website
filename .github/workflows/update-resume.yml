@@ -36,5 +36,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add public/RESUME.pdf
-          git commit -m "chore: update resume from sujeetgund.io"
+          git commit -m "chore: update resume from sujeetgund.github.io"
           git push
