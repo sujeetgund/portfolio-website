@@ -43,3 +43,6 @@ next-env.d.ts
 # agent skills
 .agents
 skills-lock.json
+
+# custom ignores
+.ignore/

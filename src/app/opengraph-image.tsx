@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { profileData } from "@/lib/data";
 
-export const alt = "Sujeet Gund | AI Engineer";
+export const alt = "Sujeet Gund | Agentic AI Engineer";
 export const size = {
   width: 1200,
   height: 630,
@@ -13,107 +13,122 @@ export default function Image() {
     (
       <div
         style={{
-          background: "#000000",
+          background: "#0c0c0e",
           width: "100%",
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          padding: "60px 80px",
-          border: "4px solid #5e5e5e",
+          padding: "60px 72px",
           justifyContent: "space-between",
           fontFamily: "sans-serif",
+          boxSizing: "border-box",
+          border: "2px solid #27272a",
+          position: "relative",
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div
+        {/* Top Accent Line */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: "6px",
+            background: "#76b900",
+          }}
+        />
+
+        {/* Top Header - Domain Only */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            width: "100%",
+          }}
+        >
+          <span
             style={{
-              display: "flex",
-              alignItems: "center",
+              color: "#76b900",
+              fontSize: "22px",
+              fontWeight: 700,
+              letterSpacing: "1px",
             }}
           >
-            <div
-              style={{
-                width: "24px",
-                height: "24px",
-                backgroundColor: "#76b900",
-                marginRight: "20px",
-              }}
-            />
-            <span
-              style={{
-                color: "#ffffff",
-                fontSize: "32px",
-                fontWeight: "bold",
-                textTransform: "uppercase",
-                letterSpacing: "6px",
-              }}
-            >
-              Portfolio
-            </span>
-          </div>
+            sujeetgund.in
+          </span>
+        </div>
 
-          <h1
+        {/* Hero Content Section */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "18px",
+          }}
+        >
+          <div
             style={{
               color: "#ffffff",
-              fontSize: "100px",
+              fontSize: "96px",
               fontWeight: 900,
-              lineHeight: 1,
-              margin: 0,
-              marginTop: "60px",
-              maxWidth: "1000px",
+              lineHeight: 1.05,
+              letterSpacing: "-2px",
             }}
           >
             {profileData.name}
-          </h1>
+          </div>
 
-          <p
+          <div
             style={{
               color: "#76b900",
-              fontSize: "48px",
-              fontWeight: "bold",
-              lineHeight: 1.2,
-              margin: 0,
-              marginTop: "16px",
-              maxWidth: "900px",
+              fontSize: "40px",
+              fontWeight: 700,
+              letterSpacing: "-0.5px",
             }}
           >
-            AI Engineer
-          </p>
+            Agentic AI Engineer · M.Tech AI @ VIT Bhopal
+          </div>
 
-          <p
+          <div
             style={{
-              color: "rgba(255,255,255,0.7)",
-              fontSize: "36px",
-              lineHeight: 1.4,
-              maxWidth: "950px",
-              margin: 0,
-              marginTop: "32px",
+              color: "#e4e4e7",
+              fontSize: "28px",
+              lineHeight: 1.45,
+              maxWidth: "1050px",
+              marginTop: "4px",
             }}
           >
-            {profileData.title} <br /> {profileData.subtitle}
-          </p>
+            {profileData.subtitle}
+          </div>
         </div>
 
-        <div style={{ display: "flex", gap: "24px" }}>
-          {["Machine Learning", "LLMs", "Agentic AI", "Full Stack"].map(
-            (skill, i) => (
-              <div
-                key={i}
-                style={{
-                  padding: "16px 32px",
-                  background: "#1a1a1a",
-                  border: "2px solid #5e5e5e",
-                  color: "#ffffff",
-                  fontSize: "24px",
-                  fontWeight: "bold",
-                  borderRadius: "4px",
-                  display: "flex",
-                }}
-              >
-                {skill}
-              </div>
-            )
-          )}
+        {/* Bottom Skill Pills */}
+        <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+          {[
+            "Agentic Workflows",
+            "LangGraph",
+            "Production RAG",
+            "FastAPI & AWS",
+            "Full-Stack AI",
+          ].map((skill, i) => (
+            <div
+              key={i}
+              style={{
+                padding: "12px 26px",
+                background: "#18181b",
+                border: "1px solid #3f3f46",
+                color: "#f4f4f5",
+                fontSize: "22px",
+                fontWeight: 600,
+                borderRadius: "8px",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              {skill}
+            </div>
+          ))}
         </div>
       </div>
     ),
